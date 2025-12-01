@@ -1,0 +1,2719 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/fsm/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 188,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg a Broker package error.\n"
+    },
+    {
+      "FilePath": "pkg/fsm/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 188,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "ErrUnmarshal",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrUnmarshal error.\n"
+    },
+    {
+      "FilePath": "pkg/fsm/generator/errors.go",
+      "Start": {
+        "Offset": 70,
+        "Line": 6,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 106,
+        "Line": 6,
+        "Column": 37
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/generator/generator.go",
+      "Start": {
+        "Offset": 194,
+        "Line": 16,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 212,
+        "Line": 16,
+        "Column": 19
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "diagram",
+      "Type": {
+        "Label": "string",
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "string",
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/fsm/dsl/workflow_gen.go",
+      "Start": {
+        "Offset": 13,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 100,
+        "Line": 6,
+        "Column": 2
+      },
+      "PackageName": "dsl",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+      "Name": "Workflow",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm/dsl.Workflow",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "Edges",
+          "Type": {
+            "Label": "[]Edge",
+            "Links": [
+              {
+                "Name": "Edge",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"edges\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "edges"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "States",
+          "Type": {
+            "Label": "[]State",
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"states\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "states"
+              }
+            ]
+          },
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/dsl/workflow_gen.go",
+      "Start": {
+        "Offset": 102,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 265,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "dsl",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+      "Name": "Edge",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm/dsl.Edge",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "Colour",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"colour\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "colour"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "Description",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"description\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "description"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "From",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"from\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "from"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "To",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"to\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "to"
+              }
+            ]
+          },
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/dsl/workflow_gen.go",
+      "Start": {
+        "Offset": 267,
+        "Line": 15,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 399,
+        "Line": 19,
+        "Column": 2
+      },
+      "PackageName": "dsl",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+      "Name": "State",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm/dsl.State",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "Colour",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"colour\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "colour"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "Description",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"description\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "description"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "Name",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`json:\"name\"`",
+            "Tags": [
+              {
+                "Name": "json",
+                "Value": "name"
+              }
+            ]
+          },
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/fsm.go",
+      "Start": {
+        "Offset": 150,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 252,
+        "Line": 16,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "FiniteStateMachine",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.FiniteStateMachine",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "EdgesGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "FSM",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "FinalStateGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "InitialStateGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "NextEdgesGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "NextStatesGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "PreviousStatesGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "StateGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "StateSetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        },
+        {
+          "Name": "StatesGetter",
+          "PackageName": "fsm",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "state",
+          "Type": {
+            "Label": "*dsl.State",
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "workflow",
+          "Type": {
+            "Label": "*dsl.Workflow",
+            "Links": [
+              {
+                "Name": "Workflow",
+                "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 298,
+            "Line": 19,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 668,
+            "Line": 36,
+            "Column": 2
+          },
+          "Name": "SetState",
+          "Signature": {
+            "Label": "(name string) (error)",
+            "Alt": "(string) (error)",
+            "Arguments": [
+              {
+                "Name": "name",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "SetState sets the current state by name.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 709,
+            "Line": 39,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 816,
+            "Line": 44,
+            "Column": 2
+          },
+          "Name": "GetState",
+          "Signature": {
+            "Label": "() (*dsl.State)",
+            "Alt": "() (*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetState returns the current state.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 858,
+            "Line": 47,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1278,
+            "Line": 65,
+            "Column": 2
+          },
+          "Name": "GetInitialState",
+          "Signature": {
+            "Label": "() (*dsl.State)",
+            "Alt": "() (*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetInitialState finds initial state.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 1317,
+            "Line": 68,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1541,
+            "Line": 79,
+            "Column": 2
+          },
+          "Name": "GetStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetStates returns all the states.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 1663,
+            "Line": 82,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2159,
+            "Line": 110,
+            "Column": 2
+          },
+          "Name": "GetFinalStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetFinalStates returns all final states of the finite state machine. A state is final if no edges originate from it.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 2268,
+            "Line": 113,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2728,
+            "Line": 134,
+            "Column": 2
+          },
+          "Name": "GetPreviousStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetPreviousStates returns the list of valid previous states that can transition into the current state.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 2809,
+            "Line": 137,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3265,
+            "Line": 158,
+            "Column": 2
+          },
+          "Name": "GetNextStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetNextStates returns the list of next valid states from the current state.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 3298,
+            "Line": 161,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3514,
+            "Line": 172,
+            "Column": 2
+          },
+          "Name": "GetEdges",
+          "Signature": {
+            "Label": "() ([]*dsl.Edge)",
+            "Alt": "() ([]*dsl.Edge)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.Edge",
+                  "Links": [
+                    {
+                      "Name": "Edge",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Edge",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetEdges returns all edges.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 3592,
+            "Line": 175,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3896,
+            "Line": 192,
+            "Column": 2
+          },
+          "Name": "GetNextEdges",
+          "Signature": {
+            "Label": "() ([]*dsl.Edge)",
+            "Alt": "() ([]*dsl.Edge)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.Edge",
+                  "Links": [
+                    {
+                      "Name": "Edge",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Edge",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "GetNextEdges returns all edges that can be taken from the current state.\n"
+        },
+        {
+          "FilePath": "pkg/fsm/fsm.go",
+          "Start": {
+            "Offset": 3990,
+            "Line": 195,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 4116,
+            "Line": 200,
+            "Column": 2
+          },
+          "Name": "setWorkflow",
+          "Signature": {
+            "Label": "(workflow *dsl.Workflow)",
+            "Alt": "(*dsl.Workflow)",
+            "Arguments": [
+              {
+                "Name": "workflow",
+                "Type": {
+                  "Label": "*dsl.Workflow",
+                  "Links": [
+                    {
+                      "Name": "Workflow",
+                      "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "Workflow",
+                "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": "SetWorkflow sets the workflow and initialises the state to the workflow's initial state.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 292,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 351,
+        "Line": 10,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "StateSetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.StateSetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 330,
+            "Line": 9,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 349,
+            "Line": 9,
+            "Column": 29
+          },
+          "Name": "SetState",
+          "Signature": {
+            "Label": "(name string) (error)",
+            "Alt": "(string) (error)",
+            "Arguments": [
+              {
+                "Name": "name",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 513,
+        "Line": 14,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 566,
+        "Line": 16,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "StateGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.StateGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 551,
+            "Line": 15,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 564,
+            "Line": 15,
+            "Column": 23
+          },
+          "Name": "GetState",
+          "Signature": {
+            "Label": "() (*dsl.State)",
+            "Alt": "() (*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 617,
+        "Line": 19,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 684,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "InitialStateGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.InitialStateGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 669,
+            "Line": 20,
+            "Column": 17
+          },
+          "End": {
+            "Offset": 682,
+            "Line": 20,
+            "Column": 30
+          },
+          "Name": "GetInitialState",
+          "Signature": {
+            "Label": "() (*dsl.State)",
+            "Alt": "() (*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 722,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 779,
+        "Line": 26,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "StatesGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.StatesGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 762,
+            "Line": 25,
+            "Column": 11
+          },
+          "End": {
+            "Offset": 777,
+            "Line": 25,
+            "Column": 26
+          },
+          "Name": "GetStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 29,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 897,
+        "Line": 31,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "FinalStateGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.FinalStateGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 880,
+            "Line": 30,
+            "Column": 16
+          },
+          "End": {
+            "Offset": 895,
+            "Line": 30,
+            "Column": 31
+          },
+          "Name": "GetFinalStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 952,
+        "Line": 34,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1025,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "PreviousStatesGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.PreviousStatesGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 1008,
+            "Line": 35,
+            "Column": 19
+          },
+          "End": {
+            "Offset": 1023,
+            "Line": 35,
+            "Column": 34
+          },
+          "Name": "GetPreviousStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 1156,
+        "Line": 40,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1221,
+        "Line": 42,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "NextStatesGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.NextStatesGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 1204,
+            "Line": 41,
+            "Column": 15
+          },
+          "End": {
+            "Offset": 1219,
+            "Line": 41,
+            "Column": 30
+          },
+          "Name": "GetNextStates",
+          "Signature": {
+            "Label": "() ([]*dsl.State)",
+            "Alt": "() ([]*dsl.State)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.State",
+                  "Links": [
+                    {
+                      "Name": "State",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "State",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; Name string \"json:\\\"name\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 1257,
+        "Line": 45,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1311,
+        "Line": 47,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "EdgesGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.EdgesGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 1295,
+            "Line": 46,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 1309,
+            "Line": 46,
+            "Column": 24
+          },
+          "Name": "GetEdges",
+          "Signature": {
+            "Label": "() ([]*dsl.Edge)",
+            "Alt": "() ([]*dsl.Edge)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.Edge",
+                  "Links": [
+                    {
+                      "Name": "Edge",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Edge",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 1462,
+        "Line": 51,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1524,
+        "Line": 53,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "NextEdgesGetter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.NextEdgesGetter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/interface.go",
+          "Start": {
+            "Offset": 1508,
+            "Line": 52,
+            "Column": 14
+          },
+          "End": {
+            "Offset": 1522,
+            "Line": 52,
+            "Column": 28
+          },
+          "Name": "GetNextEdges",
+          "Signature": {
+            "Label": "() ([]*dsl.Edge)",
+            "Alt": "() ([]*dsl.Edge)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]*dsl.Edge",
+                  "Links": [
+                    {
+                      "Name": "Edge",
+                      "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Edge",
+                "Underlying": "struct{Colour string \"json:\\\"colour\\\"\"; Description string \"json:\\\"description\\\"\"; From string \"json:\\\"from\\\"\"; To string \"json:\\\"to\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/interface.go",
+      "Start": {
+        "Offset": 1689,
+        "Line": 57,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1772,
+        "Line": 62,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "FSM",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm.FSM",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [
+        {
+          "Label": "StateSetter",
+          "Links": [
+            {
+              "Name": "StateSetter",
+              "Underlying": "interface{SetState(name string) error}",
+              "PackageName": "fsm",
+              "PackagePath": "github.com/codemityio/go/pkg/fsm",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "StateGetter",
+          "Links": [
+            {
+              "Name": "StateGetter",
+              "Underlying": "interface{GetState() *github.com/codemityio/go/pkg/fsm/dsl.State}",
+              "PackageName": "fsm",
+              "PackagePath": "github.com/codemityio/go/pkg/fsm",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "NextStatesGetter",
+          "Links": [
+            {
+              "Name": "NextStatesGetter",
+              "Underlying": "interface{GetNextStates() []*github.com/codemityio/go/pkg/fsm/dsl.State}",
+              "PackageName": "fsm",
+              "PackagePath": "github.com/codemityio/go/pkg/fsm",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "NextEdgesGetter",
+          "Links": [
+            {
+              "Name": "NextEdgesGetter",
+              "Underlying": "interface{GetNextEdges() []*github.com/codemityio/go/pkg/fsm/dsl.Edge}",
+              "PackageName": "fsm",
+              "PackagePath": "github.com/codemityio/go/pkg/fsm",
+              "PackageAlias": ""
+            }
+          ]
+        }
+      ],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/generator/generator.go",
+      "Start": {
+        "Offset": 266,
+        "Line": 19,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 331,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "DefaultGenerator",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm/generator.DefaultGenerator",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "Generator",
+          "PackageName": "generator",
+          "PackagePath": "github.com/codemityio/go/pkg/fsm/generator"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "start",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "stop",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "state",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "link",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/generator/generator.go",
+          "Start": {
+            "Offset": 333,
+            "Line": 23,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1508,
+            "Line": 70,
+            "Column": 2
+          },
+          "Name": "Generate",
+          "Signature": {
+            "Label": "(workflow *dsl.Workflow) ([]byte, error)",
+            "Alt": "(*dsl.Workflow) ([]byte, error)",
+            "Arguments": [
+              {
+                "Name": "workflow",
+                "Type": {
+                  "Label": "*dsl.Workflow",
+                  "Links": [
+                    {
+                      "Name": "Workflow",
+                      "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Workflow",
+                "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/generator/interface.go",
+      "Start": {
+        "Offset": 197,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 270,
+        "Line": 9,
+        "Column": 2
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "Generator",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm/generator.Generator",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/fsm/generator/interface.go",
+          "Start": {
+            "Offset": 233,
+            "Line": 8,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 268,
+            "Line": 8,
+            "Column": 45
+          },
+          "Name": "Generate",
+          "Signature": {
+            "Label": "(dsl *dsl.Workflow) ([]byte, error)",
+            "Alt": "(*dsl.Workflow) ([]byte, error)",
+            "Arguments": [
+              {
+                "Name": "dsl",
+                "Type": {
+                  "Label": "*dsl.Workflow",
+                  "Links": [
+                    {
+                      "Name": "Workflow",
+                      "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                      "PackageName": "dsl",
+                      "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Workflow",
+                "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                "PackageName": "dsl",
+                "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/fsm/generator/type.go",
+      "Start": {
+        "Offset": 69,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 113,
+        "Line": 4,
+        "Column": 45
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "Option",
+      "Type": {
+        "Label": "func(workflow *DefaultGenerator)",
+        "Links": [
+          {
+            "Name": "DefaultGenerator",
+            "Underlying": "struct{start string; stop string; state string; link string}",
+            "PackageName": "generator",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/fsm/generator.Option",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/fsm/factory.go",
+      "Start": {
+        "Offset": 128,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 319,
+        "Line": 22,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "New",
+      "Signature": {
+        "Label": "(workflow *dsl.Workflow) (*FiniteStateMachine)",
+        "Alt": "(*dsl.Workflow) (*FiniteStateMachine)",
+        "Arguments": [
+          {
+            "Name": "workflow",
+            "Type": {
+              "Label": "*dsl.Workflow",
+              "Links": [
+                {
+                  "Name": "Workflow",
+                  "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                  "PackageName": "dsl",
+                  "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*FiniteStateMachine",
+              "Links": [
+                {
+                  "Name": "FiniteStateMachine",
+                  "Underlying": "struct{mu sync.RWMutex; state *github.com/codemityio/go/pkg/fsm/dsl.State; workflow *github.com/codemityio/go/pkg/fsm/dsl.Workflow}",
+                  "PackageName": "fsm",
+                  "PackagePath": "github.com/codemityio/go/pkg/fsm",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Workflow",
+            "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+            "PackageName": "dsl",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "FiniteStateMachine",
+            "Underlying": "struct{mu sync.RWMutex; state *github.com/codemityio/go/pkg/fsm/dsl.State; workflow *github.com/codemityio/go/pkg/fsm/dsl.Workflow}",
+            "PackageName": "fsm",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "New is a factory function.\n"
+    },
+    {
+      "FilePath": "pkg/fsm/factory.go",
+      "Start": {
+        "Offset": 356,
+        "Line": 25,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 601,
+        "Line": 33,
+        "Column": 2
+      },
+      "PackageName": "fsm",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm",
+      "Name": "NewWorkflow",
+      "Signature": {
+        "Label": "(input []byte) (*dsl.Workflow, error)",
+        "Alt": "([]byte) (*dsl.Workflow, error)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "[]byte",
+              "Links": [
+                {
+                  "Name": "byte",
+                  "Underlying": "byte",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*dsl.Workflow",
+              "Links": [
+                {
+                  "Name": "Workflow",
+                  "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+                  "PackageName": "dsl",
+                  "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "byte",
+            "Underlying": "byte",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Workflow",
+            "Underlying": "struct{Edges []github.com/codemityio/go/pkg/fsm/dsl.Edge \"json:\\\"edges\\\"\"; States []github.com/codemityio/go/pkg/fsm/dsl.State \"json:\\\"states\\\"\"}",
+            "PackageName": "dsl",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm/dsl",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewWorkflow a workflow factory.\n"
+    },
+    {
+      "FilePath": "pkg/fsm/generator/factory.go",
+      "Start": {
+        "Offset": 59,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 289,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "New",
+      "Signature": {
+        "Label": "(options ...Option) (*DefaultGenerator)",
+        "Alt": "(...Option) (*DefaultGenerator)",
+        "Arguments": [
+          {
+            "Name": "options",
+            "Type": {
+              "Label": "...Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(workflow *github.com/codemityio/go/pkg/fsm/generator.DefaultGenerator)",
+                  "PackageName": "generator",
+                  "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*DefaultGenerator",
+              "Links": [
+                {
+                  "Name": "DefaultGenerator",
+                  "Underlying": "struct{start string; stop string; state string; link string}",
+                  "PackageName": "generator",
+                  "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Option",
+            "Underlying": "func(workflow *github.com/codemityio/go/pkg/fsm/generator.DefaultGenerator)",
+            "PackageName": "generator",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "DefaultGenerator",
+            "Underlying": "struct{start string; stop string; state string; link string}",
+            "PackageName": "generator",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "New a fsm diagram generator factory.\n"
+    },
+    {
+      "FilePath": "pkg/fsm/generator/func.go",
+      "Start": {
+        "Offset": 74,
+        "Line": 6,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 317,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "generator",
+      "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+      "Name": "WithColours",
+      "Signature": {
+        "Label": "(start string, stop string, state string, link string) (Option)",
+        "Alt": "(string, string, string, string) (Option)",
+        "Arguments": [
+          {
+            "Name": "start",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "stop",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "state",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "link",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(workflow *github.com/codemityio/go/pkg/fsm/generator.DefaultGenerator)",
+                  "PackageName": "generator",
+                  "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(workflow *github.com/codemityio/go/pkg/fsm/generator.DefaultGenerator)",
+            "PackageName": "generator",
+            "PackagePath": "github.com/codemityio/go/pkg/fsm/generator",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithColours configuration option.\n"
+    }
+  ],
+  "Const": []
+}

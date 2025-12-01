@@ -1,0 +1,74 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/validator" as github_com_codemityio_go_pkg_validator {
+    class "<b><font color=#1c1c1c>JSONValidator</font></b>" as github_com_codemityio_go_pkg_validator_JSONValidator << (I, #e4f58e) >> {
+        + ValidateJSON <font color=#1f38b5>(schema []byte, input []byte) ([]Error, error)</font>
+    }
+    class "<b><font color=#1c1c1c>YAMLValidator</font></b>" as github_com_codemityio_go_pkg_validator_YAMLValidator << (I, #e4f58e) >> {
+        + ValidateYAML <font color=#1f38b5>(schema []byte, input []byte) ([]Error, error)</font>
+    }
+    class "<b><font color=#1c1c1c>AnyValidator</font></b>" as github_com_codemityio_go_pkg_validator_AnyValidator << (I, #e4f58e) >> {
+        + ValidateAny <font color=#1f38b5>(schema []byte, input any) ([]Error, error)</font>
+    }
+    class "<b><font color=#1c1c1c>Error</font></b>" as github_com_codemityio_go_pkg_validator_Error << (S, #b5558d) >> {
+        + Field <font color=#1f38b5>string</font>
+        + Message <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>DefaultValidator</font></b>" as github_com_codemityio_go_pkg_validator_DefaultValidator << (S, #b5558d) >> {
+        + ValidateJSON <font color=#1f38b5>(schema []byte, input []byte) ([]Error, error)</font>
+        + ValidateYAML <font color=#1f38b5>(schema []byte, input []byte) ([]Error, error)</font>
+        + ValidateAny <font color=#1f38b5>(schema []byte, input any) ([]Error, error)</font>
+        - check <font color=#1f38b5>(result *gojsonschema.Result) ([]Error)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_validator_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>() (*DefaultValidator)</font>" as github_com_codemityio_go_pkg_validator_New << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/validator" as github_com_codemityio_go_pkg_validator {
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "github.com/xeipuuv/gojsonschema" as .github_com_xeipuuv_gojsonschema {
+        class "Result" as github_com_xeipuuv_gojsonschema_Result << (S, #b5558d) >> {}
+    }
+    class "error" as error << (I, #e4f58e) >> {}
+}
+package "github.com/codemityio/go/pkg/validator" as github_com_codemityio_go_pkg_validator {
+    github_com_codemityio_go_pkg_validator_JSONValidator #...up...> _interface
+    github_com_codemityio_go_pkg_validator_JSONValidator ...up...> github_com_codemityio_go_pkg_validator_Error
+    github_com_codemityio_go_pkg_validator_JSONValidator ...up...> _error
+    github_com_codemityio_go_pkg_validator_YAMLValidator #...up...> _interface
+    github_com_codemityio_go_pkg_validator_YAMLValidator ...up...> github_com_codemityio_go_pkg_validator_Error
+    github_com_codemityio_go_pkg_validator_YAMLValidator ...up...> _error
+    github_com_codemityio_go_pkg_validator_AnyValidator #...up...> _interface
+    github_com_codemityio_go_pkg_validator_AnyValidator ...up...> _any
+    github_com_codemityio_go_pkg_validator_AnyValidator ...up...> github_com_codemityio_go_pkg_validator_Error
+    github_com_codemityio_go_pkg_validator_AnyValidator ...up...> _error
+    github_com_codemityio_go_pkg_validator_Error #...up...> _struct
+    github_com_codemityio_go_pkg_validator_DefaultValidator #...up...> _struct
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...|> github_com_codemityio_go_pkg_validator_AnyValidator
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...|> github_com_codemityio_go_pkg_validator_JSONValidator
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...|> github_com_codemityio_go_pkg_validator_YAMLValidator
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...> github_com_codemityio_go_pkg_validator_Error
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...> _error
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...> _any
+    github_com_codemityio_go_pkg_validator_DefaultValidator ...up...> github_com_xeipuuv_gojsonschema_Result
+    github_com_codemityio_go_pkg_validator_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_validator_New ....up....> github_com_codemityio_go_pkg_validator_DefaultValidator
+}
+@enduml
+

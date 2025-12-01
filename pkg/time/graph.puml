@@ -1,0 +1,28 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/time" as github_com_codemityio_go_pkg_time {
+    class "<b><font color=#1c1c1c>ProviderFunc</font></b>" as github_com_codemityio_go_pkg_time_ProviderFunc << (F, #739e78) >> {
+        + Now <font color=#1f38b5>() (time.Time)</font>
+    }
+}
+package "github.com/codemityio/go/pkg/time" as github_com_codemityio_go_pkg_time {
+    package "time" as .time {
+        class "Time" as time_Time << (S, #b5558d) >> {}
+    }
+    class "func() (time.Time)" as github_com_codemityio_go_pkg_time_func____time_Time_ << (F, #739e78) >> {}
+    package "time" as .time {
+        class "Time" as time_Time << (S, #b5558d) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/time" as github_com_codemityio_go_pkg_time {
+    github_com_codemityio_go_pkg_time_ProviderFunc #...up...> time_Time
+    github_com_codemityio_go_pkg_time_ProviderFunc #...up...> github_com_codemityio_go_pkg_time_func____time_Time_
+    github_com_codemityio_go_pkg_time_ProviderFunc ...up...> time_Time
+}
+@enduml
+

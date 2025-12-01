@@ -1,0 +1,838 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/dsn/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 352,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/dsn/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 352,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "ErrInvalidDSN",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrInvalidDSN error.\n"
+    },
+    {
+      "FilePath": "pkg/dsn/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 352,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "ErrInvalidQuery",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrInvalidQuery error.\n"
+    },
+    {
+      "FilePath": "pkg/dsn/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 352,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "ErrInvalidPort",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrInvalidPort error.\n"
+    },
+    {
+      "FilePath": "pkg/dsn/func.go",
+      "Start": {
+        "Offset": 75,
+        "Line": 11,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 141,
+        "Line": 11,
+        "Column": 67
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "bareSchemeRe",
+      "Type": null,
+      "TypeInfo": "*regexp.Regexp",
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/dsn/type.go",
+      "Start": {
+        "Offset": 301,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 634,
+        "Line": 20,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "DSN",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/dsn.DSN",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "Scheme",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "User",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Password",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Host",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Port",
+          "Type": {
+            "Label": "int",
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Hosts",
+          "Type": {
+            "Label": "[]string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Ports",
+          "Type": {
+            "Label": "[]int",
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Path",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Query",
+          "Type": {
+            "Label": "url.Values",
+            "Links": [
+              {
+                "Name": "Values",
+                "Underlying": "map[string][]string",
+                "PackageName": "url",
+                "PackagePath": "net/url",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Raw",
+          "Type": {
+            "Label": "*url.URL",
+            "Links": [
+              {
+                "Name": "URL",
+                "Underlying": "struct{Scheme string; Opaque string; User *net/url.Userinfo; Host string; Path string; Fragment string; RawQuery string; RawPath string; RawFragment string; ForceQuery bool; OmitHost bool}",
+                "PackageName": "url",
+                "PackagePath": "net/url",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/dsn/func.go",
+      "Start": {
+        "Offset": 283,
+        "Line": 15,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1085,
+        "Line": 56,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "Parse",
+      "Signature": {
+        "Label": "(input string) (*DSN, error)",
+        "Alt": "(string) (*DSN, error)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*DSN",
+              "Links": [
+                {
+                  "Name": "DSN",
+                  "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+                  "PackageName": "dsn",
+                  "PackagePath": "github.com/codemityio/go/pkg/dsn",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "DSN",
+            "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+            "PackageName": "dsn",
+            "PackagePath": "github.com/codemityio/go/pkg/dsn",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "Parse interprets the given string as a DSN, handling URL-style formats,\nfile URLs, bare schemes, and relative or absolute file paths.\n"
+    },
+    {
+      "FilePath": "pkg/dsn/func.go",
+      "Start": {
+        "Offset": 1087,
+        "Line": 58,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1442,
+        "Line": 76,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "parseFilePath",
+      "Signature": {
+        "Label": "(input string, dsn *DSN) (*DSN, error)",
+        "Alt": "(string, *DSN) (*DSN, error)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "dsn",
+            "Type": {
+              "Label": "*DSN",
+              "Links": [
+                {
+                  "Name": "DSN",
+                  "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+                  "PackageName": "dsn",
+                  "PackagePath": "github.com/codemityio/go/pkg/dsn",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*DSN",
+              "Links": [
+                {
+                  "Name": "DSN",
+                  "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+                  "PackageName": "dsn",
+                  "PackagePath": "github.com/codemityio/go/pkg/dsn",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "DSN",
+            "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+            "PackageName": "dsn",
+            "PackagePath": "github.com/codemityio/go/pkg/dsn",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/dsn/func.go",
+      "Start": {
+        "Offset": 1444,
+        "Line": 78,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2301,
+        "Line": 116,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "parseURLDSN",
+      "Signature": {
+        "Label": "(input string, dsn *DSN) (*DSN, error)",
+        "Alt": "(string, *DSN) (*DSN, error)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "dsn",
+            "Type": {
+              "Label": "*DSN",
+              "Links": [
+                {
+                  "Name": "DSN",
+                  "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+                  "PackageName": "dsn",
+                  "PackagePath": "github.com/codemityio/go/pkg/dsn",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*DSN",
+              "Links": [
+                {
+                  "Name": "DSN",
+                  "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+                  "PackageName": "dsn",
+                  "PackagePath": "github.com/codemityio/go/pkg/dsn",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "DSN",
+            "Underlying": "struct{Scheme string; User string; Password string; Host string; Port int; Hosts []string; Ports []int; Path string; Query net/url.Values; Raw *net/url.URL}",
+            "PackageName": "dsn",
+            "PackagePath": "github.com/codemityio/go/pkg/dsn",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/dsn/func.go",
+      "Start": {
+        "Offset": 2452,
+        "Line": 120,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3167,
+        "Line": 153,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "normaliseMultiHost",
+      "Signature": {
+        "Label": "(input string) (string, string)",
+        "Alt": "(string) (string, string)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": false,
+      "Doc": "normaliseMultiHost extracts the raw host section and returns a normalised\nsingle-host URL safe for url.Parse, along with the raw hosts string.\n"
+    },
+    {
+      "FilePath": "pkg/dsn/func.go",
+      "Start": {
+        "Offset": 3247,
+        "Line": 156,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3867,
+        "Line": 186,
+        "Column": 2
+      },
+      "PackageName": "dsn",
+      "PackagePath": "github.com/codemityio/go/pkg/dsn",
+      "Name": "parseHosts",
+      "Signature": {
+        "Label": "(rawHosts string) ([]string, []int, error)",
+        "Alt": "(string) ([]string, []int, error)",
+        "Arguments": [
+          {
+            "Name": "rawHosts",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "[]string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "[]int",
+              "Links": [
+                {
+                  "Name": "int",
+                  "Underlying": "int",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "int",
+            "Underlying": "int",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": false,
+      "Doc": "parseHosts splits a comma-separated host:port string into separate slices.\n"
+    }
+  ],
+  "Const": []
+}

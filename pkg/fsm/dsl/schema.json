@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "colour": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "colour"
+        ],
+        "allowAdditionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "colour": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "description",
+          "colour"
+        ],
+        "allowAdditionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "states",
+    "edges"
+  ],
+  "allowAdditionalProperties": false
+}

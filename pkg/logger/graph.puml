@@ -1,0 +1,267 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_logger {
+    class "<b><font color=#1c1c1c>Field</font></b>" as github_com_codemityio_go_pkg_logger_Field << (S, #b5558d) >> {
+        + Key <font color=#1f38b5>string</font>
+        + Value <font color=#1f38b5>any</font>
+    }
+    class "<b><font color=#1c1c1c>Logger</font></b>" as github_com_codemityio_go_pkg_logger_Logger << (I, #e4f58e) >> {
+        <font color=#1f38b5>DebugLogger</font>
+        <font color=#1f38b5>InfoLogger</font>
+        <font color=#1f38b5>WarnLogger</font>
+        <font color=#1f38b5>ErrorLogger</font>
+        <font color=#1f38b5>FatalLogger</font>
+        <font color=#1f38b5>DebugfLogger</font>
+        <font color=#1f38b5>InfofLogger</font>
+        <font color=#1f38b5>WarnfLogger</font>
+        <font color=#1f38b5>ErrorfLogger</font>
+        <font color=#1f38b5>FatalfLogger</font>
+    }
+    class "<b><font color=#1c1c1c>DebugLogger</font></b>" as github_com_codemityio_go_pkg_logger_DebugLogger << (I, #e4f58e) >> {
+        + Debug <font color=#1f38b5>(message string, fields ...Field)</font>
+    }
+    class "<b><font color=#1c1c1c>InfoLogger</font></b>" as github_com_codemityio_go_pkg_logger_InfoLogger << (I, #e4f58e) >> {
+        + Info <font color=#1f38b5>(message string, fields ...Field)</font>
+    }
+    class "<b><font color=#1c1c1c>WarnLogger</font></b>" as github_com_codemityio_go_pkg_logger_WarnLogger << (I, #e4f58e) >> {
+        + Warn <font color=#1f38b5>(message string, fields ...Field)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrorLogger</font></b>" as github_com_codemityio_go_pkg_logger_ErrorLogger << (I, #e4f58e) >> {
+        + Error <font color=#1f38b5>(err error, message string, fields ...Field)</font>
+    }
+    class "<b><font color=#1c1c1c>FatalLogger</font></b>" as github_com_codemityio_go_pkg_logger_FatalLogger << (I, #e4f58e) >> {
+        + Fatal <font color=#1f38b5>(message string, fields ...Field)</font>
+    }
+    class "<b><font color=#1c1c1c>DebugfLogger</font></b>" as github_com_codemityio_go_pkg_logger_DebugfLogger << (I, #e4f58e) >> {
+        + Debugf <font color=#1f38b5>(format string, v ...any)</font>
+    }
+    class "<b><font color=#1c1c1c>InfofLogger</font></b>" as github_com_codemityio_go_pkg_logger_InfofLogger << (I, #e4f58e) >> {
+        + Infof <font color=#1f38b5>(format string, v ...any)</font>
+    }
+    class "<b><font color=#1c1c1c>WarnfLogger</font></b>" as github_com_codemityio_go_pkg_logger_WarnfLogger << (I, #e4f58e) >> {
+        + Warnf <font color=#1f38b5>(format string, v ...any)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrorfLogger</font></b>" as github_com_codemityio_go_pkg_logger_ErrorfLogger << (I, #e4f58e) >> {
+        + Errorf <font color=#1f38b5>(err error, format string, v ...any)</font>
+    }
+    class "<b><font color=#1c1c1c>FatalfLogger</font></b>" as github_com_codemityio_go_pkg_logger_FatalfLogger << (I, #e4f58e) >> {
+        + Fatalf <font color=#1f38b5>(format string, v ...any)</font>
+    }
+    class "<b><font color=#1c1c1c>DefaultLogger</font></b>" as github_com_codemityio_go_pkg_logger_DefaultLogger << (S, #b5558d) >> {
+        - level <font color=#1f38b5>uint</font>
+        - format <font color=#1f38b5>Format</font>
+        - logger <font color=#1f38b5>*log.Logger</font>
+        - loggerMu <font color=#1f38b5>sync.Mutex</font>
+        - ch <font color=#1f38b5>*ast.ChanType</font>
+        - mu <font color=#1f38b5>sync.Mutex</font>
+        - done <font color=#1f38b5>*ast.ChanType</font>
+        - once <font color=#1f38b5>sync.Once</font>
+        + Debug <font color=#1f38b5>(message string, fields ...Field)</font>
+        + Info <font color=#1f38b5>(message string, fields ...Field)</font>
+        + Warn <font color=#1f38b5>(message string, fields ...Field)</font>
+        + Error <font color=#1f38b5>(err error, message string, fields ...Field)</font>
+        + Fatal <font color=#1f38b5>(message string, fields ...Field)</font>
+        + Debugf <font color=#1f38b5>(format string, v ...any)</font>
+        + Infof <font color=#1f38b5>(format string, v ...any)</font>
+        + Warnf <font color=#1f38b5>(format string, v ...any)</font>
+        + Errorf <font color=#1f38b5>(err error, format string, v ...any)</font>
+        + Fatalf <font color=#1f38b5>(format string, v ...any)</font>
+        + Close <font color=#1f38b5>()</font>
+        + Done <font color=#1f38b5>()</font>
+        - worker <font color=#1f38b5>()</font>
+        - fmt <font color=#1f38b5>(level Level, message string, e error, fields ...Field) (string)</font>
+        - formatJSON <font color=#1f38b5>(level Level, message string, e error, fields ...Field) (string)</font>
+        - formatText <font color=#1f38b5>(level Level, message string, e error, fields ...Field) (string)</font>
+        - formatFieldsText <font color=#1f38b5>(fields ...Field) (string)</font>
+        - log <font color=#1f38b5>(level uint, label Level, message string, err error, fields ...Field)</font>
+    }
+    class "<b><font color=#1c1c1c>Level</font></b>" as github_com_codemityio_go_pkg_logger_Level << (P, #74b1b5) >> {
+    }
+    class "<b><font color=#1c1c1c>Format</font></b>" as github_com_codemityio_go_pkg_logger_Format << (P, #74b1b5) >> {
+    }
+    class "<b><font color=#1c1c1c>Option</font></b>" as github_com_codemityio_go_pkg_logger_Option << (F, #739e78) >> {
+    }
+    class "<font color=#1c1c1c>logEntry</font>" as github_com_codemityio_go_pkg_logger_logEntry << (S, #b5558d) >> {
+        - level <font color=#1f38b5>uint</font>
+        - label <font color=#1f38b5>Level</font>
+        - message <font color=#1f38b5>string</font>
+        - err <font color=#1f38b5>error</font>
+        - fields <font color=#1f38b5>[]Field</font>
+    }
+    class "<font color=#1c1c1c>exitFunc</font>" as github_com_codemityio_go_pkg_logger_exitFunc << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>labelLevel</font>" as github_com_codemityio_go_pkg_logger_labelLevel << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>labelMessage</font>" as github_com_codemityio_go_pkg_logger_labelMessage << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>labelError</font>" as github_com_codemityio_go_pkg_logger_labelError << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>LevelDebug</font></b>" as github_com_codemityio_go_pkg_logger_LevelDebug << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>LevelInfo</font></b>" as github_com_codemityio_go_pkg_logger_LevelInfo << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>LevelWarn</font></b>" as github_com_codemityio_go_pkg_logger_LevelWarn << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>LevelError</font></b>" as github_com_codemityio_go_pkg_logger_LevelError << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>LevelFatal</font></b>" as github_com_codemityio_go_pkg_logger_LevelFatal << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>d</font>" as github_com_codemityio_go_pkg_logger_d << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>i</font>" as github_com_codemityio_go_pkg_logger_i << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>w</font>" as github_com_codemityio_go_pkg_logger_w << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>e</font>" as github_com_codemityio_go_pkg_logger_e << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>f</font>" as github_com_codemityio_go_pkg_logger_f << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>FormatText</font></b>" as github_com_codemityio_go_pkg_logger_FormatText << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>FormatJSON</font></b>" as github_com_codemityio_go_pkg_logger_FormatJSON << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>BufferSizeDefault</font></b>" as github_com_codemityio_go_pkg_logger_BufferSizeDefault << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>(options ...Option) (*DefaultLogger)</font>" as github_com_codemityio_go_pkg_logger_New << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithLogger</font></b><font color=#1f38b5>(logger *log.Logger) (Option)</font>" as github_com_codemityio_go_pkg_logger_WithLogger << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithLevel</font></b><font color=#1f38b5>(level Level) (Option)</font>" as github_com_codemityio_go_pkg_logger_WithLevel << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithFormat</font></b><font color=#1f38b5>(format Format) (Option)</font>" as github_com_codemityio_go_pkg_logger_WithFormat << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithOutput</font></b><font color=#1f38b5>(output io.Writer) (Option)</font>" as github_com_codemityio_go_pkg_logger_WithOutput << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithBufferSize</font></b><font color=#1f38b5>(bufferSize int) (Option)</font>" as github_com_codemityio_go_pkg_logger_WithBufferSize << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_logger {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "log" as .log {
+        class "Logger" as log_Logger << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Mutex" as sync_Mutex << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Mutex" as sync_Mutex << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Once" as sync_Once << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "func(logger *DefaultLogger)" as github_com_codemityio_go_pkg_logger_func_logger__DefaultLogger_ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "func(code int)" as func_code_int_ << (F, #739e78) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
+    package "log" as .log {
+        class "Logger" as log_Logger << (S, #b5558d) >> {}
+    }
+    package "io" as .io {
+        class "Writer" as io_Writer << (I, #e4f58e) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_logger {
+    github_com_codemityio_go_pkg_logger_Field #...up...> _struct
+    github_com_codemityio_go_pkg_logger_Field o---up---> _any
+    github_com_codemityio_go_pkg_logger_Logger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_DebugLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_InfoLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_WarnLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_ErrorLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_FatalLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_DebugfLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_InfofLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_WarnfLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_ErrorfLogger
+    github_com_codemityio_go_pkg_logger_Logger *---up---> github_com_codemityio_go_pkg_logger_FatalfLogger
+    github_com_codemityio_go_pkg_logger_DebugLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_DebugLogger ...up...> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_InfoLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_InfoLogger ...up...> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_WarnLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_WarnLogger ...up...> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_ErrorLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_ErrorLogger ...up...> _error
+    github_com_codemityio_go_pkg_logger_ErrorLogger ...up...> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_FatalLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_FatalLogger ...up...> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_DebugfLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_DebugfLogger ...up...> _any
+    github_com_codemityio_go_pkg_logger_InfofLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_InfofLogger ...up...> _any
+    github_com_codemityio_go_pkg_logger_WarnfLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_WarnfLogger ...up...> _any
+    github_com_codemityio_go_pkg_logger_ErrorfLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_ErrorfLogger ...up...> _error
+    github_com_codemityio_go_pkg_logger_ErrorfLogger ...up...> _any
+    github_com_codemityio_go_pkg_logger_FatalfLogger #...up...> _interface
+    github_com_codemityio_go_pkg_logger_FatalfLogger ...up...> _any
+    github_com_codemityio_go_pkg_logger_DefaultLogger #...up...> _struct
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_DebugLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_DebugfLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_ErrorLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_ErrorfLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_FatalLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_FatalfLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_InfoLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_InfofLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_Logger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_WarnLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...|> github_com_codemityio_go_pkg_logger_WarnfLogger
+    github_com_codemityio_go_pkg_logger_DefaultLogger o---up---> github_com_codemityio_go_pkg_logger_Format
+    github_com_codemityio_go_pkg_logger_DefaultLogger o---up---> log_Logger
+    github_com_codemityio_go_pkg_logger_DefaultLogger o---up---> sync_Mutex
+    github_com_codemityio_go_pkg_logger_DefaultLogger o---up---> sync_Once
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...> _error
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...> _any
+    github_com_codemityio_go_pkg_logger_DefaultLogger ...up...> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_Option #...up...> github_com_codemityio_go_pkg_logger_DefaultLogger
+    github_com_codemityio_go_pkg_logger_Option #...up...> github_com_codemityio_go_pkg_logger_func_logger__DefaultLogger_
+    github_com_codemityio_go_pkg_logger_logEntry #...up...> _struct
+    github_com_codemityio_go_pkg_logger_logEntry o---up---> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_logEntry o---up---> _error
+    github_com_codemityio_go_pkg_logger_logEntry o---up---> github_com_codemityio_go_pkg_logger_Field
+    github_com_codemityio_go_pkg_logger_exitFunc #...up...> func_code_int_
+    github_com_codemityio_go_pkg_logger_labelLevel #...up...> untyped_string
+    github_com_codemityio_go_pkg_logger_labelMessage #...up...> untyped_string
+    github_com_codemityio_go_pkg_logger_labelError #...up...> untyped_string
+    github_com_codemityio_go_pkg_logger_LevelDebug #...down...> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_LevelInfo #...down...> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_LevelWarn #...down...> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_LevelError #...down...> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_LevelFatal #...down...> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_FormatText #...down...> github_com_codemityio_go_pkg_logger_Format
+    github_com_codemityio_go_pkg_logger_FormatJSON #...down...> github_com_codemityio_go_pkg_logger_Format
+    github_com_codemityio_go_pkg_logger_BufferSizeDefault #...up...> untyped_int
+    github_com_codemityio_go_pkg_logger_New ....up....> github_com_codemityio_go_pkg_logger_Option
+    github_com_codemityio_go_pkg_logger_New ....up....> github_com_codemityio_go_pkg_logger_DefaultLogger
+    github_com_codemityio_go_pkg_logger_WithLogger ....up....> log_Logger
+    github_com_codemityio_go_pkg_logger_WithLogger ....up....> github_com_codemityio_go_pkg_logger_Option
+    github_com_codemityio_go_pkg_logger_WithLevel ....up....> github_com_codemityio_go_pkg_logger_Level
+    github_com_codemityio_go_pkg_logger_WithLevel ....up....> github_com_codemityio_go_pkg_logger_Option
+    github_com_codemityio_go_pkg_logger_WithFormat ....up....> github_com_codemityio_go_pkg_logger_Format
+    github_com_codemityio_go_pkg_logger_WithFormat ....up....> github_com_codemityio_go_pkg_logger_Option
+    github_com_codemityio_go_pkg_logger_WithOutput ....up....> io_Writer
+    github_com_codemityio_go_pkg_logger_WithOutput ....up....> github_com_codemityio_go_pkg_logger_Option
+    github_com_codemityio_go_pkg_logger_WithBufferSize ....up....> github_com_codemityio_go_pkg_logger_Option
+}
+@enduml
+

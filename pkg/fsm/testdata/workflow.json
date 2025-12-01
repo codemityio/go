@@ -1,0 +1,65 @@
+{
+  "states": [
+    {
+      "name": "zero",
+      "description": "state zero description"
+    },
+    {
+      "name": "one",
+      "description": "state one description"
+    },
+    {
+      "name": "two",
+      "description": "state two\\nmulti line description"
+    },
+    {
+      "name": "three"
+    },
+    {
+      "name": "four"
+    },
+    {
+      "name": "five",
+      "description": "state five description"
+    },
+    {
+      "name": "six"
+    }
+  ],
+  "edges": [
+    {
+      "from": "zero",
+      "to": "one"
+    },
+    {
+      "from": "zero",
+      "to": "two"
+    },
+    {
+      "from": "zero",
+      "to": "three",
+      "description": "edge zero-three\\nmulti line description"
+    },
+    {
+      "from": "one",
+      "to": "four"
+    },
+    {
+      "from": "two",
+      "to": "four",
+      "description": "edge two-four description"
+    },
+    {
+      "from": "three",
+      "to": "five"
+    },
+    {
+      "from": "three",
+      "to": "six"
+    },
+    {
+      "from": "six",
+      "to": "three"
+    }
+  ]
+}

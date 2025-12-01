@@ -1,0 +1,18 @@
+digraph DepGraph {
+    fontname="Courier New"
+    splines="ortho"
+    nodesep="1.4"
+    ranksep="0.8"
+    graph [rankdir="TB", pad="0.2"]
+    node [shape="tab", fontname="Courier New", style="filled", fixedsize=false]
+    edge [fontname="Courier New", color="grey66", arrowhead="normal", arrowtail="none", arrowsize="0.6", weight="0.5"]
+    subgraph deps {
+        "github.com/codemityio/go/pkg/fsm" [label="github.com/codemityio/go/pkg/fsm", color="gray58", fillcolor="gray99", penwidth=1]
+              "github.com/codemityio/go/pkg/fsm" -> "github.com/codemityio/go/pkg/fsm/dsl"
+        "github.com/codemityio/go/pkg/fsm/dsl" [label="github.com/codemityio/go/pkg/fsm/dsl", color="gray58", fillcolor="gray99", penwidth=1]
+        "github.com/codemityio/go/pkg/fsm/generator" [label="github.com/codemityio/go/pkg/fsm/generator", color="gray58", fillcolor="gray99", penwidth=1]
+              "github.com/codemityio/go/pkg/fsm/generator" -> "github.com/codemityio/go/pkg/fsm"
+              "github.com/codemityio/go/pkg/fsm/generator" -> "github.com/codemityio/go/pkg/fsm/dsl"
+    }
+}
+

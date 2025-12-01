@@ -1,0 +1,58 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json {
+    class "<b><font color=#1c1c1c>RawMessageSequenceMap</font></b>" as github_com_codemityio_go_pkg_json_RawMessageSequenceMap << (S, #b5558d) >> {
+        - data <font color=#1f38b5>map[string][]json.RawMessage</font>
+        - cursor <font color=#1f38b5>map[string]int</font>
+        + Next <font color=#1f38b5>(key string) (json.RawMessage)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_json_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrJSON</font></b>" as github_com_codemityio_go_pkg_json_ErrJSON << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>NewRawMessageSequenceMap</font></b><font color=#1f38b5>(input map[string][]json.RawMessage) (*RawMessageSequenceMap)</font>" as github_com_codemityio_go_pkg_json_NewRawMessageSequenceMap << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>MustBuildJSON</font></b><font color=#1f38b5>(data json.RawMessage) (*T)</font><[T any]>" as github_com_codemityio_go_pkg_json_MustBuildJSON << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewJSON</font></b><font color=#1f38b5>(data json.RawMessage) (*T, error)</font><[T any]>" as github_com_codemityio_go_pkg_json_NewJSON << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "encoding/json" as .encoding_json {
+        class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
+    }
+    package "encoding/json" as .encoding_json {
+        class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
+    }
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    package "encoding/json" as .encoding_json {
+        class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
+    }
+    package "encoding/json" as .encoding_json {
+        class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
+    }
+    class "T" as github_com_codemityio_go_pkg_json_T << (T, #6d8cbf) >> {}
+    package "encoding/json" as .encoding_json {
+        class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
+    }
+    class "T" as github_com_codemityio_go_pkg_json_T << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+}
+package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json {
+    github_com_codemityio_go_pkg_json_RawMessageSequenceMap #...up...> _struct
+    github_com_codemityio_go_pkg_json_RawMessageSequenceMap o---up---> encoding_json_RawMessage
+    github_com_codemityio_go_pkg_json_RawMessageSequenceMap ...up...> encoding_json_RawMessage
+    github_com_codemityio_go_pkg_json_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_json_ErrJSON ...up...|> error
+    github_com_codemityio_go_pkg_json_NewRawMessageSequenceMap ....up....> encoding_json_RawMessage
+    github_com_codemityio_go_pkg_json_NewRawMessageSequenceMap ....up....> github_com_codemityio_go_pkg_json_RawMessageSequenceMap
+    github_com_codemityio_go_pkg_json_MustBuildJSON ....up....> encoding_json_RawMessage
+    github_com_codemityio_go_pkg_json_MustBuildJSON ....up....> github_com_codemityio_go_pkg_json_T
+    github_com_codemityio_go_pkg_json_NewJSON ....up....> encoding_json_RawMessage
+    github_com_codemityio_go_pkg_json_NewJSON ....up....> github_com_codemityio_go_pkg_json_T
+    github_com_codemityio_go_pkg_json_NewJSON ....up....> _error
+}
+@enduml
+

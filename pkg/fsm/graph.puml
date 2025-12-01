@@ -1,0 +1,203 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/fsm" as github_com_codemityio_go_pkg_fsm {
+    class "<b><font color=#1c1c1c>FiniteStateMachine</font></b>" as github_com_codemityio_go_pkg_fsm_FiniteStateMachine << (S, #b5558d) >> {
+        - mu <font color=#1f38b5>sync.RWMutex</font>
+        - state <font color=#1f38b5>*dsl.State</font>
+        - workflow <font color=#1f38b5>*dsl.Workflow</font>
+        + SetState <font color=#1f38b5>(name string) (error)</font>
+        + GetState <font color=#1f38b5>() (*dsl.State)</font>
+        + GetInitialState <font color=#1f38b5>() (*dsl.State)</font>
+        + GetStates <font color=#1f38b5>() ([]*dsl.State)</font>
+        + GetFinalStates <font color=#1f38b5>() ([]*dsl.State)</font>
+        + GetPreviousStates <font color=#1f38b5>() ([]*dsl.State)</font>
+        + GetNextStates <font color=#1f38b5>() ([]*dsl.State)</font>
+        + GetEdges <font color=#1f38b5>() ([]*dsl.Edge)</font>
+        + GetNextEdges <font color=#1f38b5>() ([]*dsl.Edge)</font>
+        - setWorkflow <font color=#1f38b5>(workflow *dsl.Workflow)</font>
+    }
+    class "<b><font color=#1c1c1c>StateSetter</font></b>" as github_com_codemityio_go_pkg_fsm_StateSetter << (I, #e4f58e) >> {
+        + SetState <font color=#1f38b5>(name string) (error)</font>
+    }
+    class "<b><font color=#1c1c1c>StateGetter</font></b>" as github_com_codemityio_go_pkg_fsm_StateGetter << (I, #e4f58e) >> {
+        + GetState <font color=#1f38b5>() (*dsl.State)</font>
+    }
+    class "<b><font color=#1c1c1c>InitialStateGetter</font></b>" as github_com_codemityio_go_pkg_fsm_InitialStateGetter << (I, #e4f58e) >> {
+        + GetInitialState <font color=#1f38b5>() (*dsl.State)</font>
+    }
+    class "<b><font color=#1c1c1c>StatesGetter</font></b>" as github_com_codemityio_go_pkg_fsm_StatesGetter << (I, #e4f58e) >> {
+        + GetStates <font color=#1f38b5>() ([]*dsl.State)</font>
+    }
+    class "<b><font color=#1c1c1c>FinalStateGetter</font></b>" as github_com_codemityio_go_pkg_fsm_FinalStateGetter << (I, #e4f58e) >> {
+        + GetFinalStates <font color=#1f38b5>() ([]*dsl.State)</font>
+    }
+    class "<b><font color=#1c1c1c>PreviousStatesGetter</font></b>" as github_com_codemityio_go_pkg_fsm_PreviousStatesGetter << (I, #e4f58e) >> {
+        + GetPreviousStates <font color=#1f38b5>() ([]*dsl.State)</font>
+    }
+    class "<b><font color=#1c1c1c>NextStatesGetter</font></b>" as github_com_codemityio_go_pkg_fsm_NextStatesGetter << (I, #e4f58e) >> {
+        + GetNextStates <font color=#1f38b5>() ([]*dsl.State)</font>
+    }
+    class "<b><font color=#1c1c1c>EdgesGetter</font></b>" as github_com_codemityio_go_pkg_fsm_EdgesGetter << (I, #e4f58e) >> {
+        + GetEdges <font color=#1f38b5>() ([]*dsl.Edge)</font>
+    }
+    class "<b><font color=#1c1c1c>NextEdgesGetter</font></b>" as github_com_codemityio_go_pkg_fsm_NextEdgesGetter << (I, #e4f58e) >> {
+        + GetNextEdges <font color=#1f38b5>() ([]*dsl.Edge)</font>
+    }
+    class "<b><font color=#1c1c1c>FSM</font></b>" as github_com_codemityio_go_pkg_fsm_FSM << (I, #e4f58e) >> {
+        <font color=#1f38b5>StateSetter</font>
+        <font color=#1f38b5>StateGetter</font>
+        <font color=#1f38b5>NextStatesGetter</font>
+        <font color=#1f38b5>NextEdgesGetter</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_fsm_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrUnmarshal</font></b>" as github_com_codemityio_go_pkg_fsm_ErrUnmarshal << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>(workflow *dsl.Workflow) (*FiniteStateMachine)</font>" as github_com_codemityio_go_pkg_fsm_New << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewWorkflow</font></b><font color=#1f38b5>(input []byte) (*dsl.Workflow, error)</font>" as github_com_codemityio_go_pkg_fsm_NewWorkflow << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/fsm/dsl" as github_com_codemityio_go_pkg_fsm_dsl {
+    class "<b><font color=#1c1c1c>Workflow</font></b>" as github_com_codemityio_go_pkg_fsm_dsl_Workflow << (S, #b5558d) >> {
+        + Edges <font color=#1f38b5>[]Edge</font>
+        + States <font color=#1f38b5>[]State</font>
+    }
+    class "<b><font color=#1c1c1c>Edge</font></b>" as github_com_codemityio_go_pkg_fsm_dsl_Edge << (S, #b5558d) >> {
+        + Colour <font color=#1f38b5>string</font>
+        + Description <font color=#1f38b5>string</font>
+        + From <font color=#1f38b5>string</font>
+        + To <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>State</font></b>" as github_com_codemityio_go_pkg_fsm_dsl_State << (S, #b5558d) >> {
+        + Colour <font color=#1f38b5>string</font>
+        + Description <font color=#1f38b5>string</font>
+        + Name <font color=#1f38b5>string</font>
+    }
+}
+package "github.com/codemityio/go/pkg/fsm/generator" as github_com_codemityio_go_pkg_fsm_generator {
+    class "<b><font color=#1c1c1c>DefaultGenerator</font></b>" as github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator << (S, #b5558d) >> {
+        - start <font color=#1f38b5>string</font>
+        - stop <font color=#1f38b5>string</font>
+        - state <font color=#1f38b5>string</font>
+        - link <font color=#1f38b5>string</font>
+        + Generate <font color=#1f38b5>(workflow *dsl.Workflow) ([]byte, error)</font>
+    }
+    class "<b><font color=#1c1c1c>Generator</font></b>" as github_com_codemityio_go_pkg_fsm_generator_Generator << (I, #e4f58e) >> {
+        + Generate <font color=#1f38b5>(dsl *dsl.Workflow) ([]byte, error)</font>
+    }
+    class "<b><font color=#1c1c1c>Option</font></b>" as github_com_codemityio_go_pkg_fsm_generator_Option << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_fsm_generator_ErrPkg << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>diagram</font>" as github_com_codemityio_go_pkg_fsm_generator_diagram << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>(options ...Option) (*DefaultGenerator)</font>" as github_com_codemityio_go_pkg_fsm_generator_New << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithColours</font></b><font color=#1f38b5>(start string, stop string, state string, link string) (Option)</font>" as github_com_codemityio_go_pkg_fsm_generator_WithColours << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/fsm" as github_com_codemityio_go_pkg_fsm {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+}
+package "github.com/codemityio/go/pkg/fsm/dsl" as github_com_codemityio_go_pkg_fsm_dsl {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+}
+package "github.com/codemityio/go/pkg/fsm/generator" as github_com_codemityio_go_pkg_fsm_generator {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "func(workflow *DefaultGenerator)" as github_com_codemityio_go_pkg_fsm_generator_func_workflow__DefaultGenerator_ << (F, #739e78) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+}
+package "github.com/codemityio/go/pkg/fsm" as github_com_codemityio_go_pkg_fsm {
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine #...up...> _struct
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_EdgesGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_FSM
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_FinalStateGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_InitialStateGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_NextEdgesGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_NextStatesGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_PreviousStatesGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_StateGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_StateSetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...|> github_com_codemityio_go_pkg_fsm_StatesGetter
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine o---up---> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine o---up---> github_com_codemityio_go_pkg_fsm_dsl_Workflow
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...> _error
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...> github_com_codemityio_go_pkg_fsm_dsl_Edge
+    github_com_codemityio_go_pkg_fsm_FiniteStateMachine ...up...> github_com_codemityio_go_pkg_fsm_dsl_Workflow
+    github_com_codemityio_go_pkg_fsm_StateSetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_StateSetter ...up...> _error
+    github_com_codemityio_go_pkg_fsm_StateGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_StateGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_InitialStateGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_InitialStateGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_StatesGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_StatesGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_FinalStateGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_FinalStateGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_PreviousStatesGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_PreviousStatesGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_NextStatesGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_NextStatesGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_EdgesGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_EdgesGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_Edge
+    github_com_codemityio_go_pkg_fsm_NextEdgesGetter #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_NextEdgesGetter ...up...> github_com_codemityio_go_pkg_fsm_dsl_Edge
+    github_com_codemityio_go_pkg_fsm_FSM #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_FSM *---up---> github_com_codemityio_go_pkg_fsm_StateSetter
+    github_com_codemityio_go_pkg_fsm_FSM *---up---> github_com_codemityio_go_pkg_fsm_StateGetter
+    github_com_codemityio_go_pkg_fsm_FSM *---up---> github_com_codemityio_go_pkg_fsm_NextStatesGetter
+    github_com_codemityio_go_pkg_fsm_FSM *---up---> github_com_codemityio_go_pkg_fsm_NextEdgesGetter
+    github_com_codemityio_go_pkg_fsm_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_fsm_ErrUnmarshal ...up...|> error
+    github_com_codemityio_go_pkg_fsm_New ....up....> github_com_codemityio_go_pkg_fsm_dsl_Workflow
+    github_com_codemityio_go_pkg_fsm_New ....up....> github_com_codemityio_go_pkg_fsm_FiniteStateMachine
+    github_com_codemityio_go_pkg_fsm_NewWorkflow ....up....> github_com_codemityio_go_pkg_fsm_dsl_Workflow
+    github_com_codemityio_go_pkg_fsm_NewWorkflow ....up....> _error
+}
+package "github.com/codemityio/go/pkg/fsm/dsl" as github_com_codemityio_go_pkg_fsm_dsl {
+    github_com_codemityio_go_pkg_fsm_dsl_Workflow #...up...> _struct
+    github_com_codemityio_go_pkg_fsm_dsl_Workflow o---up---> github_com_codemityio_go_pkg_fsm_dsl_Edge
+    github_com_codemityio_go_pkg_fsm_dsl_Workflow o---up---> github_com_codemityio_go_pkg_fsm_dsl_State
+    github_com_codemityio_go_pkg_fsm_dsl_Edge #...up...> _struct
+    github_com_codemityio_go_pkg_fsm_dsl_State #...up...> _struct
+}
+package "github.com/codemityio/go/pkg/fsm/generator" as github_com_codemityio_go_pkg_fsm_generator {
+    github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator #...up...> _struct
+    github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator ...up...|> github_com_codemityio_go_pkg_fsm_generator_Generator
+    github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator ...up...> github_com_codemityio_go_pkg_fsm_dsl_Workflow
+    github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator ...up...> _error
+    github_com_codemityio_go_pkg_fsm_generator_Generator #...up...> _interface
+    github_com_codemityio_go_pkg_fsm_generator_Generator ...up...> github_com_codemityio_go_pkg_fsm_dsl_Workflow
+    github_com_codemityio_go_pkg_fsm_generator_Generator ...up...> _error
+    github_com_codemityio_go_pkg_fsm_generator_Option #...up...> github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator
+    github_com_codemityio_go_pkg_fsm_generator_Option #...up...> github_com_codemityio_go_pkg_fsm_generator_func_workflow__DefaultGenerator_
+    github_com_codemityio_go_pkg_fsm_generator_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_fsm_generator_New ....up....> github_com_codemityio_go_pkg_fsm_generator_Option
+    github_com_codemityio_go_pkg_fsm_generator_New ....up....> github_com_codemityio_go_pkg_fsm_generator_DefaultGenerator
+    github_com_codemityio_go_pkg_fsm_generator_WithColours ....up....> github_com_codemityio_go_pkg_fsm_generator_Option
+}
+@enduml
+
