@@ -1,0 +1,4108 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/logger/logger.go",
+      "Start": {
+        "Offset": 92,
+        "Line": 13,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 114,
+        "Line": 13,
+        "Column": 23
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "exitFunc",
+      "Type": null,
+      "TypeInfo": "func(code int)",
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 107,
+        "Line": 5,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 153,
+        "Line": 8,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "Field",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Field",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "Key",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Value",
+          "Type": {
+            "Label": "any",
+            "Links": [
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 188,
+        "Line": 11,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 344,
+        "Line": 22,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "Logger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Logger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [
+        {
+          "Label": "DebugLogger",
+          "Links": [
+            {
+              "Name": "DebugLogger",
+              "Underlying": "interface{Debug(message string, fields ...github.com/codemityio/go/pkg/logger.Field)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "InfoLogger",
+          "Links": [
+            {
+              "Name": "InfoLogger",
+              "Underlying": "interface{Info(message string, fields ...github.com/codemityio/go/pkg/logger.Field)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "WarnLogger",
+          "Links": [
+            {
+              "Name": "WarnLogger",
+              "Underlying": "interface{Warn(message string, fields ...github.com/codemityio/go/pkg/logger.Field)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "ErrorLogger",
+          "Links": [
+            {
+              "Name": "ErrorLogger",
+              "Underlying": "interface{Error(err error, message string, fields ...github.com/codemityio/go/pkg/logger.Field)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "FatalLogger",
+          "Links": [
+            {
+              "Name": "FatalLogger",
+              "Underlying": "interface{Fatal(message string, fields ...github.com/codemityio/go/pkg/logger.Field)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "DebugfLogger",
+          "Links": [
+            {
+              "Name": "DebugfLogger",
+              "Underlying": "interface{Debugf(format string, v ...any)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "InfofLogger",
+          "Links": [
+            {
+              "Name": "InfofLogger",
+              "Underlying": "interface{Infof(format string, v ...any)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "WarnfLogger",
+          "Links": [
+            {
+              "Name": "WarnfLogger",
+              "Underlying": "interface{Warnf(format string, v ...any)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "ErrorfLogger",
+          "Links": [
+            {
+              "Name": "ErrorfLogger",
+              "Underlying": "interface{Errorf(err error, format string, v ...any)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        },
+        {
+          "Label": "FatalfLogger",
+          "Links": [
+            {
+              "Name": "FatalfLogger",
+              "Underlying": "interface{Fatalf(format string, v ...any)}",
+              "PackageName": "logger",
+              "PackagePath": "github.com/codemityio/go/pkg/logger",
+              "PackageAlias": ""
+            }
+          ]
+        }
+      ],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 346,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 416,
+        "Line": 26,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "DebugLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.DebugLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 381,
+            "Line": 25,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 414,
+            "Line": 25,
+            "Column": 40
+          },
+          "Name": "Debug",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 418,
+        "Line": 28,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 486,
+        "Line": 30,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "InfoLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.InfoLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 451,
+            "Line": 29,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 484,
+            "Line": 29,
+            "Column": 39
+          },
+          "Name": "Info",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 488,
+        "Line": 32,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 556,
+        "Line": 34,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WarnLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.WarnLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 521,
+            "Line": 33,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 554,
+            "Line": 33,
+            "Column": 39
+          },
+          "Name": "Warn",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 558,
+        "Line": 36,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 639,
+        "Line": 38,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "ErrorLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.ErrorLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 593,
+            "Line": 37,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 637,
+            "Line": 37,
+            "Column": 51
+          },
+          "Name": "Error",
+          "Signature": {
+            "Label": "(err error, message string, fields ...Field)",
+            "Alt": "(error, string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 641,
+        "Line": 40,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 711,
+        "Line": 42,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "FatalLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.FatalLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 676,
+            "Line": 41,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 709,
+            "Line": 41,
+            "Column": 40
+          },
+          "Name": "Fatal",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 747,
+        "Line": 45,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 811,
+        "Line": 47,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "DebugfLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.DebugfLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 784,
+            "Line": 46,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 809,
+            "Line": 46,
+            "Column": 33
+          },
+          "Name": "Debugf",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 841,
+        "Line": 50,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 903,
+        "Line": 52,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "InfofLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.InfofLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 876,
+            "Line": 51,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 901,
+            "Line": 51,
+            "Column": 32
+          },
+          "Name": "Infof",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 933,
+        "Line": 55,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 995,
+        "Line": 57,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WarnfLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.WarnfLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 968,
+            "Line": 56,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 993,
+            "Line": 56,
+            "Column": 32
+          },
+          "Name": "Warnf",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 1027,
+        "Line": 60,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1102,
+        "Line": 62,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "ErrorfLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.ErrorfLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 1064,
+            "Line": 61,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 1100,
+            "Line": 61,
+            "Column": 44
+          },
+          "Name": "Errorf",
+          "Signature": {
+            "Label": "(err error, format string, v ...any)",
+            "Alt": "(error, string, ...any)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/interface.go",
+      "Start": {
+        "Offset": 1134,
+        "Line": 65,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1198,
+        "Line": 67,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "FatalfLogger",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.FatalfLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/interface.go",
+          "Start": {
+            "Offset": 1171,
+            "Line": 66,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 1196,
+            "Line": 66,
+            "Column": 33
+          },
+          "Name": "Fatalf",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/logger.go",
+      "Start": {
+        "Offset": 201,
+        "Line": 16,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 394,
+        "Line": 25,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "DefaultLogger",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.DefaultLogger",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "DebugLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "DebugfLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "ErrorLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "ErrorfLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "FatalLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "FatalfLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "InfoLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "InfofLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "Logger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "WarnLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        },
+        {
+          "Name": "WarnfLogger",
+          "PackageName": "logger",
+          "PackagePath": "github.com/codemityio/go/pkg/logger"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "level",
+          "Type": {
+            "Label": "uint",
+            "Links": [
+              {
+                "Name": "uint",
+                "Underlying": "uint",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "format",
+          "Type": {
+            "Label": "Format",
+            "Links": [
+              {
+                "Name": "Format",
+                "Underlying": "string",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "logger",
+          "Type": {
+            "Label": "*log.Logger",
+            "Links": [
+              {
+                "Name": "Logger",
+                "Underlying": "struct{outMu sync.Mutex; out io.Writer; prefix sync/atomic.Pointer[string]; flag sync/atomic.Int32; isDiscard sync/atomic.Bool}",
+                "PackageName": "log",
+                "PackagePath": "log",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "loggerMu",
+          "Type": {
+            "Label": "sync.Mutex",
+            "Links": [
+              {
+                "Name": "Mutex",
+                "Underlying": "struct{_ sync.noCopy; mu internal/sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "ch",
+          "Type": {
+            "Label": "*ast.ChanType",
+            "Links": []
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.Mutex",
+            "Links": [
+              {
+                "Name": "Mutex",
+                "Underlying": "struct{_ sync.noCopy; mu internal/sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "done",
+          "Type": {
+            "Label": "*ast.ChanType",
+            "Links": []
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "once",
+          "Type": {
+            "Label": "sync.Once",
+            "Links": [
+              {
+                "Name": "Once",
+                "Underlying": "struct{_ sync.noCopy; done sync/atomic.Bool; m sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 435,
+            "Line": 28,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 548,
+            "Line": 30,
+            "Column": 2
+          },
+          "Name": "Debug",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Debug a common logger debug method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 588,
+            "Line": 33,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 699,
+            "Line": 35,
+            "Column": 2
+          },
+          "Name": "Info",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Info a common logger debug method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 739,
+            "Line": 38,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 850,
+            "Line": 40,
+            "Column": 2
+          },
+          "Name": "Warn",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Warn a common logger debug method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 891,
+            "Line": 43,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1015,
+            "Line": 45,
+            "Column": 2
+          },
+          "Name": "Error",
+          "Signature": {
+            "Label": "(err error, message string, fields ...Field)",
+            "Alt": "(error, string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Error a common logger debug method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 1056,
+            "Line": 48,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1183,
+            "Line": 52,
+            "Column": 2
+          },
+          "Name": "Fatal",
+          "Signature": {
+            "Label": "(message string, fields ...Field)",
+            "Alt": "(string, ...Field)",
+            "Arguments": [
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Fatal a common logger debug method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 1225,
+            "Line": 55,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1338,
+            "Line": 57,
+            "Column": 2
+          },
+          "Name": "Debugf",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Debugf a common logger debug method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 1378,
+            "Line": 60,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1489,
+            "Line": 62,
+            "Column": 2
+          },
+          "Name": "Infof",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Infof a common logger info method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 1529,
+            "Line": 65,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1640,
+            "Line": 67,
+            "Column": 2
+          },
+          "Name": "Warnf",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Warnf a common logger warn method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 1682,
+            "Line": 70,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1806,
+            "Line": 72,
+            "Column": 2
+          },
+          "Name": "Errorf",
+          "Signature": {
+            "Label": "(err error, format string, v ...any)",
+            "Alt": "(error, string, ...any)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Errorf a common logger error method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 1848,
+            "Line": 75,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1975,
+            "Line": 79,
+            "Column": 2
+          },
+          "Name": "Fatalf",
+          "Signature": {
+            "Label": "(format string, v ...any)",
+            "Alt": "(string, ...any)",
+            "Arguments": [
+              {
+                "Name": "format",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "v",
+                "Type": {
+                  "Label": "...any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Fatalf a common logger error method.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 2013,
+            "Line": 82,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2116,
+            "Line": 88,
+            "Column": 2
+          },
+          "Name": "Close",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Close signal the worker to stop.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 2153,
+            "Line": 91,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2197,
+            "Line": 93,
+            "Column": 2
+          },
+          "Name": "Done",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Done signal the logger is done.\n"
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 2199,
+            "Line": 95,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2449,
+            "Line": 105,
+            "Column": 2
+          },
+          "Name": "worker",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 2451,
+            "Line": 107,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2728,
+            "Line": 116,
+            "Column": 2
+          },
+          "Name": "fmt",
+          "Signature": {
+            "Label": "(level Level, message string, e error, fields ...Field) (string)",
+            "Alt": "(Level, string, error, ...Field) (string)",
+            "Arguments": [
+              {
+                "Name": "level",
+                "Type": {
+                  "Label": "Level",
+                  "Links": [
+                    {
+                      "Name": "Level",
+                      "Underlying": "string",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "e",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Level",
+                "Underlying": "string",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 2730,
+            "Line": 118,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3174,
+            "Line": 140,
+            "Column": 2
+          },
+          "Name": "formatJSON",
+          "Signature": {
+            "Label": "(level Level, message string, e error, fields ...Field) (string)",
+            "Alt": "(Level, string, error, ...Field) (string)",
+            "Arguments": [
+              {
+                "Name": "level",
+                "Type": {
+                  "Label": "Level",
+                  "Links": [
+                    {
+                      "Name": "Level",
+                      "Underlying": "string",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "e",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Level",
+                "Underlying": "string",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 3176,
+            "Line": 142,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3584,
+            "Line": 158,
+            "Column": 2
+          },
+          "Name": "formatText",
+          "Signature": {
+            "Label": "(level Level, message string, e error, fields ...Field) (string)",
+            "Alt": "(Level, string, error, ...Field) (string)",
+            "Arguments": [
+              {
+                "Name": "level",
+                "Type": {
+                  "Label": "Level",
+                  "Links": [
+                    {
+                      "Name": "Level",
+                      "Underlying": "string",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "e",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Level",
+                "Underlying": "string",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 3586,
+            "Line": 160,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 4073,
+            "Line": 181,
+            "Column": 2
+          },
+          "Name": "formatFieldsText",
+          "Signature": {
+            "Label": "(fields ...Field) (string)",
+            "Alt": "(...Field) (string)",
+            "Arguments": [
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/logger/logger.go",
+          "Start": {
+            "Offset": 4075,
+            "Line": 183,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 4667,
+            "Line": 211,
+            "Column": 2
+          },
+          "Name": "log",
+          "Signature": {
+            "Label": "(level uint, label Level, message string, err error, fields ...Field)",
+            "Alt": "(uint, Level, string, error, ...Field)",
+            "Arguments": [
+              {
+                "Name": "level",
+                "Type": {
+                  "Label": "uint",
+                  "Links": [
+                    {
+                      "Name": "uint",
+                      "Underlying": "uint",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "label",
+                "Type": {
+                  "Label": "Level",
+                  "Links": [
+                    {
+                      "Name": "Level",
+                      "Underlying": "string",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "message",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "fields",
+                "Type": {
+                  "Label": "...Field",
+                  "Links": [
+                    {
+                      "Name": "Field",
+                      "Underlying": "struct{Key string; Value any}",
+                      "PackageName": "logger",
+                      "PackagePath": "github.com/codemityio/go/pkg/logger",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint",
+                "Underlying": "uint",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Level",
+                "Underlying": "string",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/type.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 295,
+        "Line": 18,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "Level",
+      "Type": {
+        "Label": "string",
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Level",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": "Level a level type.\n"
+    },
+    {
+      "FilePath": "pkg/logger/type.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 295,
+        "Line": 18,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "Format",
+      "Type": {
+        "Label": "string",
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Format",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": "Format a format type.\n"
+    },
+    {
+      "FilePath": "pkg/logger/type.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 295,
+        "Line": 18,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "Option",
+      "Type": {
+        "Label": "func(logger *DefaultLogger)",
+        "Links": [
+          {
+            "Name": "DefaultLogger",
+            "Underlying": "struct{level uint; format github.com/codemityio/go/pkg/logger.Format; logger *log.Logger; loggerMu sync.Mutex; ch chan github.com/codemityio/go/pkg/logger.logEntry; mu sync.Mutex; done chan struct{}; once sync.Once}",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Option",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": "Option to be used to build with optional deps.\n"
+    },
+    {
+      "FilePath": "pkg/logger/type.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 295,
+        "Line": 18,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "logEntry",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.logEntry",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "level",
+          "Type": {
+            "Label": "uint",
+            "Links": [
+              {
+                "Name": "uint",
+                "Underlying": "uint",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "label",
+          "Type": {
+            "Label": "Level",
+            "Links": [
+              {
+                "Name": "Level",
+                "Underlying": "string",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "message",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "err",
+          "Type": {
+            "Label": "error",
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "fields",
+          "Type": {
+            "Label": "[]Field",
+            "Links": [
+              {
+                "Name": "Field",
+                "Underlying": "struct{Key string; Value any}",
+                "PackageName": "logger",
+                "PackagePath": "github.com/codemityio/go/pkg/logger",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": false,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/logger/factory.go",
+      "Start": {
+        "Offset": 81,
+        "Line": 10,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 532,
+        "Line": 29,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "New",
+      "Signature": {
+        "Label": "(options ...Option) (*DefaultLogger)",
+        "Alt": "(...Option) (*DefaultLogger)",
+        "Arguments": [
+          {
+            "Name": "options",
+            "Type": {
+              "Label": "...Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*DefaultLogger",
+              "Links": [
+                {
+                  "Name": "DefaultLogger",
+                  "Underlying": "struct{level uint; format github.com/codemityio/go/pkg/logger.Format; logger *log.Logger; loggerMu sync.Mutex; ch chan github.com/codemityio/go/pkg/logger.logEntry; mu sync.Mutex; done chan struct{}; once sync.Once}",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Option",
+            "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "DefaultLogger",
+            "Underlying": "struct{level uint; format github.com/codemityio/go/pkg/logger.Format; logger *log.Logger; loggerMu sync.Mutex; ch chan github.com/codemityio/go/pkg/logger.logEntry; mu sync.Mutex; done chan struct{}; once sync.Once}",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "New a common logger factory.\n"
+    },
+    {
+      "FilePath": "pkg/logger/func.go",
+      "Start": {
+        "Offset": 67,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 173,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WithLogger",
+      "Signature": {
+        "Label": "(logger *log.Logger) (Option)",
+        "Alt": "(*log.Logger) (Option)",
+        "Arguments": [
+          {
+            "Name": "logger",
+            "Type": {
+              "Label": "*log.Logger",
+              "Links": [
+                {
+                  "Name": "Logger",
+                  "Underlying": "struct{outMu sync.Mutex; out io.Writer; prefix sync/atomic.Pointer[string]; flag sync/atomic.Int32; isDiscard sync/atomic.Bool}",
+                  "PackageName": "log",
+                  "PackagePath": "log",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Logger",
+            "Underlying": "struct{outMu sync.Mutex; out io.Writer; prefix sync/atomic.Pointer[string]; flag sync/atomic.Int32; isDiscard sync/atomic.Bool}",
+            "PackageName": "log",
+            "PackagePath": "log",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithLogger set logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/func.go",
+      "Start": {
+        "Offset": 262,
+        "Line": 16,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 582,
+        "Line": 35,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WithLevel",
+      "Signature": {
+        "Label": "(level Level) (Option)",
+        "Alt": "(Level) (Option)",
+        "Arguments": [
+          {
+            "Name": "level",
+            "Type": {
+              "Label": "Level",
+              "Links": [
+                {
+                  "Name": "Level",
+                  "Underlying": "string",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Level",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithLevel set level value (e.g. `logger.New(logger.WithLevel(logger.LevelDebug))`).\n"
+    },
+    {
+      "FilePath": "pkg/logger/func.go",
+      "Start": {
+        "Offset": 616,
+        "Line": 38,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 717,
+        "Line": 42,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WithFormat",
+      "Signature": {
+        "Label": "(format Format) (Option)",
+        "Alt": "(Format) (Option)",
+        "Arguments": [
+          {
+            "Name": "format",
+            "Type": {
+              "Label": "Format",
+              "Links": [
+                {
+                  "Name": "Format",
+                  "Underlying": "string",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Format",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithFormat set format value.\n"
+    },
+    {
+      "FilePath": "pkg/logger/func.go",
+      "Start": {
+        "Offset": 745,
+        "Line": 45,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 911,
+        "Line": 52,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WithOutput",
+      "Signature": {
+        "Label": "(output io.Writer) (Option)",
+        "Alt": "(io.Writer) (Option)",
+        "Arguments": [
+          {
+            "Name": "output",
+            "Type": {
+              "Label": "io.Writer",
+              "Links": [
+                {
+                  "Name": "Writer",
+                  "Underlying": "interface{Write(p []byte) (n int, err error)}",
+                  "PackageName": "io",
+                  "PackagePath": "io",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Writer",
+            "Underlying": "interface{Write(p []byte) (n int, err error)}",
+            "PackageName": "io",
+            "PackagePath": "io",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithOutput set output.\n"
+    },
+    {
+      "FilePath": "pkg/logger/func.go",
+      "Start": {
+        "Offset": 943,
+        "Line": 55,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1070,
+        "Line": 59,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "WithBufferSize",
+      "Signature": {
+        "Label": "(bufferSize int) (Option)",
+        "Alt": "(int) (Option)",
+        "Arguments": [
+          {
+            "Name": "bufferSize",
+            "Type": {
+              "Label": "int",
+              "Links": [
+                {
+                  "Name": "int",
+                  "Underlying": "int",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+                  "PackageName": "logger",
+                  "PackagePath": "github.com/codemityio/go/pkg/logger",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "int",
+            "Underlying": "int",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(logger *github.com/codemityio/go/pkg/logger.DefaultLogger)",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithBufferSize set output.\n"
+    }
+  ],
+  "Const": [
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "labelLevel",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "labelMessage",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "labelError",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "LevelDebug",
+      "Type": {
+        "Label": "Level",
+        "Links": [
+          {
+            "Name": "Level",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Level",
+      "IsExported": true,
+      "Doc": "LevelDebug a debug level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "LevelInfo",
+      "Type": {
+        "Label": "Level",
+        "Links": [
+          {
+            "Name": "Level",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Level",
+      "IsExported": true,
+      "Doc": "LevelInfo an info level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "LevelWarn",
+      "Type": {
+        "Label": "Level",
+        "Links": [
+          {
+            "Name": "Level",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Level",
+      "IsExported": true,
+      "Doc": "LevelWarn warning level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "LevelError",
+      "Type": {
+        "Label": "Level",
+        "Links": [
+          {
+            "Name": "Level",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Level",
+      "IsExported": true,
+      "Doc": "LevelError an error level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "LevelFatal",
+      "Type": {
+        "Label": "Level",
+        "Links": [
+          {
+            "Name": "Level",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Level",
+      "IsExported": true,
+      "Doc": "LevelFatal an fatal level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "d",
+      "Type": {
+        "Label": "uint",
+        "Links": [
+          {
+            "Name": "uint",
+            "Underlying": "uint",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "uint",
+      "IsExported": false,
+      "Doc": "debug level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "i",
+      "Type": null,
+      "TypeInfo": "uint",
+      "IsExported": false,
+      "Doc": "info level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "w",
+      "Type": null,
+      "TypeInfo": "uint",
+      "IsExported": false,
+      "Doc": "warning level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "e",
+      "Type": null,
+      "TypeInfo": "uint",
+      "IsExported": false,
+      "Doc": "error level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "f",
+      "Type": null,
+      "TypeInfo": "uint",
+      "IsExported": false,
+      "Doc": "fatal level for the logger.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "FormatText",
+      "Type": {
+        "Label": "Format",
+        "Links": [
+          {
+            "Name": "Format",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Format",
+      "IsExported": true,
+      "Doc": "FormatText a simple text format for the log output.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "FormatJSON",
+      "Type": {
+        "Label": "Format",
+        "Links": [
+          {
+            "Name": "Format",
+            "Underlying": "string",
+            "PackageName": "logger",
+            "PackagePath": "github.com/codemityio/go/pkg/logger",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/logger.Format",
+      "IsExported": true,
+      "Doc": "FormatJSON a JSON format for the log output.\n"
+    },
+    {
+      "FilePath": "pkg/logger/const.go",
+      "Start": {
+        "Offset": 16,
+        "Line": 3,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 895,
+        "Line": 37,
+        "Column": 2
+      },
+      "PackageName": "logger",
+      "PackagePath": "github.com/codemityio/go/pkg/logger",
+      "Name": "BufferSizeDefault",
+      "Type": null,
+      "TypeInfo": "untyped int",
+      "IsExported": true,
+      "Doc": "BufferSizeDefault async output buffer size.\n"
+    }
+  ]
+}

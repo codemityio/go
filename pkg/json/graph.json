@@ -1,0 +1,504 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/json/errors.go",
+      "Start": {
+        "Offset": 43,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 172,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/json/errors.go",
+      "Start": {
+        "Offset": 43,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 172,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "ErrJSON",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrJSON error.\n"
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/json/jsonsequence.go",
+      "Start": {
+        "Offset": 254,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 446,
+        "Line": 11,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "RawMessageSequenceMap",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/json.RawMessageSequenceMap",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "data",
+          "Type": {
+            "Label": "map[string][]json.RawMessage",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "RawMessage",
+                "Underlying": "[]byte",
+                "PackageName": "json",
+                "PackagePath": "encoding/json",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "cursor",
+          "Type": {
+            "Label": "map[string]int",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/json/jsonsequence.go",
+          "Start": {
+            "Offset": 674,
+            "Line": 16,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 925,
+            "Line": 31,
+            "Column": 2
+          },
+          "Name": "Next",
+          "Signature": {
+            "Label": "(key string) (json.RawMessage)",
+            "Alt": "(string) (json.RawMessage)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "json.RawMessage",
+                  "Links": [
+                    {
+                      "Name": "RawMessage",
+                      "Underlying": "[]byte",
+                      "PackageName": "json",
+                      "PackagePath": "encoding/json",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "RawMessage",
+                "Underlying": "[]byte",
+                "PackageName": "json",
+                "PackagePath": "encoding/json",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Next returns the next json.RawMessage for the given key in the predefined sequence.\nIf the key is unknown or has an empty sequence, it returns nil.\nIf the sequence is exhausted, the last value is returned repeatedly.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/json/factory.go",
+      "Start": {
+        "Offset": 122,
+        "Line": 6,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 298,
+        "Line": 11,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "NewRawMessageSequenceMap",
+      "Signature": {
+        "Label": "(input map[string][]json.RawMessage) (*RawMessageSequenceMap)",
+        "Alt": "(map[string][]json.RawMessage) (*RawMessageSequenceMap)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "map[string][]json.RawMessage",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                },
+                {
+                  "Name": "RawMessage",
+                  "Underlying": "[]byte",
+                  "PackageName": "json",
+                  "PackagePath": "encoding/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*RawMessageSequenceMap",
+              "Links": [
+                {
+                  "Name": "RawMessageSequenceMap",
+                  "Underlying": "struct{data map[string][]encoding/json.RawMessage; cursor map[string]int}",
+                  "PackageName": "json",
+                  "PackagePath": "github.com/codemityio/go/pkg/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "RawMessage",
+            "Underlying": "[]byte",
+            "PackageName": "json",
+            "PackagePath": "encoding/json",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "RawMessageSequenceMap",
+            "Underlying": "struct{data map[string][]encoding/json.RawMessage; cursor map[string]int}",
+            "PackageName": "json",
+            "PackagePath": "github.com/codemityio/go/pkg/json",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewRawMessageSequenceMap initialises and returns a new instance of JSONSequence.\n"
+    },
+    {
+      "FilePath": "pkg/json/json.go",
+      "Start": {
+        "Offset": 119,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 255,
+        "Line": 16,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "MustBuildJSON",
+      "Signature": {
+        "Label": "(data json.RawMessage) (*T)",
+        "Alt": "(json.RawMessage) (*T)",
+        "Arguments": [
+          {
+            "Name": "data",
+            "Type": {
+              "Label": "json.RawMessage",
+              "Links": [
+                {
+                  "Name": "RawMessage",
+                  "Underlying": "[]byte",
+                  "PackageName": "json",
+                  "PackagePath": "encoding/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*T",
+              "Links": [
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "json",
+                  "PackagePath": "github.com/codemityio/go/pkg/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "RawMessage",
+            "Underlying": "[]byte",
+            "PackageName": "json",
+            "PackagePath": "encoding/json",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "json",
+            "PackagePath": "github.com/codemityio/go/pkg/json",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "MustBuildJSON factory, use it if the error is not worth handling.\n"
+    },
+    {
+      "FilePath": "pkg/json/json.go",
+      "Start": {
+        "Offset": 277,
+        "Line": 19,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 472,
+        "Line": 27,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "NewJSON",
+      "Signature": {
+        "Label": "(data json.RawMessage) (*T, error)",
+        "Alt": "(json.RawMessage) (*T, error)",
+        "Arguments": [
+          {
+            "Name": "data",
+            "Type": {
+              "Label": "json.RawMessage",
+              "Links": [
+                {
+                  "Name": "RawMessage",
+                  "Underlying": "[]byte",
+                  "PackageName": "json",
+                  "PackagePath": "encoding/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*T",
+              "Links": [
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "json",
+                  "PackagePath": "github.com/codemityio/go/pkg/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "RawMessage",
+            "Underlying": "[]byte",
+            "PackageName": "json",
+            "PackagePath": "encoding/json",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "json",
+            "PackagePath": "github.com/codemityio/go/pkg/json",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "NewJSON factory.\n"
+    }
+  ],
+  "Const": []
+}

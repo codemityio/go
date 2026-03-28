@@ -1,0 +1,210 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/env/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 167,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "env",
+      "PackagePath": "github.com/codemityio/go/pkg/env",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/env/errors.go",
+      "Start": {
+        "Offset": 42,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 167,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "env",
+      "PackagePath": "github.com/codemityio/go/pkg/env",
+      "Name": "ErrEnv",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrEnv error.\n"
+    }
+  ],
+  "Type": [],
+  "Func": [
+    {
+      "FilePath": "pkg/env/env.go",
+      "Start": {
+        "Offset": 149,
+        "Line": 11,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 259,
+        "Line": 18,
+        "Column": 2
+      },
+      "PackageName": "env",
+      "PackagePath": "github.com/codemityio/go/pkg/env",
+      "Name": "MustBuildEnv",
+      "Signature": {
+        "Label": "() (*T)",
+        "Alt": "() (*T)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*T",
+              "Links": [
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "env",
+                  "PackagePath": "github.com/codemityio/go/pkg/env",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "env",
+            "PackagePath": "github.com/codemityio/go/pkg/env",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "MustBuildEnv factory, use it if the error is not worth handling.\n"
+    },
+    {
+      "FilePath": "pkg/env/env.go",
+      "Start": {
+        "Offset": 280,
+        "Line": 21,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 472,
+        "Line": 29,
+        "Column": 2
+      },
+      "PackageName": "env",
+      "PackagePath": "github.com/codemityio/go/pkg/env",
+      "Name": "NewEnv",
+      "Signature": {
+        "Label": "() (*T, error)",
+        "Alt": "() (*T, error)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*T",
+              "Links": [
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "env",
+                  "PackagePath": "github.com/codemityio/go/pkg/env",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "env",
+            "PackagePath": "github.com/codemityio/go/pkg/env",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "NewEnv factory.\n"
+    }
+  ],
+  "Const": []
+}

@@ -1,0 +1,5689 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/sync/errors.go",
+      "Start": {
+        "Offset": 43,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 206,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/sync/errors.go",
+      "Start": {
+        "Offset": 43,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 206,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "ErrSafeBufferWrite",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrSafeBufferWrite error.\n"
+    },
+    {
+      "FilePath": "pkg/sync/gid.go",
+      "Start": {
+        "Offset": 91,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 273,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "fallbackIDCounter",
+      "Type": {
+        "Label": "atomic.Int64",
+        "Links": [
+          {
+            "Name": "Int64",
+            "Underlying": "struct{_ sync/atomic.noCopy; _ sync/atomic.align64; v int64}",
+            "PackageName": "atomic",
+            "PackagePath": "sync/atomic",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "sync/atomic.Int64",
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/gid.go",
+      "Start": {
+        "Offset": 91,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 273,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "fallbackIDs",
+      "Type": {
+        "Label": "sync.Map",
+        "Links": [
+          {
+            "Name": "Map",
+            "Underlying": "struct{_ sync.noCopy; m internal/sync.HashTrieMap[any, any]}",
+            "PackageName": "sync",
+            "PackagePath": "sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "sync.Map",
+      "Params": null,
+      "IsExported": false,
+      "Doc": ""
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/sync/gate.go",
+      "Start": {
+        "Offset": 54,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 130,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "Gate",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.Gate",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "Gatekeeper",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "open",
+          "Type": {
+            "Label": "*ast.ChanType",
+            "Links": []
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "opened",
+          "Type": {
+            "Label": "bool",
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/gate.go",
+          "Start": {
+            "Offset": 171,
+            "Line": 15,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 250,
+            "Line": 20,
+            "Column": 2
+          },
+          "Name": "Wait",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Wait blocks until the gate is open.\n"
+        },
+        {
+          "FilePath": "pkg/sync/gate.go",
+          "Start": {
+            "Offset": 353,
+            "Line": 23,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 473,
+            "Line": 33,
+            "Column": 2
+          },
+          "Name": "Open",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Open marks the gate as open, allowing any waiting routines to proceed. This method is idempotent.\n"
+        },
+        {
+          "FilePath": "pkg/sync/gate.go",
+          "Start": {
+            "Offset": 582,
+            "Line": 36,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 695,
+            "Line": 45,
+            "Column": 2
+          },
+          "Name": "Close",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Close closes the gate, making Wait block; it resets the gate if it is currently open. It is idempotent.\n"
+        },
+        {
+          "FilePath": "pkg/sync/gate.go",
+          "Start": {
+            "Offset": 792,
+            "Line": 48,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 881,
+            "Line": 53,
+            "Column": 2
+          },
+          "Name": "IsClosed",
+          "Signature": {
+            "Label": "() (bool)",
+            "Alt": "() (bool)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsClosed checks if the gate is currently closed and returns true if it is, otherwise false.\n"
+        },
+        {
+          "FilePath": "pkg/sync/gate.go",
+          "Start": {
+            "Offset": 883,
+            "Line": 55,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 960,
+            "Line": 58,
+            "Column": 2
+          },
+          "Name": "openGate",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/genericsafeindex.go",
+      "Start": {
+        "Offset": 115,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 316,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "GenericSafeIndex",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.GenericSafeIndex[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [
+        {
+          "Name": "indexes",
+          "Type": {
+            "Label": "map[uint64]struct",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "struct",
+                "Underlying": "struct",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "list",
+          "Type": {
+            "Label": "[]uint64",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "data",
+          "Type": {
+            "Label": "map[uint64]T",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "mutex",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/genericsafemap.go",
+      "Start": {
+        "Offset": 86,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 274,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "GenericSafeMap",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.GenericSafeMap[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [
+        {
+          "Name": "keys",
+          "Type": {
+            "Label": "map[string]struct",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "struct",
+                "Underlying": "struct",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "list",
+          "Type": {
+            "Label": "[]string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "data",
+          "Type": {
+            "Label": "map[string]T",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "mutex",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 129,
+        "Line": 9,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "Gatekeeper",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.Gatekeeper",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 91,
+            "Line": 5,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 93,
+            "Line": 5,
+            "Column": 8
+          },
+          "Name": "Wait",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 99,
+            "Line": 6,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 101,
+            "Line": 6,
+            "Column": 8
+          },
+          "Name": "Open",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 108,
+            "Line": 7,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 110,
+            "Line": 7,
+            "Column": 9
+          },
+          "Name": "Close",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 120,
+            "Line": 8,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 127,
+            "Line": 8,
+            "Column": 17
+          },
+          "Name": "IsClosed",
+          "Signature": {
+            "Label": "() (bool)",
+            "Alt": "() (bool)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 238,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 313,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "Locker",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.Locker",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 267,
+            "Line": 13,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 269,
+            "Line": 13,
+            "Column": 8
+          },
+          "Name": "Lock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 277,
+            "Line": 14,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 279,
+            "Line": 14,
+            "Column": 10
+          },
+          "Name": "Unlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 289,
+            "Line": 15,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 296,
+            "Line": 15,
+            "Column": 17
+          },
+          "Name": "IsLocked",
+          "Signature": {
+            "Label": "() (bool)",
+            "Alt": "() (bool)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 309,
+            "Line": 16,
+            "Column": 13
+          },
+          "End": {
+            "Offset": 311,
+            "Line": 16,
+            "Column": 15
+          },
+          "Name": "ForceUnlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 354,
+        "Line": 20,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 515,
+        "Line": 26,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "SafeIndexer",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.SafeIndexer",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 387,
+            "Line": 21,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 412,
+            "Line": 21,
+            "Column": 30
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(index uint64, value any)",
+            "Alt": "(uint64, any)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 419,
+            "Line": 22,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 433,
+            "Line": 22,
+            "Column": 21
+          },
+          "Name": "Unset",
+          "Signature": {
+            "Label": "(index uint64)",
+            "Alt": "(uint64)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 438,
+            "Line": 23,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 464,
+            "Line": 23,
+            "Column": 31
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(index uint64) (any, bool)",
+            "Alt": "(uint64) (any, bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 473,
+            "Line": 24,
+            "Column": 9
+          },
+          "End": {
+            "Offset": 484,
+            "Line": 24,
+            "Column": 20
+          },
+          "Name": "Indexes",
+          "Signature": {
+            "Label": "() ([]uint64)",
+            "Alt": "() ([]uint64)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 494,
+            "Line": 25,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 513,
+            "Line": 25,
+            "Column": 29
+          },
+          "Name": "HasIndex",
+          "Signature": {
+            "Label": "(index uint64) (bool)",
+            "Alt": "(uint64) (bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 563,
+        "Line": 29,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 734,
+        "Line": 35,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "GenericSafeIndexer",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.GenericSafeIndexer[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 610,
+            "Line": 30,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 633,
+            "Line": 30,
+            "Column": 28
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(index uint64, value T)",
+            "Alt": "(uint64, T)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "any",
+                      "PackageName": "sync",
+                      "PackagePath": "github.com/codemityio/go/pkg/sync",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 640,
+            "Line": 31,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 654,
+            "Line": 31,
+            "Column": 21
+          },
+          "Name": "Unset",
+          "Signature": {
+            "Label": "(index uint64)",
+            "Alt": "(uint64)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 659,
+            "Line": 32,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 683,
+            "Line": 32,
+            "Column": 29
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(index uint64) (T, bool)",
+            "Alt": "(uint64) (T, bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "any",
+                      "PackageName": "sync",
+                      "PackagePath": "github.com/codemityio/go/pkg/sync",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 692,
+            "Line": 33,
+            "Column": 9
+          },
+          "End": {
+            "Offset": 703,
+            "Line": 33,
+            "Column": 20
+          },
+          "Name": "Indexes",
+          "Signature": {
+            "Label": "() ([]uint64)",
+            "Alt": "() ([]uint64)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 713,
+            "Line": 34,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 732,
+            "Line": 34,
+            "Column": 29
+          },
+          "Name": "HasIndex",
+          "Signature": {
+            "Label": "(index uint64) (bool)",
+            "Alt": "(uint64) (bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 791,
+        "Line": 38,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 942,
+        "Line": 43,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "GenericSafeListIndexer",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.GenericSafeListIndexer[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 845,
+            "Line": 39,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 868,
+            "Line": 39,
+            "Column": 31
+          },
+          "Name": "Append",
+          "Signature": {
+            "Label": "(index uint64, value T)",
+            "Alt": "(uint64, T)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "any",
+                      "PackageName": "sync",
+                      "PackagePath": "github.com/codemityio/go/pkg/sync",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 873,
+            "Line": 40,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 891,
+            "Line": 40,
+            "Column": 23
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(index uint64) ([]T)",
+            "Alt": "(uint64) ([]T)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "any",
+                      "PackageName": "sync",
+                      "PackagePath": "github.com/codemityio/go/pkg/sync",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 899,
+            "Line": 41,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 918,
+            "Line": 41,
+            "Column": 27
+          },
+          "Name": "Exists",
+          "Signature": {
+            "Label": "(index uint64) (bool)",
+            "Alt": "(uint64) (bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 926,
+            "Line": 42,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 940,
+            "Line": 42,
+            "Column": 22
+          },
+          "Name": "Delete",
+          "Signature": {
+            "Label": "(index uint64)",
+            "Alt": "(uint64)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 980,
+        "Line": 46,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1127,
+        "Line": 52,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "SafeMapper",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.SafeMapper",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1012,
+            "Line": 47,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 1035,
+            "Line": 47,
+            "Column": 28
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(key string, value any)",
+            "Alt": "(string, any)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1042,
+            "Line": 48,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 1054,
+            "Line": 48,
+            "Column": 19
+          },
+          "Name": "Unset",
+          "Signature": {
+            "Label": "(key string)",
+            "Alt": "(string)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1059,
+            "Line": 49,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 1083,
+            "Line": 49,
+            "Column": 29
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(key string) (any, bool)",
+            "Alt": "(string) (any, bool)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1089,
+            "Line": 50,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 1100,
+            "Line": 50,
+            "Column": 17
+          },
+          "Name": "Keys",
+          "Signature": {
+            "Label": "() ([]string)",
+            "Alt": "() ([]string)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1108,
+            "Line": 51,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 1125,
+            "Line": 51,
+            "Column": 25
+          },
+          "Name": "HasKey",
+          "Signature": {
+            "Label": "(key string) (bool)",
+            "Alt": "(string) (bool)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 1180,
+        "Line": 55,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1337,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "GenericSafeMapper",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.GenericSafeMapper[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1226,
+            "Line": 56,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 1247,
+            "Line": 56,
+            "Column": 26
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(key string, value T)",
+            "Alt": "(string, T)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "any",
+                      "PackageName": "sync",
+                      "PackagePath": "github.com/codemityio/go/pkg/sync",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1254,
+            "Line": 57,
+            "Column": 7
+          },
+          "End": {
+            "Offset": 1266,
+            "Line": 57,
+            "Column": 19
+          },
+          "Name": "Unset",
+          "Signature": {
+            "Label": "(key string)",
+            "Alt": "(string)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1271,
+            "Line": 58,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 1293,
+            "Line": 58,
+            "Column": 27
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(key string) (T, bool)",
+            "Alt": "(string) (T, bool)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "any",
+                      "PackageName": "sync",
+                      "PackagePath": "github.com/codemityio/go/pkg/sync",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1299,
+            "Line": 59,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 1310,
+            "Line": 59,
+            "Column": 17
+          },
+          "Name": "Keys",
+          "Signature": {
+            "Label": "() ([]string)",
+            "Alt": "() ([]string)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1318,
+            "Line": 60,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 1335,
+            "Line": 60,
+            "Column": 25
+          },
+          "Name": "HasKey",
+          "Signature": {
+            "Label": "(key string) (bool)",
+            "Alt": "(string) (bool)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/interface.go",
+      "Start": {
+        "Offset": 1640,
+        "Line": 67,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1709,
+        "Line": 71,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "ReentrantLocker",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.ReentrantLocker",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1678,
+            "Line": 68,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 1680,
+            "Line": 68,
+            "Column": 8
+          },
+          "Name": "Lock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1688,
+            "Line": 69,
+            "Column": 8
+          },
+          "End": {
+            "Offset": 1690,
+            "Line": 69,
+            "Column": 10
+          },
+          "Name": "Unlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/sync/interface.go",
+          "Start": {
+            "Offset": 1700,
+            "Line": 70,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 1707,
+            "Line": 70,
+            "Column": 17
+          },
+          "Name": "IsLocked",
+          "Signature": {
+            "Label": "() (bool)",
+            "Alt": "() (bool)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/lock.go",
+      "Start": {
+        "Offset": 69,
+        "Line": 6,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 134,
+        "Line": 10,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "Lock",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.Lock",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "Locker",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        },
+        {
+          "Name": "ReentrantLocker",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.Mutex",
+            "Links": [
+              {
+                "Name": "Mutex",
+                "Underlying": "struct{_ sync.noCopy; mu internal/sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "cond",
+          "Type": {
+            "Label": "*sync.Cond",
+            "Links": [
+              {
+                "Name": "Cond",
+                "Underlying": "struct{noCopy sync.noCopy; L sync.Locker; notify sync.notifyList; checker sync.copyChecker}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "held",
+          "Type": {
+            "Label": "bool",
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/lock.go",
+          "Start": {
+            "Offset": 195,
+            "Line": 13,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 304,
+            "Line": 22,
+            "Column": 2
+          },
+          "Name": "Lock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Lock acquires the lock, blocking if it is already held.\n"
+        },
+        {
+          "FilePath": "pkg/sync/lock.go",
+          "Start": {
+            "Offset": 361,
+            "Line": 25,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 509,
+            "Line": 35,
+            "Column": 2
+          },
+          "Name": "Unlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Unlock releases the lock. Panics if it is not held.\n"
+        },
+        {
+          "FilePath": "pkg/sync/lock.go",
+          "Start": {
+            "Offset": 567,
+            "Line": 38,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 651,
+            "Line": 43,
+            "Column": 2
+          },
+          "Name": "IsLocked",
+          "Signature": {
+            "Label": "() (bool)",
+            "Alt": "() (bool)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsLocked reports whether the lock is currently held.\n"
+        },
+        {
+          "FilePath": "pkg/sync/lock.go",
+          "Start": {
+            "Offset": 714,
+            "Line": 46,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 817,
+            "Line": 52,
+            "Column": 2
+          },
+          "Name": "ForceUnlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "ForceUnlock releases the lock regardless of who holds it.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/reentrantlock.go",
+      "Start": {
+        "Offset": 328,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 425,
+        "Line": 14,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "ReentrantLock",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.ReentrantLock",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "Locker",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        },
+        {
+          "Name": "ReentrantLocker",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.Mutex",
+            "Links": [
+              {
+                "Name": "Mutex",
+                "Underlying": "struct{_ sync.noCopy; mu internal/sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "cond",
+          "Type": {
+            "Label": "*sync.Cond",
+            "Links": [
+              {
+                "Name": "Cond",
+                "Underlying": "struct{noCopy sync.noCopy; L sync.Locker; notify sync.notifyList; checker sync.copyChecker}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "ownerID",
+          "Type": {
+            "Label": "int64",
+            "Links": [
+              {
+                "Name": "int64",
+                "Underlying": "int64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "count",
+          "Type": {
+            "Label": "int",
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/reentrantlock.go",
+          "Start": {
+            "Offset": 530,
+            "Line": 17,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 830,
+            "Line": 38,
+            "Column": 2
+          },
+          "Name": "Lock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Lock acquires the lock for the current goroutine, allowing reentrant locking by the same goroutine.\n"
+        },
+        {
+          "FilePath": "pkg/sync/reentrantlock.go",
+          "Start": {
+            "Offset": 949,
+            "Line": 41,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1191,
+            "Line": 58,
+            "Column": 2
+          },
+          "Name": "Unlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Unlock releases the lock held by the current goroutine, decrementing the reentrant lock count. Panics if unowned.\n"
+        },
+        {
+          "FilePath": "pkg/sync/reentrantlock.go",
+          "Start": {
+            "Offset": 1319,
+            "Line": 62,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1417,
+            "Line": 67,
+            "Column": 2
+          },
+          "Name": "IsLocked",
+          "Signature": {
+            "Label": "() (bool)",
+            "Alt": "() (bool)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsLocked reports whether the lock is currently held by any goroutine.\nIt does not block and is safe for concurrent use.\n"
+        },
+        {
+          "FilePath": "pkg/sync/reentrantlock.go",
+          "Start": {
+            "Offset": 1761,
+            "Line": 75,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1973,
+            "Line": 85,
+            "Column": 2
+          },
+          "Name": "ForceUnlock",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "ForceUnlock releases the lock regardless of ownership. This forcibly resets\nthe lock to an unlocked state and wakes all waiting goroutines.\n\nWARNING: This should only be used in system-level recovery situations.\nIt breaks the reentrancy contract and may violate invariants for goroutines\ncurrently relying on lock ownership.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/safebuffer.go",
+      "Start": {
+        "Offset": 110,
+        "Line": 10,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 168,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "SafeBuffer",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.SafeBuffer",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.Mutex",
+            "Links": [
+              {
+                "Name": "Mutex",
+                "Underlying": "struct{_ sync.noCopy; mu internal/sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "b",
+          "Type": {
+            "Label": "bytes.Buffer",
+            "Links": [
+              {
+                "Name": "Buffer",
+                "Underlying": "struct{buf []byte; off int; lastRead bytes.readOp}",
+                "PackageName": "bytes",
+                "PackagePath": "bytes",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 201,
+            "Line": 16,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 410,
+            "Line": 26,
+            "Column": 2
+          },
+          "Name": "Write",
+          "Signature": {
+            "Label": "(p []byte) (int, error)",
+            "Alt": "([]byte) (int, error)",
+            "Arguments": [
+              {
+                "Name": "p",
+                "Type": {
+                  "Label": "[]byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Write writes to the buffer.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 462,
+            "Line": 29,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 558,
+            "Line": 34,
+            "Column": 2
+          },
+          "Name": "String",
+          "Signature": {
+            "Label": "() (string)",
+            "Alt": "() (string)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "String returns the buffer content as a string.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 608,
+            "Line": 37,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 726,
+            "Line": 42,
+            "Column": 2
+          },
+          "Name": "Bytes",
+          "Signature": {
+            "Label": "() ([]byte)",
+            "Alt": "() ([]byte)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Bytes returns a copy of the buffer contents.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 778,
+            "Line": 45,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 865,
+            "Line": 50,
+            "Column": 2
+          },
+          "Name": "Len",
+          "Signature": {
+            "Label": "() (int)",
+            "Alt": "() (int)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Len returns the number of bytes in the buffer.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 910,
+            "Line": 53,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 997,
+            "Line": 58,
+            "Column": 2
+          },
+          "Name": "Cap",
+          "Signature": {
+            "Label": "() (int)",
+            "Alt": "() (int)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Cap returns the capacity of the buffer.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 1039,
+            "Line": 61,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1119,
+            "Line": 66,
+            "Column": 2
+          },
+          "Name": "Reset",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Reset resets the buffer to be empty.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 1167,
+            "Line": 69,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1392,
+            "Line": 79,
+            "Column": 2
+          },
+          "Name": "WriteString",
+          "Signature": {
+            "Label": "(str string) (int, error)",
+            "Alt": "(string) (int, error)",
+            "Arguments": [
+              {
+                "Name": "str",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "WriteString writes a string to the buffer.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 1457,
+            "Line": 82,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1672,
+            "Line": 92,
+            "Column": 2
+          },
+          "Name": "WriteRune",
+          "Signature": {
+            "Label": "(r rune) (int, error)",
+            "Alt": "(rune) (int, error)",
+            "Arguments": [
+              {
+                "Name": "r",
+                "Type": {
+                  "Label": "rune",
+                  "Links": [
+                    {
+                      "Name": "rune",
+                      "Underlying": "rune",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "rune",
+                "Underlying": "rune",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "WriteRune writes a single UTF-8 encoded rune to the buffer.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 1723,
+            "Line": 95,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1912,
+            "Line": 104,
+            "Column": 2
+          },
+          "Name": "WriteByte",
+          "Signature": {
+            "Label": "(c byte) (error)",
+            "Alt": "(byte) (error)",
+            "Arguments": [
+              {
+                "Name": "c",
+                "Type": {
+                  "Label": "byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "WriteByte writes a single byte to the buffer.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 1972,
+            "Line": 107,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2064,
+            "Line": 112,
+            "Column": 2
+          },
+          "Name": "Truncate",
+          "Signature": {
+            "Label": "(n int)",
+            "Alt": "(int)",
+            "Arguments": [
+              {
+                "Name": "n",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Truncate truncates the buffer to the specified length.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/safeindex.go",
+      "Start": {
+        "Offset": 118,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 307,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "SafeIndex",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.SafeIndex",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "SafeIndexer",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "indexes",
+          "Type": {
+            "Label": "map[uint64]struct",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "struct",
+                "Underlying": "struct",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "list",
+          "Type": {
+            "Label": "[]uint64",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "data",
+          "Type": {
+            "Label": "map[uint64]any",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "mutex",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/safeindex.go",
+          "Start": {
+            "Offset": 360,
+            "Line": 15,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 595,
+            "Line": 25,
+            "Column": 2
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(index uint64, value any)",
+            "Alt": "(uint64, any)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Set sets a value under a specific uint64 index.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safeindex.go",
+          "Start": {
+            "Offset": 654,
+            "Line": 28,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1026,
+            "Line": 44,
+            "Column": 2
+          },
+          "Name": "Unset",
+          "Signature": {
+            "Label": "(index uint64)",
+            "Alt": "(uint64)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Unset removes the index and its value from the index.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safeindex.go",
+          "Start": {
+            "Offset": 1077,
+            "Line": 47,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1224,
+            "Line": 54,
+            "Column": 2
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(index uint64) (any, bool)",
+            "Alt": "(uint64) (any, bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Get returns the value stored under the index.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safeindex.go",
+          "Start": {
+            "Offset": 1274,
+            "Line": 57,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1441,
+            "Line": 65,
+            "Column": 2
+          },
+          "Name": "Indexes",
+          "Signature": {
+            "Label": "() ([]uint64)",
+            "Alt": "() ([]uint64)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Indexes returns all the used uint64 indexes.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safeindex.go",
+          "Start": {
+            "Offset": 1496,
+            "Line": 68,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1630,
+            "Line": 75,
+            "Column": 2
+          },
+          "Name": "HasIndex",
+          "Signature": {
+            "Label": "(index uint64) (bool)",
+            "Alt": "(uint64) (bool)",
+            "Arguments": [
+              {
+                "Name": "index",
+                "Type": {
+                  "Label": "uint64",
+                  "Links": [
+                    {
+                      "Name": "uint64",
+                      "Underlying": "uint64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "HasIndex checks if the index exists in the index.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/safelistindex.go",
+      "Start": {
+        "Offset": 60,
+        "Line": 6,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 136,
+        "Line": 9,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "SafeListIndex",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.SafeListIndex[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [
+        {
+          "Name": "mu",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "data",
+          "Type": {
+            "Label": "map[uint64][]T",
+            "Links": [
+              {
+                "Name": "uint64",
+                "Underlying": "uint64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "any",
+                "PackageName": "sync",
+                "PackagePath": "github.com/codemityio/go/pkg/sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/sync/safemap.go",
+      "Start": {
+        "Offset": 89,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 265,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "SafeMap",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/sync.SafeMap",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "SafeMapper",
+          "PackageName": "sync",
+          "PackagePath": "github.com/codemityio/go/pkg/sync"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "keys",
+          "Type": {
+            "Label": "map[string]struct",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "struct",
+                "Underlying": "struct",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "list",
+          "Type": {
+            "Label": "[]string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "data",
+          "Type": {
+            "Label": "map[string]any",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "mutex",
+          "Type": {
+            "Label": "sync.RWMutex",
+            "Links": [
+              {
+                "Name": "RWMutex",
+                "Underlying": "struct{w sync.Mutex; writerSem uint32; readerSem uint32; readerCount sync/atomic.Int32; readerWait sync/atomic.Int32}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/sync/safemap.go",
+          "Start": {
+            "Offset": 307,
+            "Line": 15,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 527,
+            "Line": 25,
+            "Column": 2
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(key string, value any)",
+            "Alt": "(string, any)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "value",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Set sets value under a specific key.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safemap.go",
+          "Start": {
+            "Offset": 554,
+            "Line": 28,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 904,
+            "Line": 45,
+            "Column": 2
+          },
+          "Name": "Unset",
+          "Signature": {
+            "Label": "(key string)",
+            "Alt": "(string)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Unset unsets the key.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safemap.go",
+          "Start": {
+            "Offset": 956,
+            "Line": 48,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1097,
+            "Line": 55,
+            "Column": 2
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(key string) (any, bool)",
+            "Alt": "(string) (any, bool)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Get returns the value stored in under the key.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safemap.go",
+          "Start": {
+            "Offset": 1132,
+            "Line": 58,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1295,
+            "Line": 67,
+            "Column": 2
+          },
+          "Name": "Keys",
+          "Signature": {
+            "Label": "() ([]string)",
+            "Alt": "() ([]string)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Keys lists all the used keys.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safemap.go",
+          "Start": {
+            "Offset": 1330,
+            "Line": 70,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1456,
+            "Line": 77,
+            "Column": 2
+          },
+          "Name": "HasKey",
+          "Signature": {
+            "Label": "(key string) (bool)",
+            "Alt": "(string) (bool)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "HasKey checks the key exists.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 79,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 212,
+        "Line": 19,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewGate",
+      "Signature": {
+        "Label": "() (*Gate)",
+        "Alt": "() (*Gate)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*Gate",
+              "Links": [
+                {
+                  "Name": "Gate",
+                  "Underlying": "struct{mu sync.RWMutex; open chan struct{}; opened bool}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Gate",
+            "Underlying": "struct{mu sync.RWMutex; open chan struct{}; opened bool}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewGate creates a new open gate.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 245,
+        "Line": 22,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 389,
+        "Line": 32,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewLock",
+      "Signature": {
+        "Label": "() (*Lock)",
+        "Alt": "() (*Lock)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*Lock",
+              "Links": [
+                {
+                  "Name": "Lock",
+                  "Underlying": "struct{mu sync.Mutex; cond *sync.Cond; held bool}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Lock",
+            "Underlying": "struct{mu sync.Mutex; cond *sync.Cond; held bool}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewLock creates a new Lock.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 503,
+        "Line": 35,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 693,
+        "Line": 46,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewReentrantLock",
+      "Signature": {
+        "Label": "() (*ReentrantLock)",
+        "Alt": "() (*ReentrantLock)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*ReentrantLock",
+              "Links": [
+                {
+                  "Name": "ReentrantLock",
+                  "Underlying": "struct{mu sync.Mutex; cond *sync.Cond; ownerID int64; count int}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "ReentrantLock",
+            "Underlying": "struct{mu sync.Mutex; cond *sync.Cond; ownerID int64; count int}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewReentrantLock initialises and returns a new instance of ReentrantLock, supporting reentrant capabilities.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 736,
+        "Line": 49,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 953,
+        "Line": 56,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewGenericSafeIndex",
+      "Signature": {
+        "Label": "() (*GenericSafeIndex[T])",
+        "Alt": "() (*GenericSafeIndex[T])",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*GenericSafeIndex[T]",
+              "Links": [
+                {
+                  "Name": "GenericSafeIndex",
+                  "Underlying": "struct{indexes map[uint64]struct{}; list []uint64; data map[uint64]T; mutex sync.RWMutex}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                },
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "GenericSafeIndex",
+            "Underlying": "struct{indexes map[uint64]struct{}; list []uint64; data map[uint64]T; mutex sync.RWMutex}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "NewGenericSafeIndex factory function.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 994,
+        "Line": 59,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1197,
+        "Line": 66,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewGenericSafeMap",
+      "Signature": {
+        "Label": "() (*GenericSafeMap[T])",
+        "Alt": "() (*GenericSafeMap[T])",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*GenericSafeMap[T]",
+              "Links": [
+                {
+                  "Name": "GenericSafeMap",
+                  "Underlying": "struct{keys map[string]struct{}; list []string; data map[string]T; mutex sync.RWMutex}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                },
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "GenericSafeMap",
+            "Underlying": "struct{keys map[string]struct{}; list []string; data map[string]T; mutex sync.RWMutex}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "NewGenericSafeMap factory function.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 1234,
+        "Line": 69,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1336,
+        "Line": 74,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewSafeBuffer",
+      "Signature": {
+        "Label": "() (*SafeBuffer)",
+        "Alt": "() (*SafeBuffer)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*SafeBuffer",
+              "Links": [
+                {
+                  "Name": "SafeBuffer",
+                  "Underlying": "struct{mu sync.Mutex; b bytes.Buffer}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "SafeBuffer",
+            "Underlying": "struct{mu sync.Mutex; b bytes.Buffer}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewSafeBuffer factory function.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 1372,
+        "Line": 77,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1557,
+        "Line": 84,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewSafeIndex",
+      "Signature": {
+        "Label": "() (*SafeIndex)",
+        "Alt": "() (*SafeIndex)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*SafeIndex",
+              "Links": [
+                {
+                  "Name": "SafeIndex",
+                  "Underlying": "struct{indexes map[uint64]struct{}; list []uint64; data map[uint64]any; mutex sync.RWMutex}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "SafeIndex",
+            "Underlying": "struct{indexes map[uint64]struct{}; list []uint64; data map[uint64]any; mutex sync.RWMutex}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewSafeIndex factory function.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 1597,
+        "Line": 87,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1733,
+        "Line": 92,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewSafeListIndex",
+      "Signature": {
+        "Label": "() (*SafeListIndex[T])",
+        "Alt": "() (*SafeListIndex[T])",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*SafeListIndex[T]",
+              "Links": [
+                {
+                  "Name": "SafeListIndex",
+                  "Underlying": "struct{mu sync.RWMutex; data map[uint64][]T}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                },
+                {
+                  "Name": "T",
+                  "Underlying": "any",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "SafeListIndex",
+            "Underlying": "struct{mu sync.RWMutex; data map[uint64][]T}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "T",
+            "Underlying": "any",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "any",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "NewSafeListIndex factory function.\n"
+    },
+    {
+      "FilePath": "pkg/sync/factory.go",
+      "Start": {
+        "Offset": 1767,
+        "Line": 95,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1938,
+        "Line": 102,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "NewSafeMap",
+      "Signature": {
+        "Label": "() (*SafeMap)",
+        "Alt": "() (*SafeMap)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*SafeMap",
+              "Links": [
+                {
+                  "Name": "SafeMap",
+                  "Underlying": "struct{keys map[string]struct{}; list []string; data map[string]any; mutex sync.RWMutex}",
+                  "PackageName": "sync",
+                  "PackagePath": "github.com/codemityio/go/pkg/sync",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "SafeMap",
+            "Underlying": "struct{keys map[string]struct{}; list []string; data map[string]any; mutex sync.RWMutex}",
+            "PackageName": "sync",
+            "PackagePath": "github.com/codemityio/go/pkg/sync",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewSafeMap factory function.\n"
+    },
+    {
+      "FilePath": "pkg/sync/gid.go",
+      "Start": {
+        "Offset": 344,
+        "Line": 18,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 941,
+        "Line": 48,
+        "Column": 2
+      },
+      "PackageName": "sync",
+      "PackagePath": "github.com/codemityio/go/pkg/sync",
+      "Name": "GID",
+      "Signature": {
+        "Label": "() (int64)",
+        "Alt": "() (int64)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "int64",
+              "Links": [
+                {
+                  "Name": "int64",
+                  "Underlying": "int64",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "int64",
+            "Underlying": "int64",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "GID returns a goroutine ID or a fallback unique ID per goroutine.\n"
+    }
+  ],
+  "Const": []
+}

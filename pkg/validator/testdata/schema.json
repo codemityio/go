@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "enum": [
+        "success"
+      ]
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^((?:\\.{0,2}/{0,1}[a-zA-Z0-9])+(?:-[a-zA-Z0-9]+)*(?:/(?:[a-zA-Z0-9])+(?:-[a-zA-Z0-9]+)*)*)$"
+    }
+  },
+  "requiredProperties": [
+    "message",
+    "path"
+  ]
+}

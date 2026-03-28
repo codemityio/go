@@ -1,0 +1,44 @@
+@startuml
+
+<style>
+componentDiagram {
+  BackGroundColor white
+  LineThickness 1
+  LineColor #333333
+}
+document {
+  BackGroundColor white
+}
+</style>
+
+skinparam defaulttextalignment center
+
+top to bottom direction
+hide empty description
+
+state state_five as "<b>five</b>"#fafafa:state five description
+state state_four as "<b>four</b>"#f5f5f5
+state state_one as "<b>one</b>"#lightblue:state one description
+state state_six as "<b>six</b>"#f5f5f5
+state state_three as "<b>three</b>"#f5f5f5
+state state_two as "<b>two</b>"#f5f5f5:state two\nmulti line description
+state state_zero as "<b>zero</b>"#f5f5f5:state zero description
+
+state zero_start <<start>>#green
+zero_start -[#808080]-> state_zero
+
+state_one -[#lightblue]-> state_four
+state_six -[#808080]-> state_three
+state_three -[#808080]-> state_five
+state_three -[#808080]-> state_six
+state_two -[#808080]-> state_four: edge two-four description
+state_zero -[#808080]-> state_one
+state_zero -[#808080]-> state_two
+state_zero -[#808080]-> state_three: edge zero-three\nmulti line description
+
+state five_end <<end>>#red
+state_five -[#808080]-> five_end
+state four_end <<end>>#red
+state_four -[#808080]-> four_end
+
+@enduml

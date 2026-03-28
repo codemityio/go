@@ -1,0 +1,68 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/dsn" as github_com_codemityio_go_pkg_dsn {
+    class "<b><font color=#1c1c1c>DSN</font></b>" as github_com_codemityio_go_pkg_dsn_DSN << (S, #b5558d) >> {
+        + Scheme <font color=#1f38b5>string</font>
+        + User <font color=#1f38b5>string</font>
+        + Password <font color=#1f38b5>string</font>
+        + Host <font color=#1f38b5>string</font>
+        + Port <font color=#1f38b5>int</font>
+        + Hosts <font color=#1f38b5>[]string</font>
+        + Ports <font color=#1f38b5>[]int</font>
+        + Path <font color=#1f38b5>string</font>
+        + Query <font color=#1f38b5>url.Values</font>
+        + Raw <font color=#1f38b5>*url.URL</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_dsn_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrInvalidDSN</font></b>" as github_com_codemityio_go_pkg_dsn_ErrInvalidDSN << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrInvalidQuery</font></b>" as github_com_codemityio_go_pkg_dsn_ErrInvalidQuery << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrInvalidPort</font></b>" as github_com_codemityio_go_pkg_dsn_ErrInvalidPort << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>bareSchemeRe</font>" as github_com_codemityio_go_pkg_dsn_bareSchemeRe << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>Parse</font></b><font color=#1f38b5>(input string) (*DSN, error)</font>" as github_com_codemityio_go_pkg_dsn_Parse << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>parseFilePath</font><font color=#1f38b5>(input string, dsn *DSN) (*DSN, error)</font>" as github_com_codemityio_go_pkg_dsn_parseFilePath << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>parseURLDSN</font><font color=#1f38b5>(input string, dsn *DSN) (*DSN, error)</font>" as github_com_codemityio_go_pkg_dsn_parseURLDSN << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>normaliseMultiHost</font><font color=#1f38b5>(input string) (string, string)</font>" as github_com_codemityio_go_pkg_dsn_normaliseMultiHost << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>parseHosts</font><font color=#1f38b5>(rawHosts string) ([]string, []int, error)</font>" as github_com_codemityio_go_pkg_dsn_parseHosts << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/dsn" as github_com_codemityio_go_pkg_dsn {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "net/url" as .net_url {
+        class "Values" as net_url_Values << (T, #739e78) >> {}
+    }
+    package "net/url" as .net_url {
+        class "URL" as net_url_URL << (S, #b5558d) >> {}
+    }
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "*regexp.Regexp" as _regexp_Regexp << (T, #fa6d57) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+}
+package "github.com/codemityio/go/pkg/dsn" as github_com_codemityio_go_pkg_dsn {
+    github_com_codemityio_go_pkg_dsn_DSN #...up...> _struct
+    github_com_codemityio_go_pkg_dsn_DSN o---up---> net_url_Values
+    github_com_codemityio_go_pkg_dsn_DSN o---up---> net_url_URL
+    github_com_codemityio_go_pkg_dsn_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_dsn_ErrInvalidDSN ...up...|> error
+    github_com_codemityio_go_pkg_dsn_ErrInvalidQuery ...up...|> error
+    github_com_codemityio_go_pkg_dsn_ErrInvalidPort ...up...|> error
+    github_com_codemityio_go_pkg_dsn_bareSchemeRe #...up...> _regexp_Regexp
+    github_com_codemityio_go_pkg_dsn_Parse ....up....> github_com_codemityio_go_pkg_dsn_DSN
+    github_com_codemityio_go_pkg_dsn_Parse ....up....> _error
+    github_com_codemityio_go_pkg_dsn_parseFilePath ....up....> github_com_codemityio_go_pkg_dsn_DSN
+    github_com_codemityio_go_pkg_dsn_parseFilePath ....up....> _error
+    github_com_codemityio_go_pkg_dsn_parseURLDSN ....up....> github_com_codemityio_go_pkg_dsn_DSN
+    github_com_codemityio_go_pkg_dsn_parseURLDSN ....up....> _error
+    github_com_codemityio_go_pkg_dsn_parseHosts ....up....> _error
+}
+@enduml
+

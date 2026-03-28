@@ -1,0 +1,21 @@
+digraph DepGraph {
+    fontname="Courier New"
+    splines="ortho"
+    nodesep="1.4"
+    ranksep="0.8"
+    graph [rankdir="TB", pad="0.2"]
+    node [shape="tab", fontname="Courier New", style="filled", fixedsize=false]
+    edge [fontname="Courier New", color="grey66", arrowhead="normal", arrowtail="none", arrowsize="0.6", weight="0.5"]
+    subgraph deps {
+        "github.com/codemityio/go/pkg/validator" [label="github.com/codemityio/go/pkg/validator", color="gray58", fillcolor="gray99", penwidth=1]
+              "github.com/codemityio/go/pkg/validator" -> "github.com/xeipuuv/gojsonschema"
+              "github.com/codemityio/go/pkg/validator" -> "gopkg.in/yaml.v3"
+        "github.com/xeipuuv/gojsonpointer" [label="github.com/xeipuuv/gojsonpointer", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/xeipuuv/gojsonreference" [label="github.com/xeipuuv/gojsonreference", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/xeipuuv/gojsonreference" -> "github.com/xeipuuv/gojsonpointer"
+        "github.com/xeipuuv/gojsonschema" [label="github.com/xeipuuv/gojsonschema", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/xeipuuv/gojsonschema" -> "github.com/xeipuuv/gojsonreference"
+        "gopkg.in/yaml.v3" [label="gopkg.in/yaml.v3", color="gray65", fillcolor="gray83", penwidth=1]
+    }
+}
+

@@ -1,0 +1,333 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync {
+    class "<b><font color=#1c1c1c>Gate</font></b>" as github_com_codemityio_go_pkg_sync_Gate << (S, #b5558d) >> {
+        - mu <font color=#1f38b5>sync.RWMutex</font>
+        - open <font color=#1f38b5>*ast.ChanType</font>
+        - opened <font color=#1f38b5>bool</font>
+        + Wait <font color=#1f38b5>()</font>
+        + Open <font color=#1f38b5>()</font>
+        + Close <font color=#1f38b5>()</font>
+        + IsClosed <font color=#1f38b5>() (bool)</font>
+        - openGate <font color=#1f38b5>()</font>
+    }
+    class "<b><font color=#1c1c1c>GenericSafeIndex</font></b><[T any]>" as github_com_codemityio_go_pkg_sync_GenericSafeIndex << (S, #b5558d) >> {
+        - indexes <font color=#1f38b5>map[uint64]struct</font>
+        - list <font color=#1f38b5>[]uint64</font>
+        - data <font color=#1f38b5>map[uint64]T</font>
+        - mutex <font color=#1f38b5>sync.RWMutex</font>
+    }
+    class "<b><font color=#1c1c1c>GenericSafeMap</font></b><[T any]>" as github_com_codemityio_go_pkg_sync_GenericSafeMap << (S, #b5558d) >> {
+        - keys <font color=#1f38b5>map[string]struct</font>
+        - list <font color=#1f38b5>[]string</font>
+        - data <font color=#1f38b5>map[string]T</font>
+        - mutex <font color=#1f38b5>sync.RWMutex</font>
+    }
+    class "<b><font color=#1c1c1c>Gatekeeper</font></b>" as github_com_codemityio_go_pkg_sync_Gatekeeper << (I, #e4f58e) >> {
+        + Wait <font color=#1f38b5>()</font>
+        + Open <font color=#1f38b5>()</font>
+        + Close <font color=#1f38b5>()</font>
+        + IsClosed <font color=#1f38b5>() (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>Locker</font></b>" as github_com_codemityio_go_pkg_sync_Locker << (I, #e4f58e) >> {
+        + Lock <font color=#1f38b5>()</font>
+        + Unlock <font color=#1f38b5>()</font>
+        + IsLocked <font color=#1f38b5>() (bool)</font>
+        + ForceUnlock <font color=#1f38b5>()</font>
+    }
+    class "<b><font color=#1c1c1c>SafeIndexer</font></b>" as github_com_codemityio_go_pkg_sync_SafeIndexer << (I, #e4f58e) >> {
+        + Set <font color=#1f38b5>(index uint64, value any)</font>
+        + Unset <font color=#1f38b5>(index uint64)</font>
+        + Get <font color=#1f38b5>(index uint64) (any, bool)</font>
+        + Indexes <font color=#1f38b5>() ([]uint64)</font>
+        + HasIndex <font color=#1f38b5>(index uint64) (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>GenericSafeIndexer</font></b><[T any]>" as github_com_codemityio_go_pkg_sync_GenericSafeIndexer << (I, #e4f58e) >> {
+        + Set <font color=#1f38b5>(index uint64, value T)</font>
+        + Unset <font color=#1f38b5>(index uint64)</font>
+        + Get <font color=#1f38b5>(index uint64) (T, bool)</font>
+        + Indexes <font color=#1f38b5>() ([]uint64)</font>
+        + HasIndex <font color=#1f38b5>(index uint64) (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>GenericSafeListIndexer</font></b><[T any]>" as github_com_codemityio_go_pkg_sync_GenericSafeListIndexer << (I, #e4f58e) >> {
+        + Append <font color=#1f38b5>(index uint64, value T)</font>
+        + Get <font color=#1f38b5>(index uint64) ([]T)</font>
+        + Exists <font color=#1f38b5>(index uint64) (bool)</font>
+        + Delete <font color=#1f38b5>(index uint64)</font>
+    }
+    class "<b><font color=#1c1c1c>SafeMapper</font></b>" as github_com_codemityio_go_pkg_sync_SafeMapper << (I, #e4f58e) >> {
+        + Set <font color=#1f38b5>(key string, value any)</font>
+        + Unset <font color=#1f38b5>(key string)</font>
+        + Get <font color=#1f38b5>(key string) (any, bool)</font>
+        + Keys <font color=#1f38b5>() ([]string)</font>
+        + HasKey <font color=#1f38b5>(key string) (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>GenericSafeMapper</font></b><[T any]>" as github_com_codemityio_go_pkg_sync_GenericSafeMapper << (I, #e4f58e) >> {
+        + Set <font color=#1f38b5>(key string, value T)</font>
+        + Unset <font color=#1f38b5>(key string)</font>
+        + Get <font color=#1f38b5>(key string) (T, bool)</font>
+        + Keys <font color=#1f38b5>() ([]string)</font>
+        + HasKey <font color=#1f38b5>(key string) (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>ReentrantLocker</font></b>" as github_com_codemityio_go_pkg_sync_ReentrantLocker << (I, #e4f58e) >> {
+        + Lock <font color=#1f38b5>()</font>
+        + Unlock <font color=#1f38b5>()</font>
+        + IsLocked <font color=#1f38b5>() (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>Lock</font></b>" as github_com_codemityio_go_pkg_sync_Lock << (S, #b5558d) >> {
+        - mu <font color=#1f38b5>sync.Mutex</font>
+        - cond <font color=#1f38b5>*sync.Cond</font>
+        - held <font color=#1f38b5>bool</font>
+        + Lock <font color=#1f38b5>()</font>
+        + Unlock <font color=#1f38b5>()</font>
+        + IsLocked <font color=#1f38b5>() (bool)</font>
+        + ForceUnlock <font color=#1f38b5>()</font>
+    }
+    class "<b><font color=#1c1c1c>ReentrantLock</font></b>" as github_com_codemityio_go_pkg_sync_ReentrantLock << (S, #b5558d) >> {
+        - mu <font color=#1f38b5>sync.Mutex</font>
+        - cond <font color=#1f38b5>*sync.Cond</font>
+        - ownerID <font color=#1f38b5>int64</font>
+        - count <font color=#1f38b5>int</font>
+        + Lock <font color=#1f38b5>()</font>
+        + Unlock <font color=#1f38b5>()</font>
+        + IsLocked <font color=#1f38b5>() (bool)</font>
+        + ForceUnlock <font color=#1f38b5>()</font>
+    }
+    class "<b><font color=#1c1c1c>SafeBuffer</font></b>" as github_com_codemityio_go_pkg_sync_SafeBuffer << (S, #b5558d) >> {
+        - mu <font color=#1f38b5>sync.Mutex</font>
+        - b <font color=#1f38b5>bytes.Buffer</font>
+        + Write <font color=#1f38b5>(p []byte) (int, error)</font>
+        + String <font color=#1f38b5>() (string)</font>
+        + Bytes <font color=#1f38b5>() ([]byte)</font>
+        + Len <font color=#1f38b5>() (int)</font>
+        + Cap <font color=#1f38b5>() (int)</font>
+        + Reset <font color=#1f38b5>()</font>
+        + WriteString <font color=#1f38b5>(str string) (int, error)</font>
+        + WriteRune <font color=#1f38b5>(r rune) (int, error)</font>
+        + WriteByte <font color=#1f38b5>(c byte) (error)</font>
+        + Truncate <font color=#1f38b5>(n int)</font>
+    }
+    class "<b><font color=#1c1c1c>SafeIndex</font></b>" as github_com_codemityio_go_pkg_sync_SafeIndex << (S, #b5558d) >> {
+        - indexes <font color=#1f38b5>map[uint64]struct</font>
+        - list <font color=#1f38b5>[]uint64</font>
+        - data <font color=#1f38b5>map[uint64]any</font>
+        - mutex <font color=#1f38b5>sync.RWMutex</font>
+        + Set <font color=#1f38b5>(index uint64, value any)</font>
+        + Unset <font color=#1f38b5>(index uint64)</font>
+        + Get <font color=#1f38b5>(index uint64) (any, bool)</font>
+        + Indexes <font color=#1f38b5>() ([]uint64)</font>
+        + HasIndex <font color=#1f38b5>(index uint64) (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>SafeListIndex</font></b><[T any]>" as github_com_codemityio_go_pkg_sync_SafeListIndex << (S, #b5558d) >> {
+        - mu <font color=#1f38b5>sync.RWMutex</font>
+        - data <font color=#1f38b5>map[uint64][]T</font>
+    }
+    class "<b><font color=#1c1c1c>SafeMap</font></b>" as github_com_codemityio_go_pkg_sync_SafeMap << (S, #b5558d) >> {
+        - keys <font color=#1f38b5>map[string]struct</font>
+        - list <font color=#1f38b5>[]string</font>
+        - data <font color=#1f38b5>map[string]any</font>
+        - mutex <font color=#1f38b5>sync.RWMutex</font>
+        + Set <font color=#1f38b5>(key string, value any)</font>
+        + Unset <font color=#1f38b5>(key string)</font>
+        + Get <font color=#1f38b5>(key string) (any, bool)</font>
+        + Keys <font color=#1f38b5>() ([]string)</font>
+        + HasKey <font color=#1f38b5>(key string) (bool)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_sync_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrSafeBufferWrite</font></b>" as github_com_codemityio_go_pkg_sync_ErrSafeBufferWrite << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>fallbackIDCounter</font>" as github_com_codemityio_go_pkg_sync_fallbackIDCounter << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>fallbackIDs</font>" as github_com_codemityio_go_pkg_sync_fallbackIDs << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>NewGate</font></b><font color=#1f38b5>() (*Gate)</font>" as github_com_codemityio_go_pkg_sync_NewGate << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewLock</font></b><font color=#1f38b5>() (*Lock)</font>" as github_com_codemityio_go_pkg_sync_NewLock << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewReentrantLock</font></b><font color=#1f38b5>() (*ReentrantLock)</font>" as github_com_codemityio_go_pkg_sync_NewReentrantLock << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewGenericSafeIndex</font></b><font color=#1f38b5>() (*GenericSafeIndex[T])</font><[T any]>" as github_com_codemityio_go_pkg_sync_NewGenericSafeIndex << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewGenericSafeMap</font></b><font color=#1f38b5>() (*GenericSafeMap[T])</font><[T any]>" as github_com_codemityio_go_pkg_sync_NewGenericSafeMap << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSafeBuffer</font></b><font color=#1f38b5>() (*SafeBuffer)</font>" as github_com_codemityio_go_pkg_sync_NewSafeBuffer << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSafeIndex</font></b><font color=#1f38b5>() (*SafeIndex)</font>" as github_com_codemityio_go_pkg_sync_NewSafeIndex << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSafeListIndex</font></b><font color=#1f38b5>() (*SafeListIndex[T])</font><[T any]>" as github_com_codemityio_go_pkg_sync_NewSafeListIndex << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSafeMap</font></b><font color=#1f38b5>() (*SafeMap)</font>" as github_com_codemityio_go_pkg_sync_NewSafeMap << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>GID</font></b><font color=#1f38b5>() (int64)</font>" as github_com_codemityio_go_pkg_sync_GID << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "sync" as .sync {
+        class "Mutex" as sync_Mutex << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Cond" as sync_Cond << (S, #b5558d) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "sync" as .sync {
+        class "Mutex" as sync_Mutex << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Cond" as sync_Cond << (S, #b5558d) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "sync" as .sync {
+        class "Mutex" as sync_Mutex << (S, #b5558d) >> {}
+    }
+    package "bytes" as .bytes {
+        class "Buffer" as bytes_Buffer << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    package "sync" as .sync {
+        class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    package "sync/atomic" as .sync_atomic {
+        class "Int64" as sync_atomic_Int64 << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Map" as sync_Map << (S, #b5558d) >> {}
+    }
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+}
+package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync {
+    github_com_codemityio_go_pkg_sync_Gate #...up...> _struct
+    github_com_codemityio_go_pkg_sync_Gate ...up...|> github_com_codemityio_go_pkg_sync_Gatekeeper
+    github_com_codemityio_go_pkg_sync_Gate o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_sync_GenericSafeIndex #...up...> _struct
+    github_com_codemityio_go_pkg_sync_GenericSafeIndex #...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeIndex o---up---> _struct
+    github_com_codemityio_go_pkg_sync_GenericSafeIndex o---up---> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_GenericSafeIndex o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_sync_GenericSafeMap #...up...> _struct
+    github_com_codemityio_go_pkg_sync_GenericSafeMap #...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeMap o---up---> _struct
+    github_com_codemityio_go_pkg_sync_GenericSafeMap o---up---> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_GenericSafeMap o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_sync_Gatekeeper #...up...> _interface
+    github_com_codemityio_go_pkg_sync_Locker #...up...> _interface
+    github_com_codemityio_go_pkg_sync_SafeIndexer #...up...> _interface
+    github_com_codemityio_go_pkg_sync_SafeIndexer ...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeIndexer #...up...> _interface
+    github_com_codemityio_go_pkg_sync_GenericSafeIndexer #...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeIndexer ...up...> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_GenericSafeListIndexer #...up...> _interface
+    github_com_codemityio_go_pkg_sync_GenericSafeListIndexer #...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeListIndexer ...up...> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_SafeMapper #...up...> _interface
+    github_com_codemityio_go_pkg_sync_SafeMapper ...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeMapper #...up...> _interface
+    github_com_codemityio_go_pkg_sync_GenericSafeMapper #...up...> _any
+    github_com_codemityio_go_pkg_sync_GenericSafeMapper ...up...> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_ReentrantLocker #...up...> _interface
+    github_com_codemityio_go_pkg_sync_Lock #...up...> _struct
+    github_com_codemityio_go_pkg_sync_Lock ...up...|> github_com_codemityio_go_pkg_sync_Locker
+    github_com_codemityio_go_pkg_sync_Lock ...up...|> github_com_codemityio_go_pkg_sync_ReentrantLocker
+    github_com_codemityio_go_pkg_sync_Lock o---up---> sync_Mutex
+    github_com_codemityio_go_pkg_sync_Lock o---up---> sync_Cond
+    github_com_codemityio_go_pkg_sync_ReentrantLock #...up...> _struct
+    github_com_codemityio_go_pkg_sync_ReentrantLock ...up...|> github_com_codemityio_go_pkg_sync_Locker
+    github_com_codemityio_go_pkg_sync_ReentrantLock ...up...|> github_com_codemityio_go_pkg_sync_ReentrantLocker
+    github_com_codemityio_go_pkg_sync_ReentrantLock o---up---> sync_Mutex
+    github_com_codemityio_go_pkg_sync_ReentrantLock o---up---> sync_Cond
+    github_com_codemityio_go_pkg_sync_SafeBuffer #...up...> _struct
+    github_com_codemityio_go_pkg_sync_SafeBuffer o---up---> sync_Mutex
+    github_com_codemityio_go_pkg_sync_SafeBuffer o---up---> bytes_Buffer
+    github_com_codemityio_go_pkg_sync_SafeBuffer ...up...> _error
+    github_com_codemityio_go_pkg_sync_SafeIndex #...up...> _struct
+    github_com_codemityio_go_pkg_sync_SafeIndex ...up...|> github_com_codemityio_go_pkg_sync_SafeIndexer
+    github_com_codemityio_go_pkg_sync_SafeIndex o---up---> _struct
+    github_com_codemityio_go_pkg_sync_SafeIndex o---up---> _any
+    github_com_codemityio_go_pkg_sync_SafeIndex o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_sync_SafeIndex ...up...> _any
+    github_com_codemityio_go_pkg_sync_SafeListIndex #...up...> _struct
+    github_com_codemityio_go_pkg_sync_SafeListIndex #...up...> _any
+    github_com_codemityio_go_pkg_sync_SafeListIndex o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_sync_SafeListIndex o---up---> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_SafeMap #...up...> _struct
+    github_com_codemityio_go_pkg_sync_SafeMap ...up...|> github_com_codemityio_go_pkg_sync_SafeMapper
+    github_com_codemityio_go_pkg_sync_SafeMap o---up---> _struct
+    github_com_codemityio_go_pkg_sync_SafeMap o---up---> _any
+    github_com_codemityio_go_pkg_sync_SafeMap o---up---> sync_RWMutex
+    github_com_codemityio_go_pkg_sync_SafeMap ...up...> _any
+    github_com_codemityio_go_pkg_sync_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_sync_ErrSafeBufferWrite ...up...|> error
+    github_com_codemityio_go_pkg_sync_fallbackIDCounter #...down...> sync_atomic_Int64
+    github_com_codemityio_go_pkg_sync_fallbackIDs #...down...> sync_Map
+    github_com_codemityio_go_pkg_sync_NewGate ....up....> github_com_codemityio_go_pkg_sync_Gate
+    github_com_codemityio_go_pkg_sync_NewLock ....up....> github_com_codemityio_go_pkg_sync_Lock
+    github_com_codemityio_go_pkg_sync_NewReentrantLock ....up....> github_com_codemityio_go_pkg_sync_ReentrantLock
+    github_com_codemityio_go_pkg_sync_NewGenericSafeIndex ....up....> github_com_codemityio_go_pkg_sync_GenericSafeIndex
+    github_com_codemityio_go_pkg_sync_NewGenericSafeIndex ....up....> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_NewGenericSafeMap ....up....> github_com_codemityio_go_pkg_sync_GenericSafeMap
+    github_com_codemityio_go_pkg_sync_NewGenericSafeMap ....up....> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_NewSafeBuffer ....up....> github_com_codemityio_go_pkg_sync_SafeBuffer
+    github_com_codemityio_go_pkg_sync_NewSafeIndex ....up....> github_com_codemityio_go_pkg_sync_SafeIndex
+    github_com_codemityio_go_pkg_sync_NewSafeListIndex ....up....> github_com_codemityio_go_pkg_sync_SafeListIndex
+    github_com_codemityio_go_pkg_sync_NewSafeListIndex ....up....> github_com_codemityio_go_pkg_sync_T
+    github_com_codemityio_go_pkg_sync_NewSafeMap ....up....> github_com_codemityio_go_pkg_sync_SafeMap
+}
+@enduml
+
