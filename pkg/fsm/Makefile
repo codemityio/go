@@ -1,3 +1,6 @@
+%: # Silence errors about non existing targets
+	@true
+
 gen:
 	docker run --rm -it \
   		-w ${PWD} \
