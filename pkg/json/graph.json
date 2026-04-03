@@ -8,8 +8,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 172,
-        "Line": 13,
+        "Offset": 249,
+        "Line": 15,
         "Column": 2
       },
       "PackageName": "json",
@@ -29,8 +29,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 172,
-        "Line": 13,
+        "Offset": 249,
+        "Line": 15,
         "Column": 2
       },
       "PackageName": "json",
@@ -41,6 +41,27 @@
       "Params": null,
       "IsExported": true,
       "Doc": "ErrJSON error.\n"
+    },
+    {
+      "FilePath": "pkg/json/errors.go",
+      "Start": {
+        "Offset": 43,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 249,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "ErrMarshal",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrMarshal error.\n"
     }
   ],
   "Type": [
@@ -132,13 +153,13 @@
         {
           "FilePath": "pkg/json/jsonsequence.go",
           "Start": {
-            "Offset": 674,
-            "Line": 16,
+            "Offset": 936,
+            "Line": 24,
             "Column": 1
           },
           "End": {
-            "Offset": 925,
-            "Line": 31,
+            "Offset": 1187,
+            "Line": 39,
             "Column": 2
           },
           "Name": "Next",
@@ -203,96 +224,162 @@
       ],
       "IsExported": true,
       "Doc": ""
-    }
-  ],
-  "Func": [
+    },
     {
-      "FilePath": "pkg/json/factory.go",
+      "FilePath": "pkg/json/serialiser.go",
       "Start": {
-        "Offset": 122,
-        "Line": 6,
+        "Offset": 120,
+        "Line": 11,
         "Column": 1
       },
       "End": {
-        "Offset": 298,
+        "Offset": 144,
         "Line": 11,
-        "Column": 2
+        "Column": 25
       },
       "PackageName": "json",
       "PackagePath": "github.com/codemityio/go/pkg/json",
-      "Name": "NewRawMessageSequenceMap",
-      "Signature": {
-        "Label": "(input map[string][]json.RawMessage) (*RawMessageSequenceMap)",
-        "Alt": "(map[string][]json.RawMessage) (*RawMessageSequenceMap)",
-        "Arguments": [
-          {
-            "Name": "input",
-            "Type": {
-              "Label": "map[string][]json.RawMessage",
-              "Links": [
-                {
-                  "Name": "string",
-                  "Underlying": "string",
-                  "PackageName": "",
-                  "PackagePath": "",
-                  "PackageAlias": ""
-                },
-                {
-                  "Name": "RawMessage",
-                  "Underlying": "[]byte",
-                  "PackageName": "json",
-                  "PackagePath": "encoding/json",
-                  "PackageAlias": ""
-                }
-              ]
-            }
-          }
-        ],
-        "Returns": [
-          {
-            "Name": "",
-            "Type": {
-              "Label": "*RawMessageSequenceMap",
-              "Links": [
-                {
-                  "Name": "RawMessageSequenceMap",
-                  "Underlying": "struct{data map[string][]encoding/json.RawMessage; cursor map[string]int}",
-                  "PackageName": "json",
-                  "PackagePath": "github.com/codemityio/go/pkg/json",
-                  "PackageAlias": ""
-                }
-              ]
-            }
-          }
-        ],
+      "Name": "Serialiser",
+      "Type": {
+        "Label": "struct",
         "Links": [
           {
-            "Name": "string",
-            "Underlying": "string",
+            "Name": "struct",
+            "Underlying": "struct",
             "PackageName": "",
             "PackagePath": "",
-            "PackageAlias": ""
-          },
-          {
-            "Name": "RawMessage",
-            "Underlying": "[]byte",
-            "PackageName": "json",
-            "PackagePath": "encoding/json",
-            "PackageAlias": ""
-          },
-          {
-            "Name": "RawMessageSequenceMap",
-            "Underlying": "struct{data map[string][]encoding/json.RawMessage; cursor map[string]int}",
-            "PackageName": "json",
-            "PackagePath": "github.com/codemityio/go/pkg/json",
             "PackageAlias": ""
           }
         ]
       },
+      "TypeInfo": "github.com/codemityio/go/pkg/json.Serialiser",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
       "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/json/serialiser.go",
+          "Start": {
+            "Offset": 343,
+            "Line": 19,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 885,
+            "Line": 45,
+            "Column": 2
+          },
+          "Name": "Serialise",
+          "Signature": {
+            "Label": "(input any, groups []string) ([]byte, error)",
+            "Alt": "(any, []string) ([]byte, error)",
+            "Arguments": [
+              {
+                "Name": "input",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "groups",
+                "Type": {
+                  "Label": "[]string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Serialise a simple serialiser with capability to serialise for specific group of interest.\n"
+        }
+      ],
       "IsExported": true,
-      "Doc": "NewRawMessageSequenceMap initialises and returns a new instance of JSONSequence.\n"
-    },
+      "Doc": ""
+    }
+  ],
+  "Func": [
     {
       "FilePath": "pkg/json/json.go",
       "Start": {
@@ -498,6 +585,143 @@
       },
       "IsExported": true,
       "Doc": "NewJSON factory.\n"
+    },
+    {
+      "FilePath": "pkg/json/jsonsequence.go",
+      "Start": {
+        "Offset": 532,
+        "Line": 14,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 708,
+        "Line": 19,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "NewRawMessageSequenceMap",
+      "Signature": {
+        "Label": "(input map[string][]json.RawMessage) (*RawMessageSequenceMap)",
+        "Alt": "(map[string][]json.RawMessage) (*RawMessageSequenceMap)",
+        "Arguments": [
+          {
+            "Name": "input",
+            "Type": {
+              "Label": "map[string][]json.RawMessage",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                },
+                {
+                  "Name": "RawMessage",
+                  "Underlying": "[]byte",
+                  "PackageName": "json",
+                  "PackagePath": "encoding/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*RawMessageSequenceMap",
+              "Links": [
+                {
+                  "Name": "RawMessageSequenceMap",
+                  "Underlying": "struct{data map[string][]encoding/json.RawMessage; cursor map[string]int}",
+                  "PackageName": "json",
+                  "PackagePath": "github.com/codemityio/go/pkg/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "RawMessage",
+            "Underlying": "[]byte",
+            "PackageName": "json",
+            "PackagePath": "encoding/json",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "RawMessageSequenceMap",
+            "Underlying": "struct{data map[string][]encoding/json.RawMessage; cursor map[string]int}",
+            "PackageName": "json",
+            "PackagePath": "github.com/codemityio/go/pkg/json",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewRawMessageSequenceMap initialises and returns a new instance of JSONSequence.\n"
+    },
+    {
+      "FilePath": "pkg/json/serialiser.go",
+      "Start": {
+        "Offset": 189,
+        "Line": 14,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 247,
+        "Line": 16,
+        "Column": 2
+      },
+      "PackageName": "json",
+      "PackagePath": "github.com/codemityio/go/pkg/json",
+      "Name": "NewSerialiser",
+      "Signature": {
+        "Label": "() (*Serialiser)",
+        "Alt": "() (*Serialiser)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*Serialiser",
+              "Links": [
+                {
+                  "Name": "Serialiser",
+                  "Underlying": "struct{}",
+                  "PackageName": "json",
+                  "PackagePath": "github.com/codemityio/go/pkg/json",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Serialiser",
+            "Underlying": "struct{}",
+            "PackageName": "json",
+            "PackagePath": "github.com/codemityio/go/pkg/json",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewSerialiser a group specific factory.\n"
     }
   ],
   "Const": []

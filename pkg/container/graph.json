@@ -1,0 +1,1138 @@
+{
+  "Var": [],
+  "Type": [
+    {
+      "FilePath": "pkg/container/container.go",
+      "Start": {
+        "Offset": 149,
+        "Line": 14,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 347,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "DefaultContainer",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/container.DefaultContainer",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "Container",
+          "PackageName": "container",
+          "PackagePath": "github.com/codemityio/go/pkg/container"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "infoFunc",
+          "Type": {
+            "Label": "LogFunc",
+            "Links": [
+              {
+                "Name": "LogFunc",
+                "Underlying": "func(warn string)",
+                "PackageName": "container",
+                "PackagePath": "github.com/codemityio/go/pkg/container",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "warnFunc",
+          "Type": {
+            "Label": "LogFunc",
+            "Links": [
+              {
+                "Name": "LogFunc",
+                "Underlying": "func(warn string)",
+                "PackageName": "container",
+                "PackagePath": "github.com/codemityio/go/pkg/container",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "signalChannel",
+          "Type": {
+            "Label": "*ast.ChanType",
+            "Links": []
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "shutdownTimeout",
+          "Type": {
+            "Label": "time.Duration",
+            "Links": [
+              {
+                "Name": "Duration",
+                "Underlying": "int64",
+                "PackageName": "time",
+                "PackagePath": "time",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "services",
+          "Type": {
+            "Label": "sync.Map",
+            "Links": [
+              {
+                "Name": "Map",
+                "Underlying": "struct{_ sync.noCopy; m internal/sync.HashTrieMap[any, any]}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "shutdownOnce",
+          "Type": {
+            "Label": "sync.Once",
+            "Links": [
+              {
+                "Name": "Once",
+                "Underlying": "struct{_ sync.noCopy; done sync/atomic.Bool; m sync.Mutex}",
+                "PackageName": "sync",
+                "PackagePath": "sync",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/container/container.go",
+          "Start": {
+            "Offset": 835,
+            "Line": 44,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1094,
+            "Line": 58,
+            "Column": 2
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(key string) (any)",
+            "Alt": "(string) (any)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Get method to get the service.\n"
+        },
+        {
+          "FilePath": "pkg/container/container.go",
+          "Start": {
+            "Offset": 1147,
+            "Line": 61,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1369,
+            "Line": 68,
+            "Column": 2
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(key string, service any, ss func(service any))",
+            "Alt": "(string, any, func(service any))",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "service",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "ss",
+                "Type": {
+                  "Label": "func(service any)",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Set method to set the service in the container.\n"
+        },
+        {
+          "FilePath": "pkg/container/container.go",
+          "Start": {
+            "Offset": 1402,
+            "Line": 71,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1699,
+            "Line": 88,
+            "Column": 2
+          },
+          "Name": "Keys",
+          "Signature": {
+            "Label": "() ([]string)",
+            "Alt": "() ([]string)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Keys list all service keys.\n"
+        },
+        {
+          "FilePath": "pkg/container/container.go",
+          "Start": {
+            "Offset": 1701,
+            "Line": 90,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2038,
+            "Line": 106,
+            "Column": 2
+          },
+          "Name": "handleOSSignals",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/container/container.go",
+          "Start": {
+            "Offset": 2040,
+            "Line": 108,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3059,
+            "Line": 158,
+            "Column": 2
+          },
+          "Name": "shutdown",
+          "Signature": {
+            "Label": "()",
+            "Alt": "()",
+            "Arguments": [],
+            "Returns": [],
+            "Links": []
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/container/interface.go",
+      "Start": {
+        "Offset": 51,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 169,
+        "Line": 8,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "Container",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/container.Container",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/container/interface.go",
+          "Start": {
+            "Offset": 82,
+            "Line": 5,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 98,
+            "Line": 5,
+            "Column": 21
+          },
+          "Name": "Get",
+          "Signature": {
+            "Label": "(key string) (any)",
+            "Alt": "(string) (any)",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/container/interface.go",
+          "Start": {
+            "Offset": 103,
+            "Line": 6,
+            "Column": 5
+          },
+          "End": {
+            "Offset": 150,
+            "Line": 6,
+            "Column": 52
+          },
+          "Name": "Set",
+          "Signature": {
+            "Label": "(key string, service any, ss func(service any))",
+            "Alt": "(string, any, func(service any))",
+            "Arguments": [
+              {
+                "Name": "key",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "service",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "ss",
+                "Type": {
+                  "Label": "func(service any)",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/container/interface.go",
+          "Start": {
+            "Offset": 156,
+            "Line": 7,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 167,
+            "Line": 7,
+            "Column": 17
+          },
+          "Name": "Keys",
+          "Signature": {
+            "Label": "() ([]string)",
+            "Alt": "() ([]string)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/container/type.go",
+      "Start": {
+        "Offset": 69,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 106,
+        "Line": 4,
+        "Column": 38
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "Option",
+      "Type": {
+        "Label": "func(p *DefaultContainer)",
+        "Links": [
+          {
+            "Name": "DefaultContainer",
+            "Underlying": "struct{infoFunc github.com/codemityio/go/pkg/container.LogFunc; warnFunc github.com/codemityio/go/pkg/container.LogFunc; signalChannel chan os.Signal; shutdownTimeout time.Duration; services sync.Map; shutdownOnce sync.Once}",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/container.Option",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/container/type.go",
+      "Start": {
+        "Offset": 143,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 167,
+        "Line": 7,
+        "Column": 25
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "ShutdownFunc",
+      "Type": {
+        "Label": "func()",
+        "Links": []
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/container.ShutdownFunc",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/container/type.go",
+      "Start": {
+        "Offset": 212,
+        "Line": 10,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 283,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "ServiceRecord",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/container.ServiceRecord",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "Service",
+          "Type": {
+            "Label": "any",
+            "Links": [
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Shutdown",
+          "Type": {
+            "Label": "func(service any)",
+            "Links": [
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/container/type.go",
+      "Start": {
+        "Offset": 329,
+        "Line": 16,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 359,
+        "Line": 16,
+        "Column": 31
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "LogFunc",
+      "Type": {
+        "Label": "func(warn string)",
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/container.LogFunc",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/container/container.go",
+      "Start": {
+        "Offset": 374,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 799,
+        "Line": 41,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "New",
+      "Signature": {
+        "Label": "(options ...Option) (*DefaultContainer, ShutdownFunc)",
+        "Alt": "(...Option) (*DefaultContainer, ShutdownFunc)",
+        "Arguments": [
+          {
+            "Name": "options",
+            "Type": {
+              "Label": "...Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*DefaultContainer",
+              "Links": [
+                {
+                  "Name": "DefaultContainer",
+                  "Underlying": "struct{infoFunc github.com/codemityio/go/pkg/container.LogFunc; warnFunc github.com/codemityio/go/pkg/container.LogFunc; signalChannel chan os.Signal; shutdownTimeout time.Duration; services sync.Map; shutdownOnce sync.Once}",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "ShutdownFunc",
+              "Links": [
+                {
+                  "Name": "ShutdownFunc",
+                  "Underlying": "func()",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Option",
+            "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "DefaultContainer",
+            "Underlying": "struct{infoFunc github.com/codemityio/go/pkg/container.LogFunc; warnFunc github.com/codemityio/go/pkg/container.LogFunc; signalChannel chan os.Signal; shutdownTimeout time.Duration; services sync.Map; shutdownOnce sync.Once}",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "ShutdownFunc",
+            "Underlying": "func()",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "New factory function.\n"
+    },
+    {
+      "FilePath": "pkg/container/func.go",
+      "Start": {
+        "Offset": 77,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 198,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "WithInfoFunc",
+      "Signature": {
+        "Label": "(function LogFunc) (Option)",
+        "Alt": "(LogFunc) (Option)",
+        "Arguments": [
+          {
+            "Name": "function",
+            "Type": {
+              "Label": "LogFunc",
+              "Links": [
+                {
+                  "Name": "LogFunc",
+                  "Underlying": "func(warn string)",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "LogFunc",
+            "Underlying": "func(warn string)",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithInfoFunc configuration option.\n"
+    },
+    {
+      "FilePath": "pkg/container/func.go",
+      "Start": {
+        "Offset": 238,
+        "Line": 15,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 359,
+        "Line": 19,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "WithWarnFunc",
+      "Signature": {
+        "Label": "(function LogFunc) (Option)",
+        "Alt": "(LogFunc) (Option)",
+        "Arguments": [
+          {
+            "Name": "function",
+            "Type": {
+              "Label": "LogFunc",
+              "Links": [
+                {
+                  "Name": "LogFunc",
+                  "Underlying": "func(warn string)",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "LogFunc",
+            "Underlying": "func(warn string)",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithWarnFunc configuration option.\n"
+    },
+    {
+      "FilePath": "pkg/container/func.go",
+      "Start": {
+        "Offset": 406,
+        "Line": 22,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 545,
+        "Line": 26,
+        "Column": 2
+      },
+      "PackageName": "container",
+      "PackagePath": "github.com/codemityio/go/pkg/container",
+      "Name": "WithShutdownTimeout",
+      "Signature": {
+        "Label": "(timeout time.Duration) (Option)",
+        "Alt": "(time.Duration) (Option)",
+        "Arguments": [
+          {
+            "Name": "timeout",
+            "Type": {
+              "Label": "time.Duration",
+              "Links": [
+                {
+                  "Name": "Duration",
+                  "Underlying": "int64",
+                  "PackageName": "time",
+                  "PackagePath": "time",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+                  "PackageName": "container",
+                  "PackagePath": "github.com/codemityio/go/pkg/container",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Duration",
+            "Underlying": "int64",
+            "PackageName": "time",
+            "PackagePath": "time",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(p *github.com/codemityio/go/pkg/container.DefaultContainer)",
+            "PackageName": "container",
+            "PackagePath": "github.com/codemityio/go/pkg/container",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithShutdownTimeout configuration option.\n"
+    }
+  ],
+  "Const": []
+}

@@ -10,6 +10,14 @@ type RawMessageSequenceMap struct {
 	cursor map[string]int               // tracks the next index for each key
 }
 
+// NewRawMessageSequenceMap initialises and returns a new instance of JSONSequence.
+func NewRawMessageSequenceMap(input map[string][]json.RawMessage) *RawMessageSequenceMap {
+	return &RawMessageSequenceMap{
+		data:   input,
+		cursor: make(map[string]int),
+	}
+}
+
 // Next returns the next json.RawMessage for the given key in the predefined sequence.
 // If the key is unknown or has an empty sequence, it returns nil.
 // If the sequence is exhausted, the last value is returned repeatedly.

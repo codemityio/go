@@ -1,6 +1,6 @@
 # ![Go](logo.jpg)
 
-![coverage-badge-do-not-edit](https://img.shields.io/badge/Coverage-91%25-brightgreen.svg?longCache=true&style=flat)
+![coverage-badge-do-not-edit](https://img.shields.io/badge/Coverage-90%25-brightgreen.svg?longCache=true&style=flat)
 
 ## Table of contents
 
@@ -21,6 +21,7 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
 
 ## Packages
 
+- [`container`](pkg/container/README.md) - A simple service container.
 - [`dsn`](pkg/dsn/README.md) - A lightweight, scheme-aware parser that normalizes **DSN** strings from **URLs** and file
   paths into a structured form.
 - [`env`](pkg/env/README.md) - This package provides a generic, type-safe wrapper around
@@ -29,7 +30,8 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
   startup-time initialization that panics on misconfiguration.
 - [`fsm`](pkg/fsm/README.md) - This package contains a simple **Finite State Machine** package.
 - [`json`](pkg/json/README.md) - This package provides generic, type-safe utilities for unmarshalling raw JSON into
-  typed Go structs, along with testing helpers for managing deterministic sequences of JSON values.
+  typed Go structs, along with testing helpers for managing deterministic sequences of JSON values and a simple
+  serialiser with capability to serialise for specific group of interest.
 - [`logger`](pkg/logger/README.md) - This package provides a simple asynchronous logger that processes log entries
   through a buffered channel and a background worker. It supports multiple log levels (`debug`, `info`, `warn`, `error`,
   `fatal`) and both `text` and `json` output formats, with structured fields for contextual metadata.
