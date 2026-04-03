@@ -10,4 +10,6 @@ var (
 	ErrPkg = errors.New("json")
 	// ErrJSON error.
 	ErrJSON = fmt.Errorf("%w: JSON error", ErrPkg)
+	// ErrMarshal error.
+	ErrMarshal = fmt.Errorf("%w: marshal error", ErrJSON)
 )

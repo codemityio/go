@@ -1,0 +1,95 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/container" as github_com_codemityio_go_pkg_container {
+    class "<b><font color=#1c1c1c>DefaultContainer</font></b>" as github_com_codemityio_go_pkg_container_DefaultContainer << (S, #b5558d) >> {
+        - infoFunc <font color=#1f38b5>LogFunc</font>
+        - warnFunc <font color=#1f38b5>LogFunc</font>
+        - signalChannel <font color=#1f38b5>*ast.ChanType</font>
+        - shutdownTimeout <font color=#1f38b5>time.Duration</font>
+        - services <font color=#1f38b5>sync.Map</font>
+        - shutdownOnce <font color=#1f38b5>sync.Once</font>
+        + Get <font color=#1f38b5>(key string) (any)</font>
+        + Set <font color=#1f38b5>(key string, service any, ss func(service any))</font>
+        + Keys <font color=#1f38b5>() ([]string)</font>
+        - handleOSSignals <font color=#1f38b5>()</font>
+        - shutdown <font color=#1f38b5>()</font>
+    }
+    class "<b><font color=#1c1c1c>Container</font></b>" as github_com_codemityio_go_pkg_container_Container << (I, #e4f58e) >> {
+        + Get <font color=#1f38b5>(key string) (any)</font>
+        + Set <font color=#1f38b5>(key string, service any, ss func(service any))</font>
+        + Keys <font color=#1f38b5>() ([]string)</font>
+    }
+    class "<b><font color=#1c1c1c>Option</font></b>" as github_com_codemityio_go_pkg_container_Option << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>ShutdownFunc</font></b>" as github_com_codemityio_go_pkg_container_ShutdownFunc << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>ServiceRecord</font></b>" as github_com_codemityio_go_pkg_container_ServiceRecord << (S, #b5558d) >> {
+        + Service <font color=#1f38b5>any</font>
+        + Shutdown <font color=#1f38b5>func(service any)</font>
+    }
+    class "<b><font color=#1c1c1c>LogFunc</font></b>" as github_com_codemityio_go_pkg_container_LogFunc << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>(options ...Option) (*DefaultContainer, ShutdownFunc)</font>" as github_com_codemityio_go_pkg_container_New << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithInfoFunc</font></b><font color=#1f38b5>(function LogFunc) (Option)</font>" as github_com_codemityio_go_pkg_container_WithInfoFunc << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithWarnFunc</font></b><font color=#1f38b5>(function LogFunc) (Option)</font>" as github_com_codemityio_go_pkg_container_WithWarnFunc << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithShutdownTimeout</font></b><font color=#1f38b5>(timeout time.Duration) (Option)</font>" as github_com_codemityio_go_pkg_container_WithShutdownTimeout << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/container" as github_com_codemityio_go_pkg_container {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    package "sync" as .sync {
+        class "Map" as sync_Map << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Once" as sync_Once << (S, #b5558d) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "func(p *DefaultContainer)" as github_com_codemityio_go_pkg_container_func_p__DefaultContainer_ << (F, #739e78) >> {}
+    class "func()" as github_com_codemityio_go_pkg_container_func__ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "func(warn string)" as github_com_codemityio_go_pkg_container_func_warn_string_ << (F, #739e78) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/container" as github_com_codemityio_go_pkg_container {
+    github_com_codemityio_go_pkg_container_DefaultContainer #...up...> _struct
+    github_com_codemityio_go_pkg_container_DefaultContainer ...up...|> github_com_codemityio_go_pkg_container_Container
+    github_com_codemityio_go_pkg_container_DefaultContainer o---up---> github_com_codemityio_go_pkg_container_LogFunc
+    github_com_codemityio_go_pkg_container_DefaultContainer o---up---> time_Duration
+    github_com_codemityio_go_pkg_container_DefaultContainer o---up---> sync_Map
+    github_com_codemityio_go_pkg_container_DefaultContainer o---up---> sync_Once
+    github_com_codemityio_go_pkg_container_DefaultContainer ...up...> _any
+    github_com_codemityio_go_pkg_container_Container #...up...> _interface
+    github_com_codemityio_go_pkg_container_Container ...up...> _any
+    github_com_codemityio_go_pkg_container_Option #...up...> github_com_codemityio_go_pkg_container_DefaultContainer
+    github_com_codemityio_go_pkg_container_Option #...up...> github_com_codemityio_go_pkg_container_func_p__DefaultContainer_
+    github_com_codemityio_go_pkg_container_ShutdownFunc #...up...> github_com_codemityio_go_pkg_container_func__
+    github_com_codemityio_go_pkg_container_ServiceRecord #...up...> _struct
+    github_com_codemityio_go_pkg_container_ServiceRecord o---up---> _any
+    github_com_codemityio_go_pkg_container_LogFunc #...up...> github_com_codemityio_go_pkg_container_func_warn_string_
+    github_com_codemityio_go_pkg_container_New ....up....> github_com_codemityio_go_pkg_container_Option
+    github_com_codemityio_go_pkg_container_New ....up....> github_com_codemityio_go_pkg_container_DefaultContainer
+    github_com_codemityio_go_pkg_container_New ....up....> github_com_codemityio_go_pkg_container_ShutdownFunc
+    github_com_codemityio_go_pkg_container_WithInfoFunc ....up....> github_com_codemityio_go_pkg_container_LogFunc
+    github_com_codemityio_go_pkg_container_WithInfoFunc ....up....> github_com_codemityio_go_pkg_container_Option
+    github_com_codemityio_go_pkg_container_WithWarnFunc ....up....> github_com_codemityio_go_pkg_container_LogFunc
+    github_com_codemityio_go_pkg_container_WithWarnFunc ....up....> github_com_codemityio_go_pkg_container_Option
+    github_com_codemityio_go_pkg_container_WithShutdownTimeout ....up....> time_Duration
+    github_com_codemityio_go_pkg_container_WithShutdownTimeout ....up....> github_com_codemityio_go_pkg_container_Option
+}
+@enduml
+

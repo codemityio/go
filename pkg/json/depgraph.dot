@@ -8,6 +8,10 @@ digraph DepGraph {
     edge [fontname="Courier New", color="grey66", arrowhead="normal", arrowtail="none", arrowsize="0.6", weight="0.5"]
     subgraph deps {
         "github.com/codemityio/go/pkg/json" [label="github.com/codemityio/go/pkg/json", color="gray58", fillcolor="gray99", penwidth=1]
+              "github.com/codemityio/go/pkg/json" -> "github.com/liip/sheriff/v2"
+        "github.com/hashicorp/go-version" [label="github.com/hashicorp/go-version", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/liip/sheriff/v2" [label="github.com/liip/sheriff/v2", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/liip/sheriff/v2" -> "github.com/hashicorp/go-version"
     }
 }
 
