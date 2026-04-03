@@ -7,6 +7,9 @@
 - [Summary](#summary)
 - [Development](#development)
 - [Packages](#packages)
+- [Dependencies](#dependencies)
+  - [Graph](#graph)
+  - [Licenses](#licenses)
 - [License](#license)
 
 ## Summary
@@ -42,6 +45,25 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
   simplify time-dependent logic in tests.
 - [`validator`](pkg/validator/README.md) - This package provides JSON schema-based validation for **JSON**, **YAML**,
   and arbitrary Go values.
+
+## Dependencies
+
+### Graph
+
+![](docs/depgraph.svg)
+
+### Licenses
+
+| Package | Licence | Type |
+|----|----|----|
+| github.com/hashicorp/go-version | https://github.com/hashicorp/go-version/blob/v1.7.0/LICENSE | MPL-2.0 |
+| github.com/iancoleman/strcase | https://github.com/iancoleman/strcase/blob/v0.3.0/LICENSE | MIT |
+| github.com/liip/sheriff/v2 | https://github.com/liip/sheriff/blob/v2.0.1/LICENSE | BSD-3-Clause |
+| github.com/sethvargo/go-envconfig | https://github.com/sethvargo/go-envconfig/blob/v1.3.0/LICENSE | Apache-2.0 |
+| github.com/xeipuuv/gojsonpointer | https://github.com/xeipuuv/gojsonpointer/blob/4e3ac2762d5f/LICENSE-APACHE-2.0.txt | Apache-2.0 |
+| github.com/xeipuuv/gojsonreference | https://github.com/xeipuuv/gojsonreference/blob/bd5ef7bd5415/LICENSE-APACHE-2.0.txt | Apache-2.0 |
+| github.com/xeipuuv/gojsonschema | https://github.com/xeipuuv/gojsonschema/blob/v1.2.0/LICENSE-APACHE-2.0.txt | Apache-2.0 |
+| gopkg.in/yaml.v3 | https://github.com/go-yaml/yaml/blob/v3.0.1/LICENSE | MIT |
 
 ## License
 
