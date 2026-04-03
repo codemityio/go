@@ -141,6 +141,7 @@ case "$1" in
     --document-path=README.md \
     --csv-path=tmp/licenses.csv \
     --skip="github.com/${VENDOR}/${BASE_NAME}" \
+    --skip="github.com/${VENDOR}/${BASE_NAME}/pkg" \
     --header="Licenses" \
     --limiter-left="##" \
     --limiter-right="## License" \

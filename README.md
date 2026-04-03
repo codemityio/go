@@ -56,7 +56,6 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
 
 | Package | Licence | Type |
 |----|----|----|
-| github.com/codemityio/go/pkg | https://github.com/codemityio/go/blob/HEAD/LICENSE | MIT |
 | github.com/hashicorp/go-version | https://github.com/hashicorp/go-version/blob/v1.7.0/LICENSE | MPL-2.0 |
 | github.com/iancoleman/strcase | https://github.com/iancoleman/strcase/blob/v0.3.0/LICENSE | MIT |
 | github.com/liip/sheriff/v2 | https://github.com/liip/sheriff/blob/v2.0.1/LICENSE | BSD-3-Clause |
