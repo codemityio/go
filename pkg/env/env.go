@@ -7,8 +7,8 @@ import (
 	"github.com/sethvargo/go-envconfig"
 )
 
-// MustBuildEnv factory, use it if the error is not worth handling.
-func MustBuildEnv[T any]() *T {
+// MustBuild factory, use it if the error is not worth handling.
+func MustBuild[T any]() *T {
 	config, err := NewEnv[T]()
 	if err != nil {
 		panic(err)
@@ -17,8 +17,15 @@ func MustBuildEnv[T any]() *T {
 	return config
 }
 
-// NewEnv factory.
-func NewEnv[T any]() (*T, error) {
+// MustBuildEnv factory, use it if the error is not worth handling.
+//
+// Deprecated: Use MustBuild.
+func MustBuildEnv[T any]() *T {
+	return MustBuild[T]()
+}
+
+// New factory.
+func New[T any]() (*T, error) {
 	var config T
 
 	if e := envconfig.Process(context.Background(), &config); e != nil {
@@ -26,4 +33,11 @@ func NewEnv[T any]() (*T, error) {
 	}
 
 	return &config, nil
+}
+
+// NewEnv factory.
+//
+// Deprecated: Use New.
+func NewEnv[T any]() (*T, error) {
+	return New[T]()
 }
