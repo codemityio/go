@@ -11,23 +11,23 @@ type MyEnvConfig struct {
 	Field string `env:"FIELD"`
 }
 
-func TestNewEnv(t *testing.T) {
+func TestNew(t *testing.T) {
 	t.Setenv("FIELD", "field")
 
-	cfg, err := NewEnv[MyEnvConfig]()
+	cfg, err := New[MyEnvConfig]()
 	require.NoError(t, err)
 
 	assert.Equal(t, "field", cfg.Field)
 }
 
-func TestMustBuildEnv(t *testing.T) {
+func TestMustBuild(t *testing.T) {
 	defer func() {
 		require.Nil(t, recover())
 	}()
 
 	t.Setenv("FIELD", "field")
 
-	cfg := MustBuildEnv[MyEnvConfig]()
+	cfg := MustBuild[MyEnvConfig]()
 
 	assert.Equal(t, "field", cfg.Field)
 }
