@@ -60,7 +60,7 @@ package "github.com/codemityio/go/pkg/container" as github_com_codemityio_go_pkg
     class "struct" as _struct << (S, #b5558d) >> {}
     class "any" as _any << (T, #6d8cbf) >> {}
     class "any" as _any << (T, #6d8cbf) >> {}
-    class "func(warn string)" as github_com_codemityio_go_pkg_container_func_warn_string_ << (F, #739e78) >> {}
+    class "func(message string)" as github_com_codemityio_go_pkg_container_func_message_string_ << (F, #739e78) >> {}
     package "time" as .time {
         class "Duration" as time_Duration << (P, #74b1b5) >> {}
     }
@@ -80,7 +80,7 @@ package "github.com/codemityio/go/pkg/container" as github_com_codemityio_go_pkg
     github_com_codemityio_go_pkg_container_ShutdownFunc #...up...> github_com_codemityio_go_pkg_container_func__
     github_com_codemityio_go_pkg_container_ServiceRecord #...up...> _struct
     github_com_codemityio_go_pkg_container_ServiceRecord o---up---> _any
-    github_com_codemityio_go_pkg_container_LogFunc #...up...> github_com_codemityio_go_pkg_container_func_warn_string_
+    github_com_codemityio_go_pkg_container_LogFunc #...up...> github_com_codemityio_go_pkg_container_func_message_string_
     github_com_codemityio_go_pkg_container_New ....up....> github_com_codemityio_go_pkg_container_Option
     github_com_codemityio_go_pkg_container_New ....up....> github_com_codemityio_go_pkg_container_DefaultContainer
     github_com_codemityio_go_pkg_container_New ....up....> github_com_codemityio_go_pkg_container_ShutdownFunc

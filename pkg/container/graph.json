@@ -47,7 +47,7 @@
             "Links": [
               {
                 "Name": "LogFunc",
-                "Underlying": "func(warn string)",
+                "Underlying": "func(message string)",
                 "PackageName": "container",
                 "PackagePath": "github.com/codemityio/go/pkg/container",
                 "PackageAlias": ""
@@ -65,7 +65,7 @@
             "Links": [
               {
                 "Name": "LogFunc",
-                "Underlying": "func(warn string)",
+                "Underlying": "func(message string)",
                 "PackageName": "container",
                 "PackagePath": "github.com/codemityio/go/pkg/container",
                 "PackageAlias": ""
@@ -788,15 +788,15 @@
         "Column": 1
       },
       "End": {
-        "Offset": 359,
+        "Offset": 362,
         "Line": 16,
-        "Column": 31
+        "Column": 34
       },
       "PackageName": "container",
       "PackagePath": "github.com/codemityio/go/pkg/container",
       "Name": "LogFunc",
       "Type": {
-        "Label": "func(warn string)",
+        "Label": "func(message string)",
         "Links": [
           {
             "Name": "string",
@@ -940,7 +940,7 @@
               "Links": [
                 {
                   "Name": "LogFunc",
-                  "Underlying": "func(warn string)",
+                  "Underlying": "func(message string)",
                   "PackageName": "container",
                   "PackagePath": "github.com/codemityio/go/pkg/container",
                   "PackageAlias": ""
@@ -969,7 +969,7 @@
         "Links": [
           {
             "Name": "LogFunc",
-            "Underlying": "func(warn string)",
+            "Underlying": "func(message string)",
             "PackageName": "container",
             "PackagePath": "github.com/codemityio/go/pkg/container",
             "PackageAlias": ""
@@ -1013,7 +1013,7 @@
               "Links": [
                 {
                   "Name": "LogFunc",
-                  "Underlying": "func(warn string)",
+                  "Underlying": "func(message string)",
                   "PackageName": "container",
                   "PackagePath": "github.com/codemityio/go/pkg/container",
                   "PackageAlias": ""
@@ -1042,7 +1042,7 @@
         "Links": [
           {
             "Name": "LogFunc",
-            "Underlying": "func(warn string)",
+            "Underlying": "func(message string)",
             "PackageName": "container",
             "PackagePath": "github.com/codemityio/go/pkg/container",
             "PackageAlias": ""

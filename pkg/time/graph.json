@@ -82,6 +82,54 @@
           "IsPointerReceiver": false,
           "IsExported": true,
           "Doc": "Now returns the current time using the provider.\nIf the provider is nil, time.Now is used.\n"
+        },
+        {
+          "FilePath": "pkg/time/provider.go",
+          "Start": {
+            "Offset": 516,
+            "Line": 22,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 619,
+            "Line": 28,
+            "Column": 2
+          },
+          "Name": "Unix",
+          "Signature": {
+            "Label": "() (int64)",
+            "Alt": "() (int64)",
+            "Arguments": [],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "int64",
+                  "Links": [
+                    {
+                      "Name": "int64",
+                      "Underlying": "int64",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "int64",
+                "Underlying": "int64",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": "Unix returns t as a Unix time, the number of seconds elapsed\nsince January 1, 1970 UTC. The result does not depend on the\nlocation associated with t.\n"
         }
       ],
       "IsExported": true,

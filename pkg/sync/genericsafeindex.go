@@ -44,7 +44,7 @@ func (si *GenericSafeIndex[T]) Unset(index uint64) {
 }
 
 // Get returns the value stored under the index.
-func (si *GenericSafeIndex[T]) Get(index uint64) (T, bool) { //nolint:ireturn // safe
+func (si *GenericSafeIndex[T]) Get(index uint64) (T, bool) { //nolint:ireturn
 	si.mutex.RLock()
 	defer si.mutex.RUnlock()
 

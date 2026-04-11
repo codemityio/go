@@ -1,0 +1,176 @@
+digraph DepGraph {
+    fontname="Courier New"
+    splines="ortho"
+    nodesep="1.4"
+    ranksep="0.8"
+    graph [rankdir="TB", pad="0.2"]
+    node [shape="tab", fontname="Courier New", style="filled", fixedsize=false]
+    edge [fontname="Courier New", color="grey66", arrowhead="normal", arrowtail="none", arrowsize="0.6", weight="0.5"]
+    subgraph deps {
+        "github.com/codemityio/go/pkg/mongo" [label="github.com/codemityio/go/pkg/mongo", color="gray58", fillcolor="gray99", penwidth=1]
+              "github.com/codemityio/go/pkg/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo"
+              "github.com/codemityio/go/pkg/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/options"
+              "github.com/codemityio/go/pkg/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+        "github.com/klauspost/compress" [label="github.com/klauspost/compress", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/klauspost/compress/fse" [label="github.com/klauspost/compress/fse", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/klauspost/compress/huff0" [label="github.com/klauspost/compress/huff0", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/klauspost/compress/huff0" -> "github.com/klauspost/compress/fse"
+        "github.com/klauspost/compress/s2" [label="github.com/klauspost/compress/s2", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/klauspost/compress/snappy" [label="github.com/klauspost/compress/snappy", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/klauspost/compress/snappy" -> "github.com/klauspost/compress/s2"
+        "github.com/klauspost/compress/zstd" [label="github.com/klauspost/compress/zstd", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/klauspost/compress/zstd" -> "github.com/klauspost/compress"
+              "github.com/klauspost/compress/zstd" -> "github.com/klauspost/compress/huff0"
+        "github.com/xdg-go/scram" [label="github.com/xdg-go/scram", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/xdg-go/scram" -> "github.com/xdg-go/stringprep"
+        "github.com/xdg-go/stringprep" [label="github.com/xdg-go/stringprep", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/xdg-go/stringprep" -> "golang.org/x/text/unicode/norm"
+        "github.com/youmark/pkcs8" [label="github.com/youmark/pkcs8", color="gray65", fillcolor="gray83", penwidth=1]
+              "github.com/youmark/pkcs8" -> "golang.org/x/crypto/pbkdf2"
+              "github.com/youmark/pkcs8" -> "golang.org/x/crypto/scrypt"
+        "go.mongodb.org/mongo-driver/v2/bson" [label="go.mongodb.org/mongo-driver/v2/bson", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/bson" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+        "go.mongodb.org/mongo-driver/v2/event" [label="go.mongodb.org/mongo-driver/v2/event", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/event" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/event" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/event" -> "go.mongodb.org/mongo-driver/v2/tag"
+        "go.mongodb.org/mongo-driver/v2/mongo" [label="go.mongodb.org/mongo-driver/v2/mongo", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/event"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/options"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/readconcern"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/writeconcern"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology"
+              "go.mongodb.org/mongo-driver/v2/mongo" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage"
+        "go.mongodb.org/mongo-driver/v2/mongo/address" [label="go.mongodb.org/mongo-driver/v2/mongo/address", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/mongo/options" [label="go.mongodb.org/mongo-driver/v2/mongo/options", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "github.com/youmark/pkcs8"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/event"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/mongo/readconcern"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/mongo/writeconcern"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/tag"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring"
+              "go.mongodb.org/mongo-driver/v2/mongo/options" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage"
+        "go.mongodb.org/mongo-driver/v2/mongo/readconcern" [label="go.mongodb.org/mongo-driver/v2/mongo/readconcern", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/mongo/readpref" [label="go.mongodb.org/mongo-driver/v2/mongo/readpref", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/mongo/readpref" -> "go.mongodb.org/mongo-driver/v2/tag"
+        "go.mongodb.org/mongo-driver/v2/mongo/writeconcern" [label="go.mongodb.org/mongo-driver/v2/mongo/writeconcern", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/tag" [label="go.mongodb.org/mongo-driver/v2/tag", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/version" [label="go.mongodb.org/mongo-driver/v2/version", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore" [label="go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "github.com/klauspost/compress/snappy"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "github.com/klauspost/compress/zstd"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/event"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/mongo/readconcern"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/mongo/writeconcern"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "github.com/xdg-go/scram"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "github.com/xdg-go/stringprep"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth/creds"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth/creds" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth/creds", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth/creds" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/dns"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/description", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description" -> "go.mongodb.org/mongo-driver/v2/tag"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/dns" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/dns", color="gray65", fillcolor="gray83", penwidth=1]
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mongocrypt/options" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/ocsp" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/ocsp", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/ocsp" -> "golang.org/x/crypto/ocsp"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/ocsp" -> "golang.org/x/sync/errgroup"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/event"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/mongo/readconcern"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/mongo/writeconcern"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/version"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/session", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/mongo/readconcern"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/mongo/writeconcern"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/bson"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/event"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/mongo/address"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/mongo/options"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/auth"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/description"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/dns"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/mnet"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/ocsp"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/operation"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/session"
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/topology" -> "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage"
+        "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage" [label="go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage", color="gray65", fillcolor="gray83", penwidth=1]
+              "go.mongodb.org/mongo-driver/v2/x/mongo/driver/wiremessage" -> "go.mongodb.org/mongo-driver/v2/x/bsonx/bsoncore"
+        "golang.org/x/crypto/ocsp" [label="golang.org/x/crypto/ocsp", color="gray65", fillcolor="gray83", penwidth=1]
+        "golang.org/x/crypto/pbkdf2" [label="golang.org/x/crypto/pbkdf2", color="gray65", fillcolor="gray83", penwidth=1]
+        "golang.org/x/crypto/scrypt" [label="golang.org/x/crypto/scrypt", color="gray65", fillcolor="gray83", penwidth=1]
+              "golang.org/x/crypto/scrypt" -> "golang.org/x/crypto/pbkdf2"
+        "golang.org/x/sync/errgroup" [label="golang.org/x/sync/errgroup", color="gray65", fillcolor="gray83", penwidth=1]
+        "golang.org/x/text/transform" [label="golang.org/x/text/transform", color="gray65", fillcolor="gray83", penwidth=1]
+        "golang.org/x/text/unicode/norm" [label="golang.org/x/text/unicode/norm", color="gray65", fillcolor="gray83", penwidth=1]
+              "golang.org/x/text/unicode/norm" -> "golang.org/x/text/transform"
+    }
+}
+

@@ -1,0 +1,11 @@
+{
+  "port": 8080,
+  "readTimeout": 15000000000,
+  "writeTimeout": 15000000000,
+  "errorsBufferSize": 100,
+  "tls": {
+    "cert": "cert",
+    "key": "key",
+    "caCert": "ca_cert"
+  }
+}

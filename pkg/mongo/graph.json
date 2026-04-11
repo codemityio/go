@@ -1,0 +1,946 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/mongo/errors.go",
+      "Start": {
+        "Offset": 44,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 182,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "mongo",
+      "PackagePath": "github.com/codemityio/go/pkg/mongo",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/mongo/errors.go",
+      "Start": {
+        "Offset": 44,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 182,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "mongo",
+      "PackagePath": "github.com/codemityio/go/pkg/mongo",
+      "Name": "ErrClient",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrClient error.\n"
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/mongo/config.go",
+      "Start": {
+        "Offset": 56,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 391,
+        "Line": 8,
+        "Column": 2
+      },
+      "PackageName": "mongo",
+      "PackagePath": "github.com/codemityio/go/pkg/mongo",
+      "Name": "Config",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/mongo.Config",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "DSN",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`env:\"DSN,default=mongodb://localhost:27017/database?retryWrites=false\" json:\"dsn\"`",
+            "Tags": [
+              {
+                "Name": "env",
+                "Value": "DSN"
+              },
+              {
+                "Name": "env",
+                "Value": "default=mongodb://localhost:27017/database?retryWrites=false"
+              },
+              {
+                "Name": "json",
+                "Value": "dsn"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "Username",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`env:\"USERNAME,default=username\" json:\"username\"`",
+            "Tags": [
+              {
+                "Name": "env",
+                "Value": "USERNAME"
+              },
+              {
+                "Name": "env",
+                "Value": "default=username"
+              },
+              {
+                "Name": "json",
+                "Value": "username"
+              }
+            ]
+          },
+          "Doc": ""
+        },
+        {
+          "Name": "Password",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": {
+            "Label": "`env:\"PASSWORD,default=password\" json:\"password\"`",
+            "Tags": [
+              {
+                "Name": "env",
+                "Value": "PASSWORD"
+              },
+              {
+                "Name": "env",
+                "Value": "default=password"
+              },
+              {
+                "Name": "json",
+                "Value": "password"
+              }
+            ]
+          },
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/mongo/interface.go",
+      "Start": {
+        "Offset": 199,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 706,
+        "Line": 23,
+        "Column": 2
+      },
+      "PackageName": "mongo",
+      "PackagePath": "github.com/codemityio/go/pkg/mongo",
+      "Name": "Clienter",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/mongo.Clienter",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/mongo/interface.go",
+          "Start": {
+            "Offset": 233,
+            "Line": 13,
+            "Column": 9
+          },
+          "End": {
+            "Offset": 288,
+            "Line": 13,
+            "Column": 64
+          },
+          "Name": "Connect",
+          "Signature": {
+            "Label": "(opts ...*options.ClientOptions) (*mongo.Client, error)",
+            "Alt": "(...*options.ClientOptions) (*mongo.Client, error)",
+            "Arguments": [
+              {
+                "Name": "opts",
+                "Type": {
+                  "Label": "...*options.ClientOptions",
+                  "Links": [
+                    {
+                      "Name": "ClientOptions",
+                      "Underlying": "struct{AppName *string; Auth *go.mongodb.org/mongo-driver/v2/mongo/options.Credential; AutoEncryptionOptions *go.mongodb.org/mongo-driver/v2/mongo/options.AutoEncryptionOptions; ConnectTimeout *time.Duration; Compressors []string; Dialer go.mongodb.org/mongo-driver/v2/mongo/options.ContextDialer; Direct *bool; DisableOCSPEndpointCheck *bool; DriverInfo *go.mongodb.org/mongo-driver/v2/mongo/options.DriverInfo; HeartbeatInterval *time.Duration; Hosts []string; HTTPClient *net/http.Client; LoadBalanced *bool; LocalThreshold *time.Duration; LoggerOptions *go.mongodb.org/mongo-driver/v2/mongo/options.LoggerOptions; MaxConnIdleTime *time.Duration; MaxPoolSize *uint64; MinPoolSize *uint64; MaxConnecting *uint64; PoolMonitor *go.mongodb.org/mongo-driver/v2/event.PoolMonitor; Monitor *go.mongodb.org/mongo-driver/v2/event.CommandMonitor; ServerMonitor *go.mongodb.org/mongo-driver/v2/event.ServerMonitor; ReadConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; ReadPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; BSONOptions *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; Registry *go.mongodb.org/mongo-driver/v2/bson.Registry; ReplicaSet *string; RetryReads *bool; RetryWrites *bool; ServerAPIOptions *go.mongodb.org/mongo-driver/v2/mongo/options.ServerAPIOptions; ServerMonitoringMode *string; ServerSelectionTimeout *time.Duration; SRVMaxHosts *int; SRVServiceName *string; Timeout *time.Duration; TLSConfig *crypto/tls.Config; WriteConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; ZlibLevel *int; ZstdLevel *int; Crypt go.mongodb.org/mongo-driver/v2/x/mongo/driver.Crypt; Deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; Custom go.mongodb.org/mongo-driver/v2/internal/optionsutil.Options; connString *go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring.ConnString; err error}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*mongo.Client",
+                  "Links": [
+                    {
+                      "Name": "Client",
+                      "Underlying": "struct{id go.mongodb.org/mongo-driver/v2/internal/uuid.UUID; deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; localThreshold time.Duration; retryWrites bool; retryReads bool; clock *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.ClusterClock; readPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; readConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; writeConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; bsonOpts *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; registry *go.mongodb.org/mongo-driver/v2/bson.Registry; monitor *go.mongodb.org/mongo-driver/v2/event.CommandMonitor; serverAPI *go.mongodb.org/mongo-driver/v2/x/mongo/driver.ServerAPIOptions; serverMonitor *go.mongodb.org/mongo-driver/v2/event.ServerMonitor; sessionPool *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.Pool; timeout *time.Duration; httpClient *net/http.Client; logger *go.mongodb.org/mongo-driver/v2/internal/logger.Logger; currentDriverInfo *sync/atomic.Pointer[go.mongodb.org/mongo-driver/v2/mongo/options.DriverInfo]; seenDriverInfo sync.Map; isAutoEncryptionSet bool; keyVaultClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; keyVaultCollFLE *go.mongodb.org/mongo-driver/v2/mongo.Collection; mongocryptdFLE *go.mongodb.org/mongo-driver/v2/mongo.mongocryptdClient; cryptFLE go.mongodb.org/mongo-driver/v2/x/mongo/driver.Crypt; metadataClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; internalClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; encryptedFieldsMap map[string]any; authenticator go.mongodb.org/mongo-driver/v2/x/mongo/driver.Authenticator}",
+                      "PackageName": "mongo",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "ClientOptions",
+                "Underlying": "struct{AppName *string; Auth *go.mongodb.org/mongo-driver/v2/mongo/options.Credential; AutoEncryptionOptions *go.mongodb.org/mongo-driver/v2/mongo/options.AutoEncryptionOptions; ConnectTimeout *time.Duration; Compressors []string; Dialer go.mongodb.org/mongo-driver/v2/mongo/options.ContextDialer; Direct *bool; DisableOCSPEndpointCheck *bool; DriverInfo *go.mongodb.org/mongo-driver/v2/mongo/options.DriverInfo; HeartbeatInterval *time.Duration; Hosts []string; HTTPClient *net/http.Client; LoadBalanced *bool; LocalThreshold *time.Duration; LoggerOptions *go.mongodb.org/mongo-driver/v2/mongo/options.LoggerOptions; MaxConnIdleTime *time.Duration; MaxPoolSize *uint64; MinPoolSize *uint64; MaxConnecting *uint64; PoolMonitor *go.mongodb.org/mongo-driver/v2/event.PoolMonitor; Monitor *go.mongodb.org/mongo-driver/v2/event.CommandMonitor; ServerMonitor *go.mongodb.org/mongo-driver/v2/event.ServerMonitor; ReadConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; ReadPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; BSONOptions *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; Registry *go.mongodb.org/mongo-driver/v2/bson.Registry; ReplicaSet *string; RetryReads *bool; RetryWrites *bool; ServerAPIOptions *go.mongodb.org/mongo-driver/v2/mongo/options.ServerAPIOptions; ServerMonitoringMode *string; ServerSelectionTimeout *time.Duration; SRVMaxHosts *int; SRVServiceName *string; Timeout *time.Duration; TLSConfig *crypto/tls.Config; WriteConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; ZlibLevel *int; ZstdLevel *int; Crypt go.mongodb.org/mongo-driver/v2/x/mongo/driver.Crypt; Deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; Custom go.mongodb.org/mongo-driver/v2/internal/optionsutil.Options; connString *go.mongodb.org/mongo-driver/v2/x/mongo/driver/connstring.ConnString; err error}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Client",
+                "Underlying": "struct{id go.mongodb.org/mongo-driver/v2/internal/uuid.UUID; deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; localThreshold time.Duration; retryWrites bool; retryReads bool; clock *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.ClusterClock; readPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; readConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; writeConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; bsonOpts *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; registry *go.mongodb.org/mongo-driver/v2/bson.Registry; monitor *go.mongodb.org/mongo-driver/v2/event.CommandMonitor; serverAPI *go.mongodb.org/mongo-driver/v2/x/mongo/driver.ServerAPIOptions; serverMonitor *go.mongodb.org/mongo-driver/v2/event.ServerMonitor; sessionPool *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.Pool; timeout *time.Duration; httpClient *net/http.Client; logger *go.mongodb.org/mongo-driver/v2/internal/logger.Logger; currentDriverInfo *sync/atomic.Pointer[go.mongodb.org/mongo-driver/v2/mongo/options.DriverInfo]; seenDriverInfo sync.Map; isAutoEncryptionSet bool; keyVaultClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; keyVaultCollFLE *go.mongodb.org/mongo-driver/v2/mongo.Collection; mongocryptdFLE *go.mongodb.org/mongo-driver/v2/mongo.mongocryptdClient; cryptFLE go.mongodb.org/mongo-driver/v2/x/mongo/driver.Crypt; metadataClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; internalClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; encryptedFieldsMap map[string]any; authenticator go.mongodb.org/mongo-driver/v2/x/mongo/driver.Authenticator}",
+                "PackageName": "mongo",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/mongo/interface.go",
+          "Start": {
+            "Offset": 300,
+            "Line": 14,
+            "Column": 12
+          },
+          "End": {
+            "Offset": 327,
+            "Line": 14,
+            "Column": 39
+          },
+          "Name": "Disconnect",
+          "Signature": {
+            "Label": "(ctx context.Context) (error)",
+            "Alt": "(context.Context) (error)",
+            "Arguments": [
+              {
+                "Name": "ctx",
+                "Type": {
+                  "Label": "context.Context",
+                  "Links": [
+                    {
+                      "Name": "Context",
+                      "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                      "PackageName": "context",
+                      "PackagePath": "context",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Context",
+                "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                "PackageName": "context",
+                "PackagePath": "context",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/mongo/interface.go",
+          "Start": {
+            "Offset": 333,
+            "Line": 15,
+            "Column": 6
+          },
+          "End": {
+            "Offset": 383,
+            "Line": 15,
+            "Column": 56
+          },
+          "Name": "Ping",
+          "Signature": {
+            "Label": "(ctx context.Context, rp *readpref.ReadPref) (error)",
+            "Alt": "(context.Context, *readpref.ReadPref) (error)",
+            "Arguments": [
+              {
+                "Name": "ctx",
+                "Type": {
+                  "Label": "context.Context",
+                  "Links": [
+                    {
+                      "Name": "Context",
+                      "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                      "PackageName": "context",
+                      "PackagePath": "context",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "rp",
+                "Type": {
+                  "Label": "*readpref.ReadPref",
+                  "Links": [
+                    {
+                      "Name": "ReadPref",
+                      "Underlying": "struct{maxStaleness time.Duration; maxStalenessSet bool; mode go.mongodb.org/mongo-driver/v2/mongo/readpref.Mode; tagSets []go.mongodb.org/mongo-driver/v2/tag.Set; hedgeEnabled *bool}",
+                      "PackageName": "readpref",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/readpref",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Context",
+                "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                "PackageName": "context",
+                "PackagePath": "context",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "ReadPref",
+                "Underlying": "struct{maxStaleness time.Duration; maxStalenessSet bool; mode go.mongodb.org/mongo-driver/v2/mongo/readpref.Mode; tagSets []go.mongodb.org/mongo-driver/v2/tag.Set; hedgeEnabled *bool}",
+                "PackageName": "readpref",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/readpref",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/mongo/interface.go",
+          "Start": {
+            "Offset": 397,
+            "Line": 16,
+            "Column": 14
+          },
+          "End": {
+            "Offset": 469,
+            "Line": 16,
+            "Column": 86
+          },
+          "Name": "StartSession",
+          "Signature": {
+            "Label": "(opts ...options.Lister[options.SessionOptions]) (*mongo.Session, error)",
+            "Alt": "(...options.Lister[options.SessionOptions]) (*mongo.Session, error)",
+            "Arguments": [
+              {
+                "Name": "opts",
+                "Type": {
+                  "Label": "...options.Lister[options.SessionOptions]",
+                  "Links": [
+                    {
+                      "Name": "Lister",
+                      "Underlying": "interface{List() []func(*T) error}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    },
+                    {
+                      "Name": "SessionOptions",
+                      "Underlying": "struct{CausalConsistency *bool; DefaultTransactionOptions *go.mongodb.org/mongo-driver/v2/mongo/options.TransactionOptionsBuilder; Snapshot *bool; SnapshotTime *go.mongodb.org/mongo-driver/v2/bson.Timestamp}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*mongo.Session",
+                  "Links": [
+                    {
+                      "Name": "Session",
+                      "Underlying": "struct{clientSession *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.Client; client *go.mongodb.org/mongo-driver/v2/mongo.Client; deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; didCommitAfterStart bool}",
+                      "PackageName": "mongo",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Lister",
+                "Underlying": "interface{List() []func(*T) error}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "SessionOptions",
+                "Underlying": "struct{CausalConsistency *bool; DefaultTransactionOptions *go.mongodb.org/mongo-driver/v2/mongo/options.TransactionOptionsBuilder; Snapshot *bool; SnapshotTime *go.mongodb.org/mongo-driver/v2/bson.Timestamp}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Session",
+                "Underlying": "struct{clientSession *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.Client; client *go.mongodb.org/mongo-driver/v2/mongo.Client; deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; didCommitAfterStart bool}",
+                "PackageName": "mongo",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/mongo/interface.go",
+          "Start": {
+            "Offset": 479,
+            "Line": 17,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 557,
+            "Line": 17,
+            "Column": 88
+          },
+          "Name": "Database",
+          "Signature": {
+            "Label": "(name string, opts ...options.Lister[options.DatabaseOptions]) (*mongo.Database)",
+            "Alt": "(string, ...options.Lister[options.DatabaseOptions]) (*mongo.Database)",
+            "Arguments": [
+              {
+                "Name": "name",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "opts",
+                "Type": {
+                  "Label": "...options.Lister[options.DatabaseOptions]",
+                  "Links": [
+                    {
+                      "Name": "Lister",
+                      "Underlying": "interface{List() []func(*T) error}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    },
+                    {
+                      "Name": "DatabaseOptions",
+                      "Underlying": "struct{ReadConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; WriteConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; ReadPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; BSONOptions *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; Registry *go.mongodb.org/mongo-driver/v2/bson.Registry}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "*mongo.Database",
+                  "Links": [
+                    {
+                      "Name": "Database",
+                      "Underlying": "struct{client *go.mongodb.org/mongo-driver/v2/mongo.Client; name string; readConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; writeConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; readPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; readSelector go.mongodb.org/mongo-driver/v2/x/mongo/driver/description.ServerSelector; writeSelector go.mongodb.org/mongo-driver/v2/x/mongo/driver/description.ServerSelector; bsonOpts *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; registry *go.mongodb.org/mongo-driver/v2/bson.Registry}",
+                      "PackageName": "mongo",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Lister",
+                "Underlying": "interface{List() []func(*T) error}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "DatabaseOptions",
+                "Underlying": "struct{ReadConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; WriteConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; ReadPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; BSONOptions *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; Registry *go.mongodb.org/mongo-driver/v2/bson.Registry}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Database",
+                "Underlying": "struct{client *go.mongodb.org/mongo-driver/v2/mongo.Client; name string; readConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; writeConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; readPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; readSelector go.mongodb.org/mongo-driver/v2/x/mongo/driver/description.ServerSelector; writeSelector go.mongodb.org/mongo-driver/v2/x/mongo/driver/description.ServerSelector; bsonOpts *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; registry *go.mongodb.org/mongo-driver/v2/bson.Registry}",
+                "PackageName": "mongo",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        },
+        {
+          "FilePath": "pkg/mongo/interface.go",
+          "Start": {
+            "Offset": 572,
+            "Line": 18,
+            "Column": 15
+          },
+          "End": {
+            "Offset": 704,
+            "Line": 22,
+            "Column": 38
+          },
+          "Name": "ListDatabases",
+          "Signature": {
+            "Label": "(ctx context.Context, filter any, opts ...options.Lister[options.ListDatabasesOptions]) (mongo.ListDatabasesResult, error)",
+            "Alt": "(context.Context, any, ...options.Lister[options.ListDatabasesOptions]) (mongo.ListDatabasesResult, error)",
+            "Arguments": [
+              {
+                "Name": "ctx",
+                "Type": {
+                  "Label": "context.Context",
+                  "Links": [
+                    {
+                      "Name": "Context",
+                      "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                      "PackageName": "context",
+                      "PackagePath": "context",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "filter",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "opts",
+                "Type": {
+                  "Label": "...options.Lister[options.ListDatabasesOptions]",
+                  "Links": [
+                    {
+                      "Name": "Lister",
+                      "Underlying": "interface{List() []func(*T) error}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    },
+                    {
+                      "Name": "ListDatabasesOptions",
+                      "Underlying": "struct{NameOnly *bool; AuthorizedDatabases *bool}",
+                      "PackageName": "options",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "mongo.ListDatabasesResult",
+                  "Links": [
+                    {
+                      "Name": "ListDatabasesResult",
+                      "Underlying": "struct{Databases []go.mongodb.org/mongo-driver/v2/mongo.DatabaseSpecification; TotalSize int64}",
+                      "PackageName": "mongo",
+                      "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Context",
+                "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                "PackageName": "context",
+                "PackagePath": "context",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Lister",
+                "Underlying": "interface{List() []func(*T) error}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "ListDatabasesOptions",
+                "Underlying": "struct{NameOnly *bool; AuthorizedDatabases *bool}",
+                "PackageName": "options",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo/options",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "ListDatabasesResult",
+                "Underlying": "struct{Databases []go.mongodb.org/mongo-driver/v2/mongo.DatabaseSpecification; TotalSize int64}",
+                "PackageName": "mongo",
+                "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/mongo/factory.go",
+      "Start": {
+        "Offset": 160,
+        "Line": 11,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 732,
+        "Line": 31,
+        "Column": 2
+      },
+      "PackageName": "mongo",
+      "PackagePath": "github.com/codemityio/go/pkg/mongo",
+      "Name": "NewClient",
+      "Signature": {
+        "Label": "(config *Config) (*mongo.Client, error)",
+        "Alt": "(*Config) (*mongo.Client, error)",
+        "Arguments": [
+          {
+            "Name": "config",
+            "Type": {
+              "Label": "*Config",
+              "Links": [
+                {
+                  "Name": "Config",
+                  "Underlying": "struct{DSN string \"env:\\\"DSN,default=mongodb://localhost:27017/database?retryWrites=false\\\" json:\\\"dsn\\\"\"; Username string \"env:\\\"USERNAME,default=username\\\"                                        json:\\\"username\\\"\"; Password string \"env:\\\"PASSWORD,default=password\\\"                                        json:\\\"password\\\"\"}",
+                  "PackageName": "mongo",
+                  "PackagePath": "github.com/codemityio/go/pkg/mongo",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*mongo.Client",
+              "Links": [
+                {
+                  "Name": "Client",
+                  "Underlying": "struct{id go.mongodb.org/mongo-driver/v2/internal/uuid.UUID; deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; localThreshold time.Duration; retryWrites bool; retryReads bool; clock *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.ClusterClock; readPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; readConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; writeConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; bsonOpts *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; registry *go.mongodb.org/mongo-driver/v2/bson.Registry; monitor *go.mongodb.org/mongo-driver/v2/event.CommandMonitor; serverAPI *go.mongodb.org/mongo-driver/v2/x/mongo/driver.ServerAPIOptions; serverMonitor *go.mongodb.org/mongo-driver/v2/event.ServerMonitor; sessionPool *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.Pool; timeout *time.Duration; httpClient *net/http.Client; logger *go.mongodb.org/mongo-driver/v2/internal/logger.Logger; currentDriverInfo *sync/atomic.Pointer[go.mongodb.org/mongo-driver/v2/mongo/options.DriverInfo]; seenDriverInfo sync.Map; isAutoEncryptionSet bool; keyVaultClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; keyVaultCollFLE *go.mongodb.org/mongo-driver/v2/mongo.Collection; mongocryptdFLE *go.mongodb.org/mongo-driver/v2/mongo.mongocryptdClient; cryptFLE go.mongodb.org/mongo-driver/v2/x/mongo/driver.Crypt; metadataClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; internalClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; encryptedFieldsMap map[string]any; authenticator go.mongodb.org/mongo-driver/v2/x/mongo/driver.Authenticator}",
+                  "PackageName": "mongo",
+                  "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "",
+            "Type": {
+              "Label": "error",
+              "Links": [
+                {
+                  "Name": "error",
+                  "Underlying": "interface{Error() string}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Config",
+            "Underlying": "struct{DSN string \"env:\\\"DSN,default=mongodb://localhost:27017/database?retryWrites=false\\\" json:\\\"dsn\\\"\"; Username string \"env:\\\"USERNAME,default=username\\\"                                        json:\\\"username\\\"\"; Password string \"env:\\\"PASSWORD,default=password\\\"                                        json:\\\"password\\\"\"}",
+            "PackageName": "mongo",
+            "PackagePath": "github.com/codemityio/go/pkg/mongo",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Client",
+            "Underlying": "struct{id go.mongodb.org/mongo-driver/v2/internal/uuid.UUID; deployment go.mongodb.org/mongo-driver/v2/x/mongo/driver.Deployment; localThreshold time.Duration; retryWrites bool; retryReads bool; clock *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.ClusterClock; readPreference *go.mongodb.org/mongo-driver/v2/mongo/readpref.ReadPref; readConcern *go.mongodb.org/mongo-driver/v2/mongo/readconcern.ReadConcern; writeConcern *go.mongodb.org/mongo-driver/v2/mongo/writeconcern.WriteConcern; bsonOpts *go.mongodb.org/mongo-driver/v2/mongo/options.BSONOptions; registry *go.mongodb.org/mongo-driver/v2/bson.Registry; monitor *go.mongodb.org/mongo-driver/v2/event.CommandMonitor; serverAPI *go.mongodb.org/mongo-driver/v2/x/mongo/driver.ServerAPIOptions; serverMonitor *go.mongodb.org/mongo-driver/v2/event.ServerMonitor; sessionPool *go.mongodb.org/mongo-driver/v2/x/mongo/driver/session.Pool; timeout *time.Duration; httpClient *net/http.Client; logger *go.mongodb.org/mongo-driver/v2/internal/logger.Logger; currentDriverInfo *sync/atomic.Pointer[go.mongodb.org/mongo-driver/v2/mongo/options.DriverInfo]; seenDriverInfo sync.Map; isAutoEncryptionSet bool; keyVaultClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; keyVaultCollFLE *go.mongodb.org/mongo-driver/v2/mongo.Collection; mongocryptdFLE *go.mongodb.org/mongo-driver/v2/mongo.mongocryptdClient; cryptFLE go.mongodb.org/mongo-driver/v2/x/mongo/driver.Crypt; metadataClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; internalClientFLE *go.mongodb.org/mongo-driver/v2/mongo.Client; encryptedFieldsMap map[string]any; authenticator go.mongodb.org/mongo-driver/v2/x/mongo/driver.Authenticator}",
+            "PackageName": "mongo",
+            "PackagePath": "go.mongodb.org/mongo-driver/v2/mongo",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewClient mongodb client factory.\n"
+    }
+  ],
+  "Const": []
+}

@@ -7,11 +7,13 @@ if [ "${DEBUG}" = "true" ]; then
   set -x
 fi
 
+mkdir -p tmp var
+
 case "$1" in
 
 "uml")
   if [ -z "${PACKAGES}" ]; then
-    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
     targets=$(auxilium select --label="Choose package to generate documents for" --select-name-label="Target package" --list="${packages}")
     if [[ ${targets} == "" ]]; then exit 0; fi
   else
@@ -36,7 +38,7 @@ case "$1" in
 
 "depgraph")
   if [ -z "${PACKAGES}" ]; then
-    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
     targets=$(auxilium select --label="Choose package to generate documents for" --select-name-label="Target package" --list="${packages}")
     if [[ ${targets} == "" ]]; then exit 0; fi
   else
@@ -48,6 +50,7 @@ case "$1" in
       --path "./pkg/${target}/..." \
       --workdir "${PWD}" \
       --exclude-standard \
+      --exclude-internal \
       --exclude-vendor \
       --owned "${GOPRIVATE}" \
       >"pkg/${target}/depgraph.dot"
@@ -60,7 +63,7 @@ case "$1" in
 
 "pkg")
   if [ -z "${PACKAGES}" ]; then
-    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
     targets=$(auxilium select --label="Choose package to generate documents for" --select-name-label="Target package" --list="${packages}")
     if [[ ${targets} == "" ]]; then exit 0; fi
   else
@@ -86,7 +89,7 @@ case "$1" in
 
 "render")
   if [ -z "${PACKAGES}" ]; then
-    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+    packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
     targets=$(auxilium select --label="Choose package to generate documents for" --select-name-label="Target package" --list="${packages}")
     if [[ ${targets} == "" ]]; then exit 0; fi
   else
@@ -103,6 +106,7 @@ case "$1" in
       -v "${PWD}:${PWD}" \
       "${VENDOR}"/notatio:latest plantuml --input-path="pkg/${target}" --output-format=svg --recursive
     docker run --rm \
+      --platform linux/amd64 \
       -v "${PWD}:${PWD}" \
       -w "${PWD}" \
       "${VENDOR}"/notatio:latest graphviz --input-path="pkg/${target}" --output-format=svg --recursive
@@ -111,7 +115,7 @@ case "$1" in
 
 "main")
   # summaries
-  packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+  packages=$(find "pkg" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort)
   paths=
   for target in ${packages//,/ }; do
     paths+=" --path=pkg/${target}/README.md"
@@ -123,6 +127,7 @@ case "$1" in
     --path "./..." \
     --workdir "${PWD}" \
     --exclude-standard \
+    --exclude-internal \
     --exclude-vendor \
     --owned "${GOPRIVATE}" \
     >"docs/depgraph.dot"
@@ -136,14 +141,12 @@ case "$1" in
     --name "${BASE_NAME}-golang-dev" \
     -v "${PWD}:${PWD}" \
     -w "${PWD}" \
-    "${VENDOR}"/golang-dev:latest go-licenses report ./... > tmp/licenses.csv
+    "${VENDOR}"/golang-dev:latest go-licenses report --ignore="github.com/${VENDOR}/${BASE_NAME}" ./... > tmp/licenses.csv
   notatio tol \
     --document-path=README.md \
     --csv-path=tmp/licenses.csv \
-    --skip="github.com/${VENDOR}/${BASE_NAME}" \
-    --skip="github.com/${VENDOR}/${BASE_NAME}/pkg" \
     --header="Licenses" \
-    --limiter-left="##" \
+    --limiter-left="###" \
     --limiter-right="## License" \
     --index=1
   # table of contents

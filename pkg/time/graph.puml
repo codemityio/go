@@ -8,6 +8,7 @@ skinparam noteTextAlignment left
 package "github.com/codemityio/go/pkg/time" as github_com_codemityio_go_pkg_time {
     class "<b><font color=#1c1c1c>ProviderFunc</font></b>" as github_com_codemityio_go_pkg_time_ProviderFunc << (F, #739e78) >> {
         + Now <font color=#1f38b5>() (time.Time)</font>
+        + Unix <font color=#1f38b5>() (int64)</font>
     }
 }
 package "github.com/codemityio/go/pkg/time" as github_com_codemityio_go_pkg_time {

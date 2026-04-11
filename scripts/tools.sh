@@ -93,6 +93,12 @@ case "$1" in
 "diff")
   (git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]) || {
     echo "error: changes detected..."
+    echo "---- Unstaged changes ----"
+    git diff
+    echo "---- Staged changes ----"
+    git diff --cached
+    echo "---- Untracked files ----"
+    git ls-files --others --exclude-standard
     exit 1
   }
   ;;
