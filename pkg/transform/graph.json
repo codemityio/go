@@ -1,0 +1,376 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/transform/errors.go",
+      "Start": {
+        "Offset": 48,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 281,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "transform",
+      "PackagePath": "github.com/codemityio/go/pkg/transform",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/transform/errors.go",
+      "Start": {
+        "Offset": 48,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 281,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "transform",
+      "PackagePath": "github.com/codemityio/go/pkg/transform",
+      "Name": "ErrMarshal",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrMarshal error.\n"
+    },
+    {
+      "FilePath": "pkg/transform/errors.go",
+      "Start": {
+        "Offset": 48,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 281,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "transform",
+      "PackagePath": "github.com/codemityio/go/pkg/transform",
+      "Name": "ErrUnmarshal",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrUnmarshal error.\n"
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/transform/interface.go",
+      "Start": {
+        "Offset": 63,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 215,
+        "Line": 7,
+        "Column": 2
+      },
+      "PackageName": "transform",
+      "PackagePath": "github.com/codemityio/go/pkg/transform",
+      "Name": "Transformer",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/transform.Transformer",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/transform/interface.go",
+          "Start": {
+            "Offset": 184,
+            "Line": 6,
+            "Column": 11
+          },
+          "End": {
+            "Offset": 213,
+            "Line": 6,
+            "Column": 40
+          },
+          "Name": "Transform",
+          "Signature": {
+            "Label": "(input any, output any) (error)",
+            "Alt": "(any, any) (error)",
+            "Arguments": [
+              {
+                "Name": "input",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "output",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": "Transform converts input into output. The output parameter must be a pointer.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/transform/json.go",
+      "Start": {
+        "Offset": 79,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 97,
+        "Line": 9,
+        "Column": 19
+      },
+      "PackageName": "transform",
+      "PackagePath": "github.com/codemityio/go/pkg/transform",
+      "Name": "JSON",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/transform.JSON",
+      "IsTypeAlias": false,
+      "Interfaces": [
+        {
+          "Name": "Transformer",
+          "PackageName": "transform",
+          "PackagePath": "github.com/codemityio/go/pkg/transform"
+        }
+      ],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/transform/json.go",
+          "Start": {
+            "Offset": 181,
+            "Line": 12,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 457,
+            "Line": 23,
+            "Column": 2
+          },
+          "Name": "Transform",
+          "Signature": {
+            "Label": "(input any, output any) (error)",
+            "Alt": "(any, any) (error)",
+            "Arguments": [
+              {
+                "Name": "input",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "output",
+                "Type": {
+                  "Label": "any",
+                  "Links": [
+                    {
+                      "Name": "any",
+                      "Underlying": "any",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "any",
+                "Underlying": "any",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Transform method to transform types by using json marshal/unmarshal functions.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/transform/factory.go",
+      "Start": {
+        "Offset": 48,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 88,
+        "Line": 6,
+        "Column": 2
+      },
+      "PackageName": "transform",
+      "PackagePath": "github.com/codemityio/go/pkg/transform",
+      "Name": "NewJSON",
+      "Signature": {
+        "Label": "() (*JSON)",
+        "Alt": "() (*JSON)",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*JSON",
+              "Links": [
+                {
+                  "Name": "JSON",
+                  "Underlying": "struct{}",
+                  "PackageName": "transform",
+                  "PackagePath": "github.com/codemityio/go/pkg/transform",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "JSON",
+            "Underlying": "struct{}",
+            "PackageName": "transform",
+            "PackagePath": "github.com/codemityio/go/pkg/transform",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewJSON factory function.\n"
+    }
+  ],
+  "Const": []
+}

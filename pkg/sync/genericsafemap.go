@@ -45,7 +45,7 @@ func (smg *GenericSafeMap[T]) Unset(key string) {
 }
 
 // Get returns the value stored in under the key.
-func (smg *GenericSafeMap[T]) Get(key string) (T, bool) { //nolint:ireturn // safe
+func (smg *GenericSafeMap[T]) Get(key string) (T, bool) { //nolint:ireturn
 	smg.mutex.RLock()
 	defer smg.mutex.RUnlock()
 

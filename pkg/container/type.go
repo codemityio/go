@@ -13,4 +13,4 @@ type ServiceRecord struct {
 }
 
 // LogFunc to allow log warnings and infos.
-type LogFunc func(warn string)
+type LogFunc func(message string)

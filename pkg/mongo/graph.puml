@@ -1,0 +1,110 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/mongo" as github_com_codemityio_go_pkg_mongo {
+    class "<b><font color=#1c1c1c>Config</font></b>" as github_com_codemityio_go_pkg_mongo_Config << (S, #b5558d) >> {
+        + DSN <font color=#1f38b5>string</font>
+        + Username <font color=#1f38b5>string</font>
+        + Password <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>Clienter</font></b>" as github_com_codemityio_go_pkg_mongo_Clienter << (I, #e4f58e) >> {
+        + Connect <font color=#1f38b5>(opts ...*options.ClientOptions) (*mongo.Client, error)</font>
+        + Disconnect <font color=#1f38b5>(ctx context.Context) (error)</font>
+        + Ping <font color=#1f38b5>(ctx context.Context, rp *readpref.ReadPref) (error)</font>
+        + StartSession <font color=#1f38b5>(opts ...options.Lister[options.SessionOptions]) (*mongo.Session, error)</font>
+        + Database <font color=#1f38b5>(name string, opts ...options.Lister[options.DatabaseOptions]) (*mongo.Database)</font>
+        + ListDatabases <font color=#1f38b5>(ctx context.Context, filter any, opts ...options.Lister[options.ListDatabasesOptions]) (mongo.ListDatabasesResult, error)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_mongo_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrClient</font></b>" as github_com_codemityio_go_pkg_mongo_ErrClient << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>NewClient</font></b><font color=#1f38b5>(config *Config) (*mongo.Client, error)</font>" as github_com_codemityio_go_pkg_mongo_NewClient << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/mongo" as github_com_codemityio_go_pkg_mongo {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "ClientOptions" as go_mongodb_org_mongo_driver_v2_mongo_options_ClientOptions << (S, #b5558d) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo" as .go_mongodb_org_mongo_driver_v2_mongo {
+        class "Client" as go_mongodb_org_mongo_driver_v2_mongo_Client << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo/readpref" as .go_mongodb_org_mongo_driver_v2_mongo_readpref {
+        class "ReadPref" as go_mongodb_org_mongo_driver_v2_mongo_readpref_ReadPref << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "Lister" as go_mongodb_org_mongo_driver_v2_mongo_options_Lister << (I, #e4f58e) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "SessionOptions" as go_mongodb_org_mongo_driver_v2_mongo_options_SessionOptions << (S, #b5558d) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo" as .go_mongodb_org_mongo_driver_v2_mongo {
+        class "Session" as go_mongodb_org_mongo_driver_v2_mongo_Session << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "Lister" as go_mongodb_org_mongo_driver_v2_mongo_options_Lister << (I, #e4f58e) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "DatabaseOptions" as go_mongodb_org_mongo_driver_v2_mongo_options_DatabaseOptions << (S, #b5558d) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo" as .go_mongodb_org_mongo_driver_v2_mongo {
+        class "Database" as go_mongodb_org_mongo_driver_v2_mongo_Database << (S, #b5558d) >> {}
+    }
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "Lister" as go_mongodb_org_mongo_driver_v2_mongo_options_Lister << (I, #e4f58e) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo/options" as .go_mongodb_org_mongo_driver_v2_mongo_options {
+        class "ListDatabasesOptions" as go_mongodb_org_mongo_driver_v2_mongo_options_ListDatabasesOptions << (S, #b5558d) >> {}
+    }
+    package "go.mongodb.org/mongo-driver/v2/mongo" as .go_mongodb_org_mongo_driver_v2_mongo {
+        class "ListDatabasesResult" as go_mongodb_org_mongo_driver_v2_mongo_ListDatabasesResult << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    package "go.mongodb.org/mongo-driver/v2/mongo" as .go_mongodb_org_mongo_driver_v2_mongo {
+        class "Client" as go_mongodb_org_mongo_driver_v2_mongo_Client << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+}
+package "github.com/codemityio/go/pkg/mongo" as github_com_codemityio_go_pkg_mongo {
+    github_com_codemityio_go_pkg_mongo_Config #...up...> _struct
+    github_com_codemityio_go_pkg_mongo_Clienter #...up...> _interface
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_options_ClientOptions
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_Client
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> _error
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> context_Context
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_readpref_ReadPref
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_options_Lister
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_options_SessionOptions
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_Session
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_options_DatabaseOptions
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_Database
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> _any
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_options_ListDatabasesOptions
+    github_com_codemityio_go_pkg_mongo_Clienter ...up...> go_mongodb_org_mongo_driver_v2_mongo_ListDatabasesResult
+    github_com_codemityio_go_pkg_mongo_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_mongo_ErrClient ...up...|> error
+    github_com_codemityio_go_pkg_mongo_NewClient ....up....> github_com_codemityio_go_pkg_mongo_Config
+    github_com_codemityio_go_pkg_mongo_NewClient ....up....> go_mongodb_org_mongo_driver_v2_mongo_Client
+    github_com_codemityio_go_pkg_mongo_NewClient ....up....> _error
+}
+@enduml
+

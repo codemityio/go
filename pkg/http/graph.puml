@@ -1,0 +1,833 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/http/client" as github_com_codemityio_go_pkg_http_client {
+    class "<b><font color=#1c1c1c>DefaultClient</font></b>" as github_com_codemityio_go_pkg_http_client_DefaultClient << (S, #b5558d) >> {
+        <font color=#1f38b5>http.Client</font>
+        - config <font color=#1f38b5>*Config</font>
+    }
+    class "<b><font color=#1c1c1c>Config</font></b>" as github_com_codemityio_go_pkg_http_client_Config << (S, #b5558d) >> {
+        + TLS <font color=#1f38b5>*TLS</font>
+        + Transport <font color=#1f38b5>*Transport</font>
+        + JWT <font color=#1f38b5>*JWT</font>
+    }
+    class "<b><font color=#1c1c1c>TLS</font></b>" as github_com_codemityio_go_pkg_http_client_TLS << (S, #b5558d) >> {
+        + Cert <font color=#1f38b5>string</font>
+        + Key <font color=#1f38b5>string</font>
+        + CACert <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>Transport</font></b>" as github_com_codemityio_go_pkg_http_client_Transport << (S, #b5558d) >> {
+        + MaxIdleConns <font color=#1f38b5>int</font>
+        + MaxConnsPerHost <font color=#1f38b5>int</font>
+        + MaxIdleConnsPerHost <font color=#1f38b5>int</font>
+        + Timeout <font color=#1f38b5>time.Duration</font>
+    }
+    class "<b><font color=#1c1c1c>JWT</font></b>" as github_com_codemityio_go_pkg_http_client_JWT << (S, #b5558d) >> {
+        + ID <font color=#1f38b5>string</font>
+        + KeyPath <font color=#1f38b5>string</font>
+        + Audience <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>Clienter</font></b>" as github_com_codemityio_go_pkg_http_client_Clienter << (I, #e4f58e) >> {
+        + Get <font color=#1f38b5>(url string) (resp *http.Response, err error)</font>
+        + Do <font color=#1f38b5>(req *http.Request) (*http.Response, error)</font>
+        + Post <font color=#1f38b5>(url string, contentType string, body io.Reader) (resp *http.Response, err error)</font>
+        + PostForm <font color=#1f38b5>(url string, data url.Values) (resp *http.Response, err error)</font>
+        + Head <font color=#1f38b5>(url string) (resp *http.Response, err error)</font>
+    }
+    class "<b><font color=#1c1c1c>Option</font></b>" as github_com_codemityio_go_pkg_http_client_Option << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>(options ...Option) (*DefaultClient)</font>" as github_com_codemityio_go_pkg_http_client_New << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithConfig</font></b><font color=#1f38b5>(config *Config) (Option)</font>" as github_com_codemityio_go_pkg_http_client_WithConfig << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>configCACert</font><font color=#1f38b5>(tlsConfig *tls.Config, config *Config)</font>" as github_com_codemityio_go_pkg_http_client_configCACert << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>configCertKey</font><font color=#1f38b5>(tlsConfig *tls.Config, config *Config)</font>" as github_com_codemityio_go_pkg_http_client_configCertKey << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>configJWT</font><font color=#1f38b5>(config *Config) (*token.DefaultSigner)</font>" as github_com_codemityio_go_pkg_http_client_configJWT << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/http/huma" as github_com_codemityio_go_pkg_http_huma {
+    class "<b><font color=#1c1c1c>Config</font></b>" as github_com_codemityio_go_pkg_http_huma_Config << (S, #b5558d) >> {
+        + Title <font color=#1f38b5>string</font>
+        + Version <font color=#1f38b5>string</font>
+        + OpenAPIPath <font color=#1f38b5>string</font>
+        + DocsPath <font color=#1f38b5>string</font>
+        + SchemasPath <font color=#1f38b5>string</font>
+        + DefaultFormat <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>FormatTextPlain</font></b>" as github_com_codemityio_go_pkg_http_huma_FormatTextPlain << (S, #b5558d) >> {
+        + ContentType <font color=#1f38b5>() (string)</font>
+        + Marshal <font color=#1f38b5>(writer io.Writer, v any) (error)</font>
+        + Unmarshal <font color=#1f38b5>(_ []byte, _ any) (error)</font>
+    }
+    class "<b><font color=#1c1c1c>FormatTextHTML</font></b>" as github_com_codemityio_go_pkg_http_huma_FormatTextHTML << (S, #b5558d) >> {
+        - template <font color=#1f38b5>*template.Template</font>
+        + ContentType <font color=#1f38b5>() (string)</font>
+        + Marshal <font color=#1f38b5>(writer io.Writer, value any) (error)</font>
+        + Unmarshal <font color=#1f38b5>(_ []byte, _ any) (error)</font>
+    }
+    class "<b><font color=#1c1c1c>FormatApplicationJSON</font></b>" as github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON << (S, #b5558d) >> {
+        + ContentType <font color=#1f38b5>() (string)</font>
+        + Marshal <font color=#1f38b5>(writer io.Writer, v any) (error)</font>
+        + Unmarshal <font color=#1f38b5>(data []byte, v any) (error)</font>
+    }
+    class "<b><font color=#1c1c1c>Handler</font></b>" as github_com_codemityio_go_pkg_http_huma_Handler << (S, #b5558d) >> {
+        - config <font color=#1f38b5>*Config</font>
+        - router <font color=#1f38b5>Router</font>
+        - operations <font color=#1f38b5>[]OperationWithHandlerRegisterer</font>
+        - middleware <font color=#1f38b5>[]MiddlewareFunc</font>
+        - formatter <font color=#1f38b5>[]Formatter</font>
+        - securityScheme <font color=#1f38b5>[]SecurityScheme</font>
+        + ServeHTTP <font color=#1f38b5>(writer http.ResponseWriter, req *http.Request)</font>
+    }
+    class "<b><font color=#1c1c1c>Router</font></b>" as github_com_codemityio_go_pkg_http_huma_Router << (I, #e4f58e) >> {
+        <font color=#1f38b5>chi.Router</font>
+    }
+    class "<b><font color=#1c1c1c>OperationWithHandlerRegisterer</font></b>" as github_com_codemityio_go_pkg_http_huma_OperationWithHandlerRegisterer << (I, #e4f58e) >> {
+        + Register <font color=#1f38b5>(api huma.API)</font>
+    }
+    class "<b><font color=#1c1c1c>MiddlewareHandler</font></b>" as github_com_codemityio_go_pkg_http_huma_MiddlewareHandler << (I, #e4f58e) >> {
+        + Handler <font color=#1f38b5>(ctx huma.Context, api huma.API, next func(huma.Context))</font>
+    }
+    class "<b><font color=#1c1c1c>CorrelationIDProvider</font></b>" as github_com_codemityio_go_pkg_http_huma_CorrelationIDProvider << (I, #e4f58e) >> {
+        + String <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>Formatter</font></b>" as github_com_codemityio_go_pkg_http_huma_Formatter << (I, #e4f58e) >> {
+        + ContentType <font color=#1f38b5>() (string)</font>
+        + Marshal <font color=#1f38b5>(writer io.Writer, v any) (error)</font>
+        + Unmarshal <font color=#1f38b5>(data []byte, v any) (error)</font>
+    }
+    class "<b><font color=#1c1c1c>SecurityScheme</font></b>" as github_com_codemityio_go_pkg_http_huma_SecurityScheme << (I, #e4f58e) >> {
+        + Key <font color=#1f38b5>() (string)</font>
+        + Type <font color=#1f38b5>() (string)</font>
+        + Name <font color=#1f38b5>() (string)</font>
+        + Description <font color=#1f38b5>() (string)</font>
+        + Scheme <font color=#1f38b5>() (string)</font>
+        + In <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>AccessLogMiddleware</font></b>" as github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware << (S, #b5558d) >> {
+        - logFunc <font color=#1f38b5>LogFunc</font>
+        + Handler <font color=#1f38b5>(ctx huma.Context, _ huma.API, next func(huma.Context))</font>
+        - deriveScheme <font color=#1f38b5>(ctx huma.Context) (string)</font>
+        - deriveHostAndPort <font color=#1f38b5>(ctx huma.Context, scheme string) (string, int)</font>
+    }
+    class "<b><font color=#1c1c1c>CorrelationIDMiddleware</font></b>" as github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware << (S, #b5558d) >> {
+        - provider <font color=#1f38b5>CorrelationIDProvider</font>
+        + Handler <font color=#1f38b5>(ctx huma.Context, _ huma.API, next func(huma.Context))</font>
+    }
+    class "<b><font color=#1c1c1c>CorrelationIDProviderFunc</font></b>" as github_com_codemityio_go_pkg_http_huma_CorrelationIDProviderFunc << (F, #739e78) >> {
+        + String <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>SecuritySchemeBasicAuth</font></b>" as github_com_codemityio_go_pkg_http_huma_SecuritySchemeBasicAuth << (S, #b5558d) >> {
+        + Key <font color=#1f38b5>() (string)</font>
+        + Type <font color=#1f38b5>() (string)</font>
+        + Name <font color=#1f38b5>() (string)</font>
+        + Description <font color=#1f38b5>() (string)</font>
+        + Scheme <font color=#1f38b5>() (string)</font>
+        + In <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>SecuritySchemeAPIHeaderKeyAuth</font></b>" as github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIHeaderKeyAuth << (S, #b5558d) >> {
+        + Key <font color=#1f38b5>() (string)</font>
+        + Type <font color=#1f38b5>() (string)</font>
+        + Name <font color=#1f38b5>() (string)</font>
+        + Description <font color=#1f38b5>() (string)</font>
+        + Scheme <font color=#1f38b5>() (string)</font>
+        + In <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>SecuritySchemeAPIQueryKeyAuth</font></b>" as github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIQueryKeyAuth << (S, #b5558d) >> {
+        + Key <font color=#1f38b5>() (string)</font>
+        + Type <font color=#1f38b5>() (string)</font>
+        + Name <font color=#1f38b5>() (string)</font>
+        + Description <font color=#1f38b5>() (string)</font>
+        + Scheme <font color=#1f38b5>() (string)</font>
+        + In <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>SecuritySchemeTokenAuth</font></b>" as github_com_codemityio_go_pkg_http_huma_SecuritySchemeTokenAuth << (S, #b5558d) >> {
+        + Key <font color=#1f38b5>() (string)</font>
+        + Type <font color=#1f38b5>() (string)</font>
+        + Name <font color=#1f38b5>() (string)</font>
+        + Description <font color=#1f38b5>() (string)</font>
+        + Scheme <font color=#1f38b5>() (string)</font>
+        + In <font color=#1f38b5>() (string)</font>
+    }
+    class "<b><font color=#1c1c1c>HandlerOption</font></b>" as github_com_codemityio_go_pkg_http_huma_HandlerOption << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>AccessLogMiddlewareOption</font></b>" as github_com_codemityio_go_pkg_http_huma_AccessLogMiddlewareOption << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>CorrelationIDMiddlewareOption</font></b>" as github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddlewareOption << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>OperationWithHandler</font></b><[I any, O any]>" as github_com_codemityio_go_pkg_http_huma_OperationWithHandler << (S, #b5558d) >> {
+        <font color=#1f38b5>huma.Operation</font>
+        + Handler <font color=#1f38b5>func(context.Context, *I) (*O, error)</font>
+    }
+    class "<b><font color=#1c1c1c>MiddlewareFunc</font></b>" as github_com_codemityio_go_pkg_http_huma_MiddlewareFunc << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>HTMLErrorView</font></b>" as github_com_codemityio_go_pkg_http_huma_HTMLErrorView << (S, #b5558d) >> {
+        + Status <font color=#1f38b5>int</font>
+        + Title <font color=#1f38b5>string</font>
+        + Detail <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>FormatTextHTMLOption</font></b>" as github_com_codemityio_go_pkg_http_huma_FormatTextHTMLOption << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>LogField</font></b>" as github_com_codemityio_go_pkg_http_huma_LogField << (S, #b5558d) >> {
+        + Key <font color=#1f38b5>string</font>
+        + Value <font color=#1f38b5>any</font>
+    }
+    class "<b><font color=#1c1c1c>LogFunc</font></b>" as github_com_codemityio_go_pkg_http_huma_LogFunc << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_http_huma_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrMarshal</font></b>" as github_com_codemityio_go_pkg_http_huma_ErrMarshal << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrUnmarshal</font></b>" as github_com_codemityio_go_pkg_http_huma_ErrUnmarshal << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>SchemeHTTP</font></b>" as github_com_codemityio_go_pkg_http_huma_SchemeHTTP << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>SchemeHTTPS</font></b>" as github_com_codemityio_go_pkg_http_huma_SchemeHTTPS << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>HeaderCorrelationID</font></b>" as github_com_codemityio_go_pkg_http_huma_HeaderCorrelationID << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>HeaderForwardedProto</font></b>" as github_com_codemityio_go_pkg_http_huma_HeaderForwardedProto << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>HeaderForwardedScheme</font></b>" as github_com_codemityio_go_pkg_http_huma_HeaderForwardedScheme << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>ContextCorrelationID</font></b>" as github_com_codemityio_go_pkg_http_huma_ContextCorrelationID << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>ContentTypeTextPlain</font></b>" as github_com_codemityio_go_pkg_http_huma_ContentTypeTextPlain << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>ContentTypeTextHTML</font></b>" as github_com_codemityio_go_pkg_http_huma_ContentTypeTextHTML << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>ContentTypeApplicationJSON</font></b>" as github_com_codemityio_go_pkg_http_huma_ContentTypeApplicationJSON << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>NewHandler</font></b><font color=#1f38b5>(options ...HandlerOption) (*Handler)</font>" as github_com_codemityio_go_pkg_http_huma_NewHandler << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewAccessLogMiddleware</font></b><font color=#1f38b5>(options ...AccessLogMiddlewareOption) (*AccessLogMiddleware)</font>" as github_com_codemityio_go_pkg_http_huma_NewAccessLogMiddleware << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewCorrelationIDMiddleware</font></b><font color=#1f38b5>(options ...CorrelationIDMiddlewareOption) (*CorrelationIDMiddleware)</font>" as github_com_codemityio_go_pkg_http_huma_NewCorrelationIDMiddleware << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewUUIDCorrelationIDProvider</font></b><font color=#1f38b5>() (CorrelationIDProviderFunc)</font>" as github_com_codemityio_go_pkg_http_huma_NewUUIDCorrelationIDProvider << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewFormatTextPlain</font></b><font color=#1f38b5>() (*FormatTextPlain)</font>" as github_com_codemityio_go_pkg_http_huma_NewFormatTextPlain << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewFormatTextHTML</font></b><font color=#1f38b5>(options ...FormatTextHTMLOption) (*FormatTextHTML)</font>" as github_com_codemityio_go_pkg_http_huma_NewFormatTextHTML << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewFormatApplicationJSON</font></b><font color=#1f38b5>() (*FormatApplicationJSON)</font>" as github_com_codemityio_go_pkg_http_huma_NewFormatApplicationJSON << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSecuritySchemeBasicAuth</font></b><font color=#1f38b5>() (*SecuritySchemeBasicAuth)</font>" as github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeBasicAuth << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSecuritySchemeAPIHeaderKeyAuth</font></b><font color=#1f38b5>() (*SecuritySchemeAPIHeaderKeyAuth)</font>" as github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeAPIHeaderKeyAuth << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSecuritySchemeAPIQueryKeyAuth</font></b><font color=#1f38b5>() (*SecuritySchemeAPIQueryKeyAuth)</font>" as github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeAPIQueryKeyAuth << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewSecuritySchemeTokenAuth</font></b><font color=#1f38b5>() (*SecuritySchemeTokenAuth)</font>" as github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeTokenAuth << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithConfig</font></b><font color=#1f38b5>(config *Config) (HandlerOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithConfig << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithRouter</font></b><font color=#1f38b5>(router Router) (HandlerOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithRouter << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithOperationWithHandler</font></b><font color=#1f38b5>(operations []OperationWithHandlerRegisterer) (HandlerOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithOperationWithHandler << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithMiddleware</font></b><font color=#1f38b5>(middleware []MiddlewareFunc) (HandlerOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithMiddleware << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithFormatter</font></b><font color=#1f38b5>(formatter []Formatter) (HandlerOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithFormatter << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithSecuritySchemes</font></b><font color=#1f38b5>(securityScheme []SecurityScheme) (HandlerOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithSecuritySchemes << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithAccessLogMiddlewareLogFunc</font></b><font color=#1f38b5>(fn LogFunc) (AccessLogMiddlewareOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithAccessLogMiddlewareLogFunc << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithCorrelationIDMiddlewareCorrelationIDProvider</font></b><font color=#1f38b5>(provider CorrelationIDProvider) (CorrelationIDMiddlewareOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithCorrelationIDMiddlewareCorrelationIDProvider << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithFormatTextHTMLTemplate</font></b><font color=#1f38b5>(tpl string) (FormatTextHTMLOption)</font>" as github_com_codemityio_go_pkg_http_huma_WithFormatTextHTMLTemplate << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/http/server" as github_com_codemityio_go_pkg_http_server {
+    class "<b><font color=#1c1c1c>Config</font></b>" as github_com_codemityio_go_pkg_http_server_Config << (S, #b5558d) >> {
+        + Port <font color=#1f38b5>int</font>
+        + ReadTimeout <font color=#1f38b5>time.Duration</font>
+        + WriteTimeout <font color=#1f38b5>time.Duration</font>
+        + ErrorsBufferSize <font color=#1f38b5>int</font>
+        + TLS <font color=#1f38b5>*TLS</font>
+    }
+    class "<b><font color=#1c1c1c>TLS</font></b>" as github_com_codemityio_go_pkg_http_server_TLS << (S, #b5558d) >> {
+        + Cert <font color=#1f38b5>string</font>
+        + Key <font color=#1f38b5>string</font>
+        + CACert <font color=#1f38b5>string</font>
+    }
+    class "<b><font color=#1c1c1c>Server</font></b>" as github_com_codemityio_go_pkg_http_server_Server << (I, #e4f58e) >> {
+        + Start <font color=#1f38b5>()</font>
+        + Stop <font color=#1f38b5>(ctx context.Context, timeout time.Duration)</font>
+        + Done <font color=#1f38b5>()</font>
+        + Errors <font color=#1f38b5>() (*ast.ChanType)</font>
+    }
+    class "<b><font color=#1c1c1c>Handler</font></b>" as github_com_codemityio_go_pkg_http_server_Handler << (I, #e4f58e) >> {
+        <font color=#1f38b5>http.Handler</font>
+    }
+    class "<b><font color=#1c1c1c>DefaultServer</font></b>" as github_com_codemityio_go_pkg_http_server_DefaultServer << (S, #b5558d) >> {
+        <font color=#1f38b5>http.Server</font>
+        - logFunc <font color=#1f38b5>LogFunc</font>
+        - config <font color=#1f38b5>*Config</font>
+        - mu <font color=#1f38b5>sync.Mutex</font>
+        - startOnce <font color=#1f38b5>sync.Once</font>
+        - stopOnce <font color=#1f38b5>sync.Once</font>
+        - started <font color=#1f38b5>bool</font>
+        - errors <font color=#1f38b5>*ast.ChanType</font>
+        - done <font color=#1f38b5>*ast.ChanType</font>
+        + Start <font color=#1f38b5>()</font>
+        + Stop <font color=#1f38b5>(ctx context.Context, timeout time.Duration)</font>
+        + Done <font color=#1f38b5>()</font>
+        + Errors <font color=#1f38b5>() (*ast.ChanType)</font>
+        - listenAndServe <font color=#1f38b5>()</font>
+        - listenAndServeTLS <font color=#1f38b5>()</font>
+        - info <font color=#1f38b5>(msg string)</font>
+    }
+    class "<b><font color=#1c1c1c>Option</font></b>" as github_com_codemityio_go_pkg_http_server_Option << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>LogFunc</font></b>" as github_com_codemityio_go_pkg_http_server_LogFunc << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_http_server_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrServerUnableListenAndServe</font></b>" as github_com_codemityio_go_pkg_http_server_ErrServerUnableListenAndServe << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrServerCertificateDoesNotExist</font></b>" as github_com_codemityio_go_pkg_http_server_ErrServerCertificateDoesNotExist << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrServerKeyDoesNotExist</font></b>" as github_com_codemityio_go_pkg_http_server_ErrServerKeyDoesNotExist << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrServerUnableToMarshal</font></b>" as github_com_codemityio_go_pkg_http_server_ErrServerUnableToMarshal << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrServerShutdownFailure</font></b>" as github_com_codemityio_go_pkg_http_server_ErrServerShutdownFailure << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>defaultTimeout</font>" as github_com_codemityio_go_pkg_http_server_defaultTimeout << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>WithConfig</font></b><font color=#1f38b5>(config *Config) (Option)</font>" as github_com_codemityio_go_pkg_http_server_WithConfig << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithShutdownFunc</font></b><font color=#1f38b5>(function func()) (Option)</font>" as github_com_codemityio_go_pkg_http_server_WithShutdownFunc << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithLogFunc</font></b><font color=#1f38b5>(fn LogFunc) (Option)</font>" as github_com_codemityio_go_pkg_http_server_WithLogFunc << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithHandler</font></b><font color=#1f38b5>(handler http.Handler) (Option)</font>" as github_com_codemityio_go_pkg_http_server_WithHandler << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>New</font></b><font color=#1f38b5>(options ...Option) (*DefaultServer)</font>" as github_com_codemityio_go_pkg_http_server_New << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/http/token" as github_com_codemityio_go_pkg_http_token {
+    class "<b><font color=#1c1c1c>Signer</font></b>" as github_com_codemityio_go_pkg_http_token_Signer << (I, #e4f58e) >> {
+        + Sign <font color=#1f38b5>(data []byte) (string, error)</font>
+    }
+    class "<b><font color=#1c1c1c>RoundTripper</font></b>" as github_com_codemityio_go_pkg_http_token_RoundTripper << (I, #e4f58e) >> {
+        + RoundTrip <font color=#1f38b5>(request *http.Request) (*http.Response, error)</font>
+    }
+    class "<b><font color=#1c1c1c>UUIDRandomiser</font></b>" as github_com_codemityio_go_pkg_http_token_UUIDRandomiser << (I, #e4f58e) >> {
+        + RandomUUID <font color=#1f38b5>() (uuid.UUID, error)</font>
+    }
+    class "<b><font color=#1c1c1c>TimeProvider</font></b>" as github_com_codemityio_go_pkg_http_token_TimeProvider << (I, #e4f58e) >> {
+        + Unix <font color=#1f38b5>() (int64)</font>
+    }
+    class "<b><font color=#1c1c1c>DefaultRoundTripper</font></b>" as github_com_codemityio_go_pkg_http_token_DefaultRoundTripper << (S, #b5558d) >> {
+        - next <font color=#1f38b5>http.RoundTripper</font>
+        - signer <font color=#1f38b5>Signer</font>
+        + RoundTrip <font color=#1f38b5>(request *http.Request) (*http.Response, error)</font>
+    }
+    class "<b><font color=#1c1c1c>DefaultSigner</font></b>" as github_com_codemityio_go_pkg_http_token_DefaultSigner << (S, #b5558d) >> {
+        - uuidProvider <font color=#1f38b5>UUIDRandomiser</font>
+        - timeProvider <font color=#1f38b5>TimeProvider</font>
+        - key <font color=#1f38b5>*rsa.PrivateKey</font>
+        - keyID <font color=#1f38b5>string</font>
+        - aud <font color=#1f38b5>string</font>
+        - payloadHash <font color=#1f38b5>crypto.Hash</font>
+        + Sign <font color=#1f38b5>(data []byte) (string, error)</font>
+    }
+    class "<b><font color=#1c1c1c>DefaultUUIDProvider</font></b>" as github_com_codemityio_go_pkg_http_token_DefaultUUIDProvider << (S, #b5558d) >> {
+        + RandomUUID <font color=#1f38b5>() (uuid.UUID, error)</font>
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_http_token_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrSignerUnableGenerateUUID</font></b>" as github_com_codemityio_go_pkg_http_token_ErrSignerUnableGenerateUUID << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrSignerUnableToSignToken</font></b>" as github_com_codemityio_go_pkg_http_token_ErrSignerUnableToSignToken << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrUUIDProviderNewRandom</font></b>" as github_com_codemityio_go_pkg_http_token_ErrUUIDProviderNewRandom << (V, #edb4ab) >> {}
+    class "<font color=#1c1c1c>typ</font>" as github_com_codemityio_go_pkg_http_token_typ << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>ver</font>" as github_com_codemityio_go_pkg_http_token_ver << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>NewDefaultRoundTripper</font></b><font color=#1f38b5>(next http.RoundTripper, signer Signer) (*DefaultRoundTripper)</font>" as github_com_codemityio_go_pkg_http_token_NewDefaultRoundTripper << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewDefaultSigner</font></b><font color=#1f38b5>(uuidProvider UUIDRandomiser, timeProvider TimeProvider, key *rsa.PrivateKey, keyID string, aud string) (*DefaultSigner)</font>" as github_com_codemityio_go_pkg_http_token_NewDefaultSigner << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>NewUUIDProvider</font></b><font color=#1f38b5>() (*DefaultUUIDProvider)</font>" as github_com_codemityio_go_pkg_http_token_NewUUIDProvider << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/http/client" as github_com_codemityio_go_pkg_http_client {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "net/http" as .net_http {
+        class "Client" as net_http_Client << (S, #b5558d) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "net/http" as .net_http {
+        class "Request" as net_http_Request << (S, #b5558d) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "io" as .io {
+        class "Reader" as io_Reader << (I, #e4f58e) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "net/url" as .net_url {
+        class "Values" as net_url_Values << (T, #739e78) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "func(p *DefaultClient)" as github_com_codemityio_go_pkg_http_client_func_p__DefaultClient_ << (F, #739e78) >> {}
+    package "crypto/tls" as .crypto_tls {
+        class "Config" as crypto_tls_Config << (S, #b5558d) >> {}
+    }
+    package "crypto/tls" as .crypto_tls {
+        class "Config" as crypto_tls_Config << (S, #b5558d) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/http/huma" as github_com_codemityio_go_pkg_http_huma {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "io" as .io {
+        class "Writer" as io_Writer << (I, #e4f58e) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "html/template" as .html_template {
+        class "Template" as html_template_Template << (S, #b5558d) >> {}
+    }
+    package "io" as .io {
+        class "Writer" as io_Writer << (I, #e4f58e) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "io" as .io {
+        class "Writer" as io_Writer << (I, #e4f58e) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "net/http" as .net_http {
+        class "ResponseWriter" as net_http_ResponseWriter << (I, #e4f58e) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Request" as net_http_Request << (S, #b5558d) >> {}
+    }
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "github.com/go-chi/chi/v5" as .github_com_go_chi_chi_v5 {
+        class "Router" as github_com_go_chi_chi_v5_Router << (I, #e4f58e) >> {}
+    }
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "API" as github_com_danielgtaylor_huma_v2_API << (I, #e4f58e) >> {}
+    }
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Context" as github_com_danielgtaylor_huma_v2_Context << (I, #e4f58e) >> {}
+    }
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "API" as github_com_danielgtaylor_huma_v2_API << (I, #e4f58e) >> {}
+    }
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "io" as .io {
+        class "Writer" as io_Writer << (I, #e4f58e) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Context" as github_com_danielgtaylor_huma_v2_Context << (I, #e4f58e) >> {}
+    }
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "API" as github_com_danielgtaylor_huma_v2_API << (I, #e4f58e) >> {}
+    }
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Context" as github_com_danielgtaylor_huma_v2_Context << (I, #e4f58e) >> {}
+    }
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Context" as github_com_danielgtaylor_huma_v2_Context << (I, #e4f58e) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Context" as github_com_danielgtaylor_huma_v2_Context << (I, #e4f58e) >> {}
+    }
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "API" as github_com_danielgtaylor_huma_v2_API << (I, #e4f58e) >> {}
+    }
+    class "func() (string)" as github_com_codemityio_go_pkg_http_huma_func____string_ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "func(p *Handler)" as github_com_codemityio_go_pkg_http_huma_func_p__Handler_ << (F, #739e78) >> {}
+    class "func(p *AccessLogMiddleware)" as github_com_codemityio_go_pkg_http_huma_func_p__AccessLogMiddleware_ << (F, #739e78) >> {}
+    class "func(p *CorrelationIDMiddleware)" as github_com_codemityio_go_pkg_http_huma_func_p__CorrelationIDMiddleware_ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Operation" as github_com_danielgtaylor_huma_v2_Operation << (S, #b5558d) >> {}
+    }
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    class "I" as github_com_codemityio_go_pkg_http_huma_I << (T, #6d8cbf) >> {}
+    class "O" as github_com_codemityio_go_pkg_http_huma_O << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "Context" as github_com_danielgtaylor_huma_v2_Context << (I, #e4f58e) >> {}
+    }
+    package "github.com/danielgtaylor/huma/v2" as .github_com_danielgtaylor_huma_v2 {
+        class "API" as github_com_danielgtaylor_huma_v2_API << (I, #e4f58e) >> {}
+    }
+    class "func(ctx huma.Context, api huma.API, next func(huma.Context))" as github_com_codemityio_go_pkg_http_huma_func_ctx_huma_Context__api_huma_API__next_func_huma_Context__ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "func(p *FormatTextHTML)" as github_com_codemityio_go_pkg_http_huma_func_p__FormatTextHTML_ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "any" as _any << (T, #6d8cbf) >> {}
+    class "func(message string, fields ...LogField)" as github_com_codemityio_go_pkg_http_huma_func_message_string__fields____LogField_ << (F, #739e78) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+}
+package "github.com/codemityio/go/pkg/http/server" as github_com_codemityio_go_pkg_http_server {
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "net/http" as .net_http {
+        class "Handler" as net_http_Handler << (I, #e4f58e) >> {}
+    }
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "net/http" as .net_http {
+        class "Server" as net_http_Server << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Mutex" as sync_Mutex << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Once" as sync_Once << (S, #b5558d) >> {}
+    }
+    package "sync" as .sync {
+        class "Once" as sync_Once << (S, #b5558d) >> {}
+    }
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    class "func(p *DefaultServer)" as github_com_codemityio_go_pkg_http_server_func_p__DefaultServer_ << (F, #739e78) >> {}
+    class "func(message string)" as github_com_codemityio_go_pkg_http_server_func_message_string_ << (F, #739e78) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
+    package "net/http" as .net_http {
+        class "Handler" as net_http_Handler << (I, #e4f58e) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/http/token" as github_com_codemityio_go_pkg_http_token {
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "net/http" as .net_http {
+        class "Request" as net_http_Request << (S, #b5558d) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    package "github.com/google/uuid" as .github_com_google_uuid {
+        class "UUID" as github_com_google_uuid_UUID << (T, #6d8cbf) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "interface" as _interface << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "net/http" as .net_http {
+        class "RoundTripper" as net_http_RoundTripper << (I, #e4f58e) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Request" as net_http_Request << (S, #b5558d) >> {}
+    }
+    package "net/http" as .net_http {
+        class "Response" as net_http_Response << (S, #b5558d) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "crypto/rsa" as .crypto_rsa {
+        class "PrivateKey" as crypto_rsa_PrivateKey << (S, #b5558d) >> {}
+    }
+    package "crypto" as .crypto {
+        class "Hash" as crypto_Hash << (P, #74b1b5) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "github.com/google/uuid" as .github_com_google_uuid {
+        class "UUID" as github_com_google_uuid_UUID << (T, #6d8cbf) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    package "net/http" as .net_http {
+        class "RoundTripper" as net_http_RoundTripper << (I, #e4f58e) >> {}
+    }
+    package "crypto/rsa" as .crypto_rsa {
+        class "PrivateKey" as crypto_rsa_PrivateKey << (S, #b5558d) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/http/client" as github_com_codemityio_go_pkg_http_client {
+    github_com_codemityio_go_pkg_http_client_DefaultClient #...up...> _struct
+    github_com_codemityio_go_pkg_http_client_DefaultClient *---up---> net_http_Client
+    github_com_codemityio_go_pkg_http_client_DefaultClient ...up...|> github_com_codemityio_go_pkg_http_client_Clienter
+    github_com_codemityio_go_pkg_http_client_DefaultClient o---up---> github_com_codemityio_go_pkg_http_client_Config
+    github_com_codemityio_go_pkg_http_client_Config #...up...> _struct
+    github_com_codemityio_go_pkg_http_client_Config o---up---> github_com_codemityio_go_pkg_http_client_TLS
+    github_com_codemityio_go_pkg_http_client_Config o---up---> github_com_codemityio_go_pkg_http_client_Transport
+    github_com_codemityio_go_pkg_http_client_Config o---up---> github_com_codemityio_go_pkg_http_client_JWT
+    github_com_codemityio_go_pkg_http_client_TLS #...up...> _struct
+    github_com_codemityio_go_pkg_http_client_Transport #...up...> _struct
+    github_com_codemityio_go_pkg_http_client_Transport o---up---> time_Duration
+    github_com_codemityio_go_pkg_http_client_JWT #...up...> _struct
+    github_com_codemityio_go_pkg_http_client_Clienter #...up...> _interface
+    github_com_codemityio_go_pkg_http_client_Clienter ...up...> net_http_Response
+    github_com_codemityio_go_pkg_http_client_Clienter ...up...> _error
+    github_com_codemityio_go_pkg_http_client_Clienter ...up...> net_http_Request
+    github_com_codemityio_go_pkg_http_client_Clienter ...up...> io_Reader
+    github_com_codemityio_go_pkg_http_client_Clienter ...up...> net_url_Values
+    github_com_codemityio_go_pkg_http_client_Option #...up...> github_com_codemityio_go_pkg_http_client_DefaultClient
+    github_com_codemityio_go_pkg_http_client_Option #...up...> github_com_codemityio_go_pkg_http_client_func_p__DefaultClient_
+    github_com_codemityio_go_pkg_http_client_New ....up....> github_com_codemityio_go_pkg_http_client_Option
+    github_com_codemityio_go_pkg_http_client_New ....up....> github_com_codemityio_go_pkg_http_client_DefaultClient
+    github_com_codemityio_go_pkg_http_client_WithConfig ....up....> github_com_codemityio_go_pkg_http_client_Config
+    github_com_codemityio_go_pkg_http_client_WithConfig ....up....> github_com_codemityio_go_pkg_http_client_Option
+    github_com_codemityio_go_pkg_http_client_configCACert ....up....> crypto_tls_Config
+    github_com_codemityio_go_pkg_http_client_configCertKey ....up....> crypto_tls_Config
+    github_com_codemityio_go_pkg_http_client_configJWT ....up....> github_com_codemityio_go_pkg_http_client_Config
+    github_com_codemityio_go_pkg_http_client_configJWT ....up....> github_com_codemityio_go_pkg_http_token_DefaultSigner
+}
+package "github.com/codemityio/go/pkg/http/huma" as github_com_codemityio_go_pkg_http_huma {
+    github_com_codemityio_go_pkg_http_huma_Config #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_FormatTextPlain #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_FormatTextPlain ...up...|> github_com_codemityio_go_pkg_http_huma_Formatter
+    github_com_codemityio_go_pkg_http_huma_FormatTextPlain ...up...> io_Writer
+    github_com_codemityio_go_pkg_http_huma_FormatTextPlain ...up...> _any
+    github_com_codemityio_go_pkg_http_huma_FormatTextPlain ...up...> _error
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTML #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTML ...up...|> github_com_codemityio_go_pkg_http_huma_Formatter
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTML o---up---> html_template_Template
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTML ...up...> io_Writer
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTML ...up...> _any
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTML ...up...> _error
+    github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON ...up...|> github_com_codemityio_go_pkg_http_huma_Formatter
+    github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON ...up...> io_Writer
+    github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON ...up...> _any
+    github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON ...up...> _error
+    github_com_codemityio_go_pkg_http_huma_Handler #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_Handler ...up...|> github_com_codemityio_go_pkg_http_server_Handler
+    github_com_codemityio_go_pkg_http_huma_Handler o---up---> github_com_codemityio_go_pkg_http_huma_Config
+    github_com_codemityio_go_pkg_http_huma_Handler o---up---> github_com_codemityio_go_pkg_http_huma_Router
+    github_com_codemityio_go_pkg_http_huma_Handler o---up---> github_com_codemityio_go_pkg_http_huma_OperationWithHandlerRegisterer
+    github_com_codemityio_go_pkg_http_huma_Handler o---up---> github_com_codemityio_go_pkg_http_huma_MiddlewareFunc
+    github_com_codemityio_go_pkg_http_huma_Handler o---up---> github_com_codemityio_go_pkg_http_huma_Formatter
+    github_com_codemityio_go_pkg_http_huma_Handler o---up---> github_com_codemityio_go_pkg_http_huma_SecurityScheme
+    github_com_codemityio_go_pkg_http_huma_Handler ...up...> net_http_ResponseWriter
+    github_com_codemityio_go_pkg_http_huma_Handler ...up...> net_http_Request
+    github_com_codemityio_go_pkg_http_huma_Router #...up...> _interface
+    github_com_codemityio_go_pkg_http_huma_Router *---up---> github_com_go_chi_chi_v5_Router
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandlerRegisterer #...up...> _interface
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandlerRegisterer ...up...> github_com_danielgtaylor_huma_v2_API
+    github_com_codemityio_go_pkg_http_huma_MiddlewareHandler #...up...> _interface
+    github_com_codemityio_go_pkg_http_huma_MiddlewareHandler ...up...> github_com_danielgtaylor_huma_v2_Context
+    github_com_codemityio_go_pkg_http_huma_MiddlewareHandler ...up...> github_com_danielgtaylor_huma_v2_API
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDProvider #...up...> _interface
+    github_com_codemityio_go_pkg_http_huma_Formatter #...up...> _interface
+    github_com_codemityio_go_pkg_http_huma_Formatter ...up...> io_Writer
+    github_com_codemityio_go_pkg_http_huma_Formatter ...up...> _any
+    github_com_codemityio_go_pkg_http_huma_Formatter ...up...> _error
+    github_com_codemityio_go_pkg_http_huma_SecurityScheme #...up...> _interface
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware ...up...|> github_com_codemityio_go_pkg_http_huma_MiddlewareHandler
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware o---up---> github_com_codemityio_go_pkg_http_huma_LogFunc
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware ...up...> github_com_danielgtaylor_huma_v2_Context
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware ...up...> github_com_danielgtaylor_huma_v2_API
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware ...up...|> github_com_codemityio_go_pkg_http_huma_MiddlewareHandler
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware o---up---> github_com_codemityio_go_pkg_http_huma_CorrelationIDProvider
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware ...up...> github_com_danielgtaylor_huma_v2_Context
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware ...up...> github_com_danielgtaylor_huma_v2_API
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDProviderFunc #...up...> github_com_codemityio_go_pkg_http_huma_func____string_
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeBasicAuth #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeBasicAuth ...up...|> github_com_codemityio_go_pkg_http_huma_SecurityScheme
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIHeaderKeyAuth #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIHeaderKeyAuth ...up...|> github_com_codemityio_go_pkg_http_huma_SecurityScheme
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIQueryKeyAuth #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIQueryKeyAuth ...up...|> github_com_codemityio_go_pkg_http_huma_SecurityScheme
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeTokenAuth #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_SecuritySchemeTokenAuth ...up...|> github_com_codemityio_go_pkg_http_huma_SecurityScheme
+    github_com_codemityio_go_pkg_http_huma_HandlerOption #...up...> github_com_codemityio_go_pkg_http_huma_Handler
+    github_com_codemityio_go_pkg_http_huma_HandlerOption #...up...> github_com_codemityio_go_pkg_http_huma_func_p__Handler_
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddlewareOption #...up...> github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware
+    github_com_codemityio_go_pkg_http_huma_AccessLogMiddlewareOption #...up...> github_com_codemityio_go_pkg_http_huma_func_p__AccessLogMiddleware_
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddlewareOption #...up...> github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware
+    github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddlewareOption #...up...> github_com_codemityio_go_pkg_http_huma_func_p__CorrelationIDMiddleware_
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler *---up---> github_com_danielgtaylor_huma_v2_Operation
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler #...up...> _any
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler ...up...|> github_com_codemityio_go_pkg_http_huma_OperationWithHandlerRegisterer
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler o---up---> context_Context
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler o---up---> github_com_codemityio_go_pkg_http_huma_I
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler o---up---> github_com_codemityio_go_pkg_http_huma_O
+    github_com_codemityio_go_pkg_http_huma_OperationWithHandler o---up---> _error
+    github_com_codemityio_go_pkg_http_huma_MiddlewareFunc #...up...> github_com_danielgtaylor_huma_v2_Context
+    github_com_codemityio_go_pkg_http_huma_MiddlewareFunc #...up...> github_com_danielgtaylor_huma_v2_API
+    github_com_codemityio_go_pkg_http_huma_MiddlewareFunc #...up...> github_com_codemityio_go_pkg_http_huma_func_ctx_huma_Context__api_huma_API__next_func_huma_Context__
+    github_com_codemityio_go_pkg_http_huma_HTMLErrorView #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTMLOption #...up...> github_com_codemityio_go_pkg_http_huma_FormatTextHTML
+    github_com_codemityio_go_pkg_http_huma_FormatTextHTMLOption #...up...> github_com_codemityio_go_pkg_http_huma_func_p__FormatTextHTML_
+    github_com_codemityio_go_pkg_http_huma_LogField #...up...> _struct
+    github_com_codemityio_go_pkg_http_huma_LogField o---up---> _any
+    github_com_codemityio_go_pkg_http_huma_LogFunc #...up...> github_com_codemityio_go_pkg_http_huma_LogField
+    github_com_codemityio_go_pkg_http_huma_LogFunc #...up...> github_com_codemityio_go_pkg_http_huma_func_message_string__fields____LogField_
+    github_com_codemityio_go_pkg_http_huma_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_http_huma_ErrMarshal ...up...|> error
+    github_com_codemityio_go_pkg_http_huma_ErrUnmarshal ...up...|> error
+    github_com_codemityio_go_pkg_http_huma_SchemeHTTP #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_SchemeHTTPS #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_HeaderCorrelationID #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_HeaderForwardedProto #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_HeaderForwardedScheme #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_ContextCorrelationID #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_ContentTypeTextPlain #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_ContentTypeTextHTML #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_ContentTypeApplicationJSON #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_huma_NewHandler ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_NewHandler ....up....> github_com_codemityio_go_pkg_http_huma_Handler
+    github_com_codemityio_go_pkg_http_huma_NewAccessLogMiddleware ....up....> github_com_codemityio_go_pkg_http_huma_AccessLogMiddlewareOption
+    github_com_codemityio_go_pkg_http_huma_NewAccessLogMiddleware ....up....> github_com_codemityio_go_pkg_http_huma_AccessLogMiddleware
+    github_com_codemityio_go_pkg_http_huma_NewCorrelationIDMiddleware ....up....> github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddlewareOption
+    github_com_codemityio_go_pkg_http_huma_NewCorrelationIDMiddleware ....up....> github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddleware
+    github_com_codemityio_go_pkg_http_huma_NewUUIDCorrelationIDProvider ....up....> github_com_codemityio_go_pkg_http_huma_CorrelationIDProviderFunc
+    github_com_codemityio_go_pkg_http_huma_NewFormatTextPlain ....up....> github_com_codemityio_go_pkg_http_huma_FormatTextPlain
+    github_com_codemityio_go_pkg_http_huma_NewFormatTextHTML ....up....> github_com_codemityio_go_pkg_http_huma_FormatTextHTMLOption
+    github_com_codemityio_go_pkg_http_huma_NewFormatTextHTML ....up....> github_com_codemityio_go_pkg_http_huma_FormatTextHTML
+    github_com_codemityio_go_pkg_http_huma_NewFormatApplicationJSON ....up....> github_com_codemityio_go_pkg_http_huma_FormatApplicationJSON
+    github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeBasicAuth ....up....> github_com_codemityio_go_pkg_http_huma_SecuritySchemeBasicAuth
+    github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeAPIHeaderKeyAuth ....up....> github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIHeaderKeyAuth
+    github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeAPIQueryKeyAuth ....up....> github_com_codemityio_go_pkg_http_huma_SecuritySchemeAPIQueryKeyAuth
+    github_com_codemityio_go_pkg_http_huma_NewSecuritySchemeTokenAuth ....up....> github_com_codemityio_go_pkg_http_huma_SecuritySchemeTokenAuth
+    github_com_codemityio_go_pkg_http_huma_WithConfig ....up....> github_com_codemityio_go_pkg_http_huma_Config
+    github_com_codemityio_go_pkg_http_huma_WithConfig ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_WithRouter ....up....> github_com_codemityio_go_pkg_http_huma_Router
+    github_com_codemityio_go_pkg_http_huma_WithRouter ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_WithOperationWithHandler ....up....> github_com_codemityio_go_pkg_http_huma_OperationWithHandlerRegisterer
+    github_com_codemityio_go_pkg_http_huma_WithOperationWithHandler ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_WithMiddleware ....up....> github_com_codemityio_go_pkg_http_huma_MiddlewareFunc
+    github_com_codemityio_go_pkg_http_huma_WithMiddleware ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_WithFormatter ....up....> github_com_codemityio_go_pkg_http_huma_Formatter
+    github_com_codemityio_go_pkg_http_huma_WithFormatter ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_WithSecuritySchemes ....up....> github_com_codemityio_go_pkg_http_huma_SecurityScheme
+    github_com_codemityio_go_pkg_http_huma_WithSecuritySchemes ....up....> github_com_codemityio_go_pkg_http_huma_HandlerOption
+    github_com_codemityio_go_pkg_http_huma_WithAccessLogMiddlewareLogFunc ....up....> github_com_codemityio_go_pkg_http_huma_LogFunc
+    github_com_codemityio_go_pkg_http_huma_WithAccessLogMiddlewareLogFunc ....up....> github_com_codemityio_go_pkg_http_huma_AccessLogMiddlewareOption
+    github_com_codemityio_go_pkg_http_huma_WithCorrelationIDMiddlewareCorrelationIDProvider ....up....> github_com_codemityio_go_pkg_http_huma_CorrelationIDProvider
+    github_com_codemityio_go_pkg_http_huma_WithCorrelationIDMiddlewareCorrelationIDProvider ....up....> github_com_codemityio_go_pkg_http_huma_CorrelationIDMiddlewareOption
+    github_com_codemityio_go_pkg_http_huma_WithFormatTextHTMLTemplate ....up....> github_com_codemityio_go_pkg_http_huma_FormatTextHTMLOption
+}
+package "github.com/codemityio/go/pkg/http/server" as github_com_codemityio_go_pkg_http_server {
+    github_com_codemityio_go_pkg_http_server_Config #...up...> _struct
+    github_com_codemityio_go_pkg_http_server_Config o---up---> time_Duration
+    github_com_codemityio_go_pkg_http_server_Config o---up---> github_com_codemityio_go_pkg_http_server_TLS
+    github_com_codemityio_go_pkg_http_server_TLS #...up...> _struct
+    github_com_codemityio_go_pkg_http_server_Server #...up...> _interface
+    github_com_codemityio_go_pkg_http_server_Server ...up...> context_Context
+    github_com_codemityio_go_pkg_http_server_Server ...up...> time_Duration
+    github_com_codemityio_go_pkg_http_server_Handler #...up...> _interface
+    github_com_codemityio_go_pkg_http_server_Handler *---up---> net_http_Handler
+    github_com_codemityio_go_pkg_http_server_DefaultServer #...up...> _struct
+    github_com_codemityio_go_pkg_http_server_DefaultServer *---up---> net_http_Server
+    github_com_codemityio_go_pkg_http_server_DefaultServer ...up...|> github_com_codemityio_go_pkg_http_server_Server
+    github_com_codemityio_go_pkg_http_server_DefaultServer o---up---> github_com_codemityio_go_pkg_http_server_LogFunc
+    github_com_codemityio_go_pkg_http_server_DefaultServer o---up---> github_com_codemityio_go_pkg_http_server_Config
+    github_com_codemityio_go_pkg_http_server_DefaultServer o---up---> sync_Mutex
+    github_com_codemityio_go_pkg_http_server_DefaultServer o---up---> sync_Once
+    github_com_codemityio_go_pkg_http_server_DefaultServer ...up...> context_Context
+    github_com_codemityio_go_pkg_http_server_DefaultServer ...up...> time_Duration
+    github_com_codemityio_go_pkg_http_server_Option #...up...> github_com_codemityio_go_pkg_http_server_DefaultServer
+    github_com_codemityio_go_pkg_http_server_Option #...up...> github_com_codemityio_go_pkg_http_server_func_p__DefaultServer_
+    github_com_codemityio_go_pkg_http_server_LogFunc #...up...> github_com_codemityio_go_pkg_http_server_func_message_string_
+    github_com_codemityio_go_pkg_http_server_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_http_server_ErrServerUnableListenAndServe ...up...|> error
+    github_com_codemityio_go_pkg_http_server_ErrServerCertificateDoesNotExist ...up...|> error
+    github_com_codemityio_go_pkg_http_server_ErrServerKeyDoesNotExist ...up...|> error
+    github_com_codemityio_go_pkg_http_server_ErrServerUnableToMarshal ...up...|> error
+    github_com_codemityio_go_pkg_http_server_ErrServerShutdownFailure ...up...|> error
+    github_com_codemityio_go_pkg_http_server_defaultTimeout #...up...> untyped_int
+    github_com_codemityio_go_pkg_http_server_WithConfig ....up....> github_com_codemityio_go_pkg_http_server_Config
+    github_com_codemityio_go_pkg_http_server_WithConfig ....up....> github_com_codemityio_go_pkg_http_server_Option
+    github_com_codemityio_go_pkg_http_server_WithShutdownFunc ....up....> github_com_codemityio_go_pkg_http_server_Option
+    github_com_codemityio_go_pkg_http_server_WithLogFunc ....up....> github_com_codemityio_go_pkg_http_server_LogFunc
+    github_com_codemityio_go_pkg_http_server_WithLogFunc ....up....> github_com_codemityio_go_pkg_http_server_Option
+    github_com_codemityio_go_pkg_http_server_WithHandler ....up....> net_http_Handler
+    github_com_codemityio_go_pkg_http_server_WithHandler ....up....> github_com_codemityio_go_pkg_http_server_Option
+    github_com_codemityio_go_pkg_http_server_New ....up....> github_com_codemityio_go_pkg_http_server_Option
+    github_com_codemityio_go_pkg_http_server_New ....up....> github_com_codemityio_go_pkg_http_server_DefaultServer
+}
+package "github.com/codemityio/go/pkg/http/token" as github_com_codemityio_go_pkg_http_token {
+    github_com_codemityio_go_pkg_http_token_Signer #...up...> _interface
+    github_com_codemityio_go_pkg_http_token_Signer ...up...> _error
+    github_com_codemityio_go_pkg_http_token_RoundTripper #...up...> _interface
+    github_com_codemityio_go_pkg_http_token_RoundTripper ...up...> net_http_Request
+    github_com_codemityio_go_pkg_http_token_RoundTripper ...up...> net_http_Response
+    github_com_codemityio_go_pkg_http_token_RoundTripper ...up...> _error
+    github_com_codemityio_go_pkg_http_token_UUIDRandomiser #...up...> _interface
+    github_com_codemityio_go_pkg_http_token_UUIDRandomiser ...up...> github_com_google_uuid_UUID
+    github_com_codemityio_go_pkg_http_token_UUIDRandomiser ...up...> _error
+    github_com_codemityio_go_pkg_http_token_TimeProvider #...up...> _interface
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper #...up...> _struct
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper ...up...|> github_com_codemityio_go_pkg_http_token_RoundTripper
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper o---up---> net_http_RoundTripper
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper o---up---> github_com_codemityio_go_pkg_http_token_Signer
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper ...up...> net_http_Request
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper ...up...> net_http_Response
+    github_com_codemityio_go_pkg_http_token_DefaultRoundTripper ...up...> _error
+    github_com_codemityio_go_pkg_http_token_DefaultSigner #...up...> _struct
+    github_com_codemityio_go_pkg_http_token_DefaultSigner ...up...|> github_com_codemityio_go_pkg_http_token_Signer
+    github_com_codemityio_go_pkg_http_token_DefaultSigner o---up---> github_com_codemityio_go_pkg_http_token_UUIDRandomiser
+    github_com_codemityio_go_pkg_http_token_DefaultSigner o---up---> github_com_codemityio_go_pkg_http_token_TimeProvider
+    github_com_codemityio_go_pkg_http_token_DefaultSigner o---up---> crypto_rsa_PrivateKey
+    github_com_codemityio_go_pkg_http_token_DefaultSigner o---up---> crypto_Hash
+    github_com_codemityio_go_pkg_http_token_DefaultSigner ...up...> _error
+    github_com_codemityio_go_pkg_http_token_DefaultUUIDProvider #...up...> _struct
+    github_com_codemityio_go_pkg_http_token_DefaultUUIDProvider ...up...|> github_com_codemityio_go_pkg_http_token_UUIDRandomiser
+    github_com_codemityio_go_pkg_http_token_DefaultUUIDProvider ...up...> github_com_google_uuid_UUID
+    github_com_codemityio_go_pkg_http_token_DefaultUUIDProvider ...up...> _error
+    github_com_codemityio_go_pkg_http_token_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_http_token_ErrSignerUnableGenerateUUID ...up...|> error
+    github_com_codemityio_go_pkg_http_token_ErrSignerUnableToSignToken ...up...|> error
+    github_com_codemityio_go_pkg_http_token_ErrUUIDProviderNewRandom ...up...|> error
+    github_com_codemityio_go_pkg_http_token_typ #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_token_ver #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_token_NewDefaultRoundTripper ....up....> net_http_RoundTripper
+    github_com_codemityio_go_pkg_http_token_NewDefaultRoundTripper ....up....> github_com_codemityio_go_pkg_http_token_Signer
+    github_com_codemityio_go_pkg_http_token_NewDefaultRoundTripper ....up....> github_com_codemityio_go_pkg_http_token_DefaultRoundTripper
+    github_com_codemityio_go_pkg_http_token_NewDefaultSigner ....up....> github_com_codemityio_go_pkg_http_token_UUIDRandomiser
+    github_com_codemityio_go_pkg_http_token_NewDefaultSigner ....up....> github_com_codemityio_go_pkg_http_token_TimeProvider
+    github_com_codemityio_go_pkg_http_token_NewDefaultSigner ....up....> crypto_rsa_PrivateKey
+    github_com_codemityio_go_pkg_http_token_NewDefaultSigner ....up....> github_com_codemityio_go_pkg_http_token_DefaultSigner
+    github_com_codemityio_go_pkg_http_token_NewUUIDProvider ....up....> github_com_codemityio_go_pkg_http_token_DefaultUUIDProvider
+}
+@enduml
+
