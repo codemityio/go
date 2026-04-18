@@ -84,10 +84,11 @@ func TestMiddleware(t *testing.T) {
 		WithAccessLogMiddlewareLogFunc(func(message string, fields ...LogField) {
 			bfr.WriteString(message)
 
-			fStr, err := json.Marshal(fields)
-			require.NoError(t, err)
+			fStr, e := json.Marshal(fields)
+			require.NoError(t, e)
 
-			fmt.Fprintf(&bfr, "%s\n", string(fStr))
+			_, e = fmt.Fprintf(&bfr, "%s\n", string(fStr))
+			require.NoError(t, e)
 		}),
 	)
 	correlationIDMiddleware := NewCorrelationIDMiddleware(
