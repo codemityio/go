@@ -30,6 +30,7 @@ case "$1" in
       --json-output-path "pkg/${target}/graph.json" \
       --path "./pkg/${target}/..." >"pkg/${target}/graph.puml"
     docker run --rm \
+      --name "${BASE_NAME}-notatio-plantuml" \
       -w "${PWD}" \
       -v "${PWD}:${PWD}" \
       "${VENDOR}"/notatio:latest plantuml --input-path="pkg/${target}/graph.puml" --output-format=svg
@@ -55,6 +56,7 @@ case "$1" in
       --owned "${GOPRIVATE}" \
       >"pkg/${target}/depgraph.dot"
     docker run --rm \
+      --name "${BASE_NAME}-notatio-graphviz" \
       -v "${PWD}:${PWD}" \
       -w "${PWD}" \
       "${VENDOR}"/notatio:latest graphviz --input-path="pkg/${target}/depgraph.dot" --output-format=svg
@@ -98,15 +100,18 @@ case "$1" in
   for target in ${targets//,/ }; do
     echo "pkg/${target}/..."
     docker run --rm \
+      --name "${BASE_NAME}-notatio-mermaid" \
       -w "${PWD}" \
       -v "${PWD}:${PWD}" \
       "${VENDOR}"/notatio:latest mermaid --input-path="pkg/${target}" --output-format=svg --recursive
     docker run --rm \
+      --name "${BASE_NAME}-notatio-plantuml" \
       -w "${PWD}" \
       -v "${PWD}:${PWD}" \
       "${VENDOR}"/notatio:latest plantuml --input-path="pkg/${target}" --output-format=svg --recursive
     docker run --rm \
       --platform linux/amd64 \
+      --name "${BASE_NAME}-notatio-graphviz" \
       -v "${PWD}:${PWD}" \
       -w "${PWD}" \
       "${VENDOR}"/notatio:latest graphviz --input-path="pkg/${target}" --output-format=svg --recursive

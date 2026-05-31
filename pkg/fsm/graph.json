@@ -2531,8 +2531,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 289,
-        "Line": 17,
+        "Offset": 307,
+        "Line": 19,
         "Column": 2
       },
       "PackageName": "generator",

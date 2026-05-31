@@ -176,7 +176,8 @@ func TestMiddleware(t *testing.T) {
 			body, err := io.ReadAll(resp.Body)
 			require.NoError(t, err)
 
-			assert.Equal(t,
+			assert.Equal(
+				t,
 				test.expectedResponseBody,
 				strings.TrimSpace(string(body)),
 			)
