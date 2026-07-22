@@ -83,8 +83,8 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
 | github.com/youmark/pkcs8                           | https://github.com/youmark/pkcs8/blob/a2c0da244d78/LICENSE                          | MIT          |
 | go.mongodb.org/mongo-driver/v2                     | https://github.com/mongodb/mongo-go-driver/blob/v2.8.0/LICENSE                      | Apache-2.0   |
 | golang.org/x/crypto                                | https://cs.opensource.google/go/x/crypto/+/v0.52.0:LICENSE                          | BSD-3-Clause |
-| golang.org/x/sync                                  | https://cs.opensource.google/go/x/sync/+/v0.20.0:LICENSE                            | BSD-3-Clause |
-| golang.org/x/text                                  | https://cs.opensource.google/go/x/text/+/v0.37.0:LICENSE                            | BSD-3-Clause |
+| golang.org/x/sync                                  | https://cs.opensource.google/go/x/sync/+/v0.21.0:LICENSE                            | BSD-3-Clause |
+| golang.org/x/text                                  | https://cs.opensource.google/go/x/text/+/v0.39.0:LICENSE                            | BSD-3-Clause |
 | gopkg.in/yaml.v3                                   | https://github.com/go-yaml/yaml/blob/v3.0.1/LICENSE                                 | MIT          |
 
 ## License
