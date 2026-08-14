@@ -17,7 +17,7 @@ import (
 // WithConfig configuration option.
 func WithConfig(config *Config) Option {
 	return func(service *DefaultClient) {
-		tlsConfig := &tls.Config{ //nolint:exhaustruct
+		tlsConfig := &tls.Config{ //nolint:exhaustruct_v5
 			MinVersion: tls.VersionTLS12,
 		}
 
@@ -32,12 +32,12 @@ func WithConfig(config *Config) Option {
 
 		var transport http.RoundTripper
 
-		transport = &http.Transport{ //nolint:exhaustruct
+		transport = &http.Transport{ //nolint:exhaustruct_v5
 			TLSClientConfig: tlsConfig,
 		}
 
 		if config != nil && config.Transport != nil {
-			transport = &http.Transport{ //nolint:exhaustruct
+			transport = &http.Transport{ //nolint:exhaustruct_v5
 				MaxIdleConns:        config.Transport.MaxIdleConns,
 				MaxConnsPerHost:     config.Transport.MaxConnsPerHost,
 				MaxIdleConnsPerHost: config.Transport.MaxIdleConnsPerHost,

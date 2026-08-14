@@ -8,8 +8,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 545,
-        "Line": 17,
+        "Offset": 581,
+        "Line": 21,
         "Column": 2
       },
       "PackageName": "token",
@@ -29,18 +29,18 @@
         "Column": 1
       },
       "End": {
-        "Offset": 545,
-        "Line": 17,
+        "Offset": 581,
+        "Line": 21,
         "Column": 2
       },
       "PackageName": "token",
       "PackagePath": "github.com/codemityio/go/pkg/http/token",
-      "Name": "ErrSignerUnableGenerateUUID",
+      "Name": "ErrSignerUnableToGenerateUUID",
       "Type": null,
       "TypeInfo": "error",
       "Params": null,
       "IsExported": true,
-      "Doc": "ErrSignerUnableGenerateUUID unable to generate UUID.\n"
+      "Doc": "ErrSignerUnableToGenerateUUID unable to generate UUID.\n"
     },
     {
       "FilePath": "pkg/http/token/error.go",
@@ -50,8 +50,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 545,
-        "Line": 17,
+        "Offset": 581,
+        "Line": 21,
         "Column": 2
       },
       "PackageName": "token",
@@ -71,18 +71,18 @@
         "Column": 1
       },
       "End": {
-        "Offset": 545,
-        "Line": 17,
+        "Offset": 581,
+        "Line": 21,
         "Column": 2
       },
       "PackageName": "token",
       "PackagePath": "github.com/codemityio/go/pkg/http/token",
-      "Name": "ErrUUIDProviderNewRandom",
+      "Name": "ErrUUIDProviderUnableToGenerateUUID",
       "Type": null,
       "TypeInfo": "error",
       "Params": null,
       "IsExported": true,
-      "Doc": "ErrUUIDProviderNewRandom error.\n"
+      "Doc": "ErrUUIDProviderUnableToGenerateUUID error.\n"
     },
     {
       "FilePath": "pkg/http/huma/errors.go",
@@ -155,7 +155,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 728,
+        "Offset": 732,
         "Line": 21,
         "Column": 2
       },
@@ -176,18 +176,18 @@
         "Column": 1
       },
       "End": {
-        "Offset": 728,
+        "Offset": 732,
         "Line": 21,
         "Column": 2
       },
       "PackageName": "server",
       "PackagePath": "github.com/codemityio/go/pkg/http/server",
-      "Name": "ErrServerUnableListenAndServe",
+      "Name": "ErrServerUnableToListenAndServe",
       "Type": null,
       "TypeInfo": "error",
       "Params": null,
       "IsExported": true,
-      "Doc": "ErrServerUnableListenAndServe server error.\n"
+      "Doc": "ErrServerUnableToListenAndServe server error.\n"
     },
     {
       "FilePath": "pkg/http/server/error.go",
@@ -197,7 +197,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 728,
+        "Offset": 732,
         "Line": 21,
         "Column": 2
       },
@@ -218,7 +218,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 728,
+        "Offset": 732,
         "Line": 21,
         "Column": 2
       },
@@ -239,7 +239,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 728,
+        "Offset": 732,
         "Line": 21,
         "Column": 2
       },
@@ -260,7 +260,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 728,
+        "Offset": 732,
         "Line": 21,
         "Column": 2
       },
@@ -908,13 +908,13 @@
     {
       "FilePath": "pkg/http/token/signer.go",
       "Start": {
-        "Offset": 180,
-        "Line": 13,
+        "Offset": 190,
+        "Line": 14,
         "Column": 1
       },
       "End": {
-        "Offset": 363,
-        "Line": 20,
+        "Offset": 373,
+        "Line": 21,
         "Column": 2
       },
       "PackageName": "token",
@@ -1057,13 +1057,155 @@
         {
           "FilePath": "pkg/http/token/signer.go",
           "Start": {
-            "Offset": 403,
-            "Line": 23,
+            "Offset": 509,
+            "Line": 25,
             "Column": 1
           },
           "End": {
-            "Offset": 1282,
-            "Line": 61,
+            "Offset": 636,
+            "Line": 27,
+            "Column": 2
+          },
+          "Name": "IsSignerUnableToGenerateUUID",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsSignerUnableToGenerateUUID reports whether err is or wraps the error Sign returns when it\nfails to generate the token's UUID.\n"
+        },
+        {
+          "FilePath": "pkg/http/token/signer.go",
+          "Start": {
+            "Offset": 758,
+            "Line": 31,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 879,
+            "Line": 33,
+            "Column": 2
+          },
+          "Name": "IsSignerUnableToSignToken",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsSignerUnableToSignToken reports whether err is or wraps the error Sign returns when it\nfails to sign the token.\n"
+        },
+        {
+          "FilePath": "pkg/http/token/signer.go",
+          "Start": {
+            "Offset": 919,
+            "Line": 36,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1800,
+            "Line": 74,
             "Column": 2
           },
           "Name": "Sign",
@@ -1154,13 +1296,13 @@
     {
       "FilePath": "pkg/http/token/uuidprovider.go",
       "Start": {
-        "Offset": 94,
-        "Line": 10,
+        "Offset": 104,
+        "Line": 11,
         "Column": 1
       },
       "End": {
-        "Offset": 127,
-        "Line": 10,
+        "Offset": 137,
+        "Line": 11,
         "Column": 34
       },
       "PackageName": "token",
@@ -1194,13 +1336,84 @@
         {
           "FilePath": "pkg/http/token/uuidprovider.go",
           "Start": {
-            "Offset": 163,
-            "Line": 13,
+            "Offset": 279,
+            "Line": 15,
             "Column": 1
           },
           "End": {
-            "Offset": 368,
+            "Offset": 423,
+            "Line": 17,
+            "Column": 2
+          },
+          "Name": "IsUUIDProviderUnableToGenerateUUID",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsUUIDProviderUnableToGenerateUUID reports whether err is or wraps the error RandomUUID returns\nwhen it fails to generate a new UUID.\n"
+        },
+        {
+          "FilePath": "pkg/http/token/uuidprovider.go",
+          "Start": {
+            "Offset": 459,
             "Line": 20,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 675,
+            "Line": 27,
             "Column": 2
           },
           "Name": "RandomUUID",
@@ -2754,13 +2967,13 @@
     {
       "FilePath": "pkg/http/huma/format.go",
       "Start": {
-        "Offset": 173,
-        "Line": 13,
+        "Offset": 183,
+        "Line": 14,
         "Column": 1
       },
       "End": {
-        "Offset": 202,
-        "Line": 13,
+        "Offset": 212,
+        "Line": 14,
         "Column": 30
       },
       "PackageName": "huma",
@@ -2794,13 +3007,13 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 270,
-            "Line": 16,
+            "Offset": 280,
+            "Line": 17,
             "Column": 1
           },
           "End": {
-            "Offset": 349,
-            "Line": 18,
+            "Offset": 359,
+            "Line": 19,
             "Column": 2
           },
           "Name": "ContentType",
@@ -2842,13 +3055,155 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 402,
-            "Line": 21,
+            "Offset": 453,
+            "Line": 22,
             "Column": 1
           },
           "End": {
-            "Offset": 681,
+            "Offset": 543,
+            "Line": 24,
+            "Column": 2
+          },
+          "Name": "IsMarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsMarshal reports whether err is or wraps the error Marshal returns when encoding fails.\n"
+        },
+        {
+          "FilePath": "pkg/http/huma/format.go",
+          "Start": {
+            "Offset": 621,
+            "Line": 27,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 715,
+            "Line": 29,
+            "Column": 2
+          },
+          "Name": "IsUnmarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsUnmarshal reports whether err is or wraps the error Unmarshal returns.\n"
+        },
+        {
+          "FilePath": "pkg/http/huma/format.go",
+          "Start": {
+            "Offset": 768,
             "Line": 32,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1047,
+            "Line": 43,
             "Column": 2
           },
           "Name": "Marshal",
@@ -2878,7 +3233,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2914,7 +3269,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2935,13 +3290,13 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 850,
-            "Line": 38,
+            "Offset": 1216,
+            "Line": 49,
             "Column": 1
           },
           "End": {
-            "Offset": 993,
-            "Line": 40,
+            "Offset": 1359,
+            "Line": 51,
             "Column": 2
           },
           "Name": "Unmarshal",
@@ -2971,7 +3326,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -3007,7 +3362,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -3032,13 +3387,13 @@
     {
       "FilePath": "pkg/http/huma/format.go",
       "Start": {
-        "Offset": 1079,
-        "Line": 43,
+        "Offset": 1445,
+        "Line": 54,
         "Column": 1
       },
       "End": {
-        "Offset": 1138,
-        "Line": 45,
+        "Offset": 1504,
+        "Line": 56,
         "Column": 2
       },
       "PackageName": "huma",
@@ -3091,13 +3446,13 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 1206,
-            "Line": 48,
+            "Offset": 1572,
+            "Line": 59,
             "Column": 1
           },
           "End": {
-            "Offset": 1283,
-            "Line": 50,
+            "Offset": 1649,
+            "Line": 61,
             "Column": 2
           },
           "Name": "ContentType",
@@ -3139,13 +3494,155 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 1336,
-            "Line": 53,
+            "Offset": 1743,
+            "Line": 64,
             "Column": 1
           },
           "End": {
-            "Offset": 1802,
+            "Offset": 1832,
+            "Line": 66,
+            "Column": 2
+          },
+          "Name": "IsMarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsMarshal reports whether err is or wraps the error Marshal returns when encoding fails.\n"
+        },
+        {
+          "FilePath": "pkg/http/huma/format.go",
+          "Start": {
+            "Offset": 1910,
+            "Line": 69,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2003,
             "Line": 71,
+            "Column": 2
+          },
+          "Name": "IsUnmarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsUnmarshal reports whether err is or wraps the error Unmarshal returns.\n"
+        },
+        {
+          "FilePath": "pkg/http/huma/format.go",
+          "Start": {
+            "Offset": 2056,
+            "Line": 74,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2522,
+            "Line": 92,
             "Column": 2
           },
           "Name": "Marshal",
@@ -3175,7 +3672,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -3211,7 +3708,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -3232,13 +3729,13 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 1923,
-            "Line": 75,
+            "Offset": 2643,
+            "Line": 96,
             "Column": 1
           },
           "End": {
-            "Offset": 2046,
-            "Line": 77,
+            "Offset": 2766,
+            "Line": 98,
             "Column": 2
           },
           "Name": "Unmarshal",
@@ -3268,7 +3765,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -3304,7 +3801,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -3329,13 +3826,13 @@
     {
       "FilePath": "pkg/http/huma/format.go",
       "Start": {
-        "Offset": 2139,
-        "Line": 80,
+        "Offset": 2859,
+        "Line": 101,
         "Column": 1
       },
       "End": {
-        "Offset": 2174,
-        "Line": 80,
+        "Offset": 2894,
+        "Line": 101,
         "Column": 36
       },
       "PackageName": "huma",
@@ -3369,13 +3866,13 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 2242,
-            "Line": 83,
+            "Offset": 2962,
+            "Line": 104,
             "Column": 1
           },
           "End": {
-            "Offset": 2333,
-            "Line": 85,
+            "Offset": 3053,
+            "Line": 106,
             "Column": 2
           },
           "Name": "ContentType",
@@ -3417,13 +3914,155 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 2386,
-            "Line": 88,
+            "Offset": 3147,
+            "Line": 109,
             "Column": 1
           },
           "End": {
-            "Offset": 2576,
-            "Line": 94,
+            "Offset": 3243,
+            "Line": 111,
+            "Column": 2
+          },
+          "Name": "IsMarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsMarshal reports whether err is or wraps the error Marshal returns when encoding fails.\n"
+        },
+        {
+          "FilePath": "pkg/http/huma/format.go",
+          "Start": {
+            "Offset": 3341,
+            "Line": 114,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3441,
+            "Line": 116,
+            "Column": 2
+          },
+          "Name": "IsUnmarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsUnmarshal reports whether err is or wraps the error Unmarshal returns when decoding fails.\n"
+        },
+        {
+          "FilePath": "pkg/http/huma/format.go",
+          "Start": {
+            "Offset": 3494,
+            "Line": 119,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3684,
+            "Line": 125,
             "Column": 2
           },
           "Name": "Marshal",
@@ -3453,7 +4092,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -3489,7 +4128,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -3510,13 +4149,13 @@
         {
           "FilePath": "pkg/http/huma/format.go",
           "Start": {
-            "Offset": 2625,
-            "Line": 97,
+            "Offset": 3733,
+            "Line": 128,
             "Column": 1
           },
           "End": {
-            "Offset": 2804,
-            "Line": 103,
+            "Offset": 3912,
+            "Line": 134,
             "Column": 2
           },
           "Name": "Unmarshal",
@@ -3546,7 +4185,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -3582,7 +4221,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4293,7 +4932,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -4329,7 +4968,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4386,7 +5025,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -4422,7 +5061,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -6830,7 +7469,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -6845,7 +7484,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -6870,14 +7509,14 @@
               },
               {
                 "Name": "I",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "huma",
                 "PackagePath": "github.com/codemityio/go/pkg/http/huma",
                 "PackageAlias": ""
               },
               {
                 "Name": "O",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "huma",
                 "PackagePath": "github.com/codemityio/go/pkg/http/huma",
                 "PackageAlias": ""
@@ -7131,7 +7770,7 @@
             "Links": [
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -7807,7 +8446,7 @@
           "Links": [
             {
               "Name": "Server",
-              "Underlying": "struct{Addr string; Handler net/http.Handler; DisableGeneralOptionsHandler bool; TLSConfig *crypto/tls.Config; ReadTimeout time.Duration; ReadHeaderTimeout time.Duration; WriteTimeout time.Duration; IdleTimeout time.Duration; MaxHeaderBytes int; TLSNextProto map[string]func(*net/http.Server, *crypto/tls.Conn, net/http.Handler); ConnState func(net.Conn, net/http.ConnState); ErrorLog *log.Logger; BaseContext func(net.Listener) context.Context; ConnContext func(ctx context.Context, c net.Conn) context.Context; HTTP2 *net/http.HTTP2Config; Protocols *net/http.Protocols; inShutdown sync/atomic.Bool; disableKeepAlives sync/atomic.Bool; nextProtoOnce sync.Once; nextProtoErr error; mu sync.Mutex; listeners map[*net.Listener]struct{}; activeConn map[*net/http.conn]struct{}; onShutdown []func(); listenerGroup sync.WaitGroup}",
+              "Underlying": "struct{Addr string; Handler net/http.Handler; DisableGeneralOptionsHandler bool; TLSConfig *crypto/tls.Config; ReadTimeout time.Duration; ReadHeaderTimeout time.Duration; WriteTimeout time.Duration; IdleTimeout time.Duration; MaxHeaderBytes int; MaxHeaderValueCount int; TLSNextProto map[string]func(*net/http.Server, *crypto/tls.Conn, net/http.Handler); ConnState func(net.Conn, net/http.ConnState); ErrorLog *log.Logger; BaseContext func(net.Listener) context.Context; ConnContext func(ctx context.Context, c net.Conn) context.Context; HTTP2 *net/http.HTTP2Config; Protocols *net/http.Protocols; DisableClientPriority bool; inShutdown sync/atomic.Bool; disableKeepAlives sync/atomic.Bool; nextProtoOnce sync.Once; nextProtoErr error; mu sync.Mutex; listeners map[*net.Listener]struct{}; activeConn map[*net/http.conn]struct{}; onShutdown []func(); h2 *net/http.http2Server; h2Config net/http.http2ExternalServerConfig; h2IdleTimeout time.Duration; h3 *net/http.http3ServerHandler; listenerGroup sync.WaitGroup}",
               "PackageName": "http",
               "PackagePath": "net/http",
               "PackageAlias": ""
@@ -7948,14 +8587,369 @@
       ],
       "Methods": [
         {
+          "FilePath": "pkg/http/server/error.go",
+          "Start": {
+            "Offset": 833,
+            "Line": 24,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 963,
+            "Line": 26,
+            "Column": 2
+          },
+          "Name": "IsServerUnableToListenAndServe",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsServerUnableToListenAndServe reports whether err is or wraps ErrServerUnableToListenAndServe.\n"
+        },
+        {
+          "FilePath": "pkg/http/server/error.go",
+          "Start": {
+            "Offset": 1066,
+            "Line": 29,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1198,
+            "Line": 31,
+            "Column": 2
+          },
+          "Name": "IsServerCertificateDoesNotExist",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsServerCertificateDoesNotExist reports whether err is or wraps ErrServerCertificateDoesNotExist.\n"
+        },
+        {
+          "FilePath": "pkg/http/server/error.go",
+          "Start": {
+            "Offset": 1285,
+            "Line": 34,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1401,
+            "Line": 36,
+            "Column": 2
+          },
+          "Name": "IsServerKeyDoesNotExist",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsServerKeyDoesNotExist reports whether err is or wraps ErrServerKeyDoesNotExist.\n"
+        },
+        {
+          "FilePath": "pkg/http/server/error.go",
+          "Start": {
+            "Offset": 1488,
+            "Line": 39,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1604,
+            "Line": 41,
+            "Column": 2
+          },
+          "Name": "IsServerUnableToMarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsServerUnableToMarshal reports whether err is or wraps ErrServerUnableToMarshal.\n"
+        },
+        {
+          "FilePath": "pkg/http/server/error.go",
+          "Start": {
+            "Offset": 1691,
+            "Line": 44,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1807,
+            "Line": 46,
+            "Column": 2
+          },
+          "Name": "IsServerShutdownFailure",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsServerShutdownFailure reports whether err is or wraps ErrServerShutdownFailure.\n"
+        },
+        {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 986,
+            "Offset": 989,
             "Line": 55,
             "Column": 1
           },
           "End": {
-            "Offset": 1782,
+            "Offset": 1785,
             "Line": 87,
             "Column": 2
           },
@@ -7974,12 +8968,12 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 1821,
+            "Offset": 1824,
             "Line": 90,
             "Column": 1
           },
           "End": {
-            "Offset": 2523,
+            "Offset": 2526,
             "Line": 127,
             "Column": 2
           },
@@ -8044,12 +9038,12 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 2575,
+            "Offset": 2578,
             "Line": 130,
             "Column": 1
           },
           "End": {
-            "Offset": 2652,
+            "Offset": 2655,
             "Line": 136,
             "Column": 2
           },
@@ -8068,12 +9062,12 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 2691,
+            "Offset": 2694,
             "Line": 139,
             "Column": 1
           },
           "End": {
-            "Offset": 2826,
+            "Offset": 2829,
             "Line": 148,
             "Column": 2
           },
@@ -8100,12 +9094,12 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 2828,
+            "Offset": 2831,
             "Line": 150,
             "Column": 1
           },
           "End": {
-            "Offset": 3106,
+            "Offset": 3111,
             "Line": 156,
             "Column": 2
           },
@@ -8124,12 +9118,12 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 3108,
+            "Offset": 3113,
             "Line": 158,
             "Column": 1
           },
           "End": {
-            "Offset": 3616,
+            "Offset": 3623,
             "Line": 178,
             "Column": 2
           },
@@ -8148,12 +9142,12 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 3618,
+            "Offset": 3625,
             "Line": 180,
             "Column": 1
           },
           "End": {
-            "Offset": 3705,
+            "Offset": 3712,
             "Line": 184,
             "Column": 2
           },
@@ -8653,7 +9647,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 1294,
+        "Offset": 1303,
         "Line": 60,
         "Column": 2
       },
@@ -8721,12 +9715,12 @@
     {
       "FilePath": "pkg/http/client/func.go",
       "Start": {
-        "Offset": 1296,
+        "Offset": 1305,
         "Line": 62,
         "Column": 1
       },
       "End": {
-        "Offset": 1866,
+        "Offset": 1875,
         "Line": 88,
         "Column": 2
       },
@@ -8786,12 +9780,12 @@
     {
       "FilePath": "pkg/http/client/func.go",
       "Start": {
-        "Offset": 1868,
+        "Offset": 1877,
         "Line": 90,
         "Column": 1
       },
       "End": {
-        "Offset": 2532,
+        "Offset": 2541,
         "Line": 117,
         "Column": 2
       },
@@ -8851,12 +9845,12 @@
     {
       "FilePath": "pkg/http/client/func.go",
       "Start": {
-        "Offset": 2534,
+        "Offset": 2543,
         "Line": 119,
         "Column": 1
       },
       "End": {
-        "Offset": 3592,
+        "Offset": 3601,
         "Line": 159,
         "Column": 2
       },
@@ -10228,7 +11222,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 1095,
+        "Offset": 1098,
         "Line": 45,
         "Column": 2
       },
@@ -10296,12 +11290,12 @@
     {
       "FilePath": "pkg/http/server/func.go",
       "Start": {
-        "Offset": 1139,
+        "Offset": 1142,
         "Line": 48,
         "Column": 1
       },
       "End": {
-        "Offset": 1269,
+        "Offset": 1272,
         "Line": 52,
         "Column": 2
       },
@@ -10354,12 +11348,12 @@
     {
       "FilePath": "pkg/http/server/func.go",
       "Start": {
-        "Offset": 1308,
+        "Offset": 1311,
         "Line": 55,
         "Column": 1
       },
       "End": {
-        "Offset": 1412,
+        "Offset": 1415,
         "Line": 59,
         "Column": 2
       },
@@ -10427,12 +11421,12 @@
     {
       "FilePath": "pkg/http/server/func.go",
       "Start": {
-        "Offset": 1451,
+        "Offset": 1454,
         "Line": 62,
         "Column": 1
       },
       "End": {
-        "Offset": 1570,
+        "Offset": 1573,
         "Line": 66,
         "Column": 2
       },
@@ -10505,7 +11499,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 945,
+        "Offset": 948,
         "Line": 52,
         "Column": 2
       },

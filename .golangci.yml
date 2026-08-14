@@ -35,7 +35,7 @@ linters:
     - errname
     - errorlint
     - exhaustive
-    - exhaustruct
+    - exhaustruct_v5
     - exptostd
     - fatcontext
     - forbidigo
@@ -191,10 +191,16 @@ linters:
           disabled: true
     nakedret:
       max-func-lines: 40
+    modernize:
+      disable:
+        # embedlit suggests dropping the embedded type name from struct literals
+        # (promoted-field style), which crashes exhaustruct_v5 v5.0.3
+        # (dev.gaijin.team/go/exhaustruct/v5@v5.0.3: makeslice: cap out of range).
+        - embedlit
   exclusions:
     rules:
       - linters:
-          - exhaustruct
+          - exhaustruct_v5
           - funlen
           - dupl
           - gochecknoglobals

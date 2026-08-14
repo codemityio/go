@@ -50,16 +50,16 @@ package "github.com/codemityio/go/pkg/container" as github_com_codemityio_go_pkg
     package "sync" as .sync {
         class "Once" as sync_Once << (S, #b5558d) >> {}
     }
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "func(p *DefaultContainer)" as github_com_codemityio_go_pkg_container_func_p__DefaultContainer_ << (F, #739e78) >> {}
     class "func()" as github_com_codemityio_go_pkg_container_func__ << (F, #739e78) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "func(message string)" as github_com_codemityio_go_pkg_container_func_message_string_ << (F, #739e78) >> {}
     package "time" as .time {
         class "Duration" as time_Duration << (P, #74b1b5) >> {}

@@ -28,7 +28,7 @@ type DefaultServer struct {
 // New a factory function to create a new server.
 func New(options ...Option) *DefaultServer {
 	ds := DefaultServer{
-		Server: http.Server{ //nolint:exhaustruct // not necessary, use zero values
+		Server: http.Server{ //nolint:exhaustruct_v5 // not necessary, use zero values
 			ReadHeaderTimeout: 0,
 			IdleTimeout:       0,
 			ReadTimeout:       defaultTimeout * time.Second,
@@ -151,7 +151,7 @@ func (s *DefaultServer) listenAndServe() {
 	s.info(fmt.Sprintf("starting HTTP server, listening on port %d", s.config.Port))
 
 	if e := s.ListenAndServe(); e != nil && !errors.Is(e, http.ErrServerClosed) {
-		s.errors <- fmt.Errorf("%w: %w", ErrServerUnableListenAndServe, e)
+		s.errors <- fmt.Errorf("%w: %w", ErrServerUnableToListenAndServe, e)
 	}
 }
 
@@ -173,7 +173,7 @@ func (s *DefaultServer) listenAndServeTLS() {
 		s.config.TLS.Cert,
 		s.config.TLS.Key,
 	); e != nil && !errors.Is(e, http.ErrServerClosed) {
-		s.errors <- fmt.Errorf("%w: %w", ErrServerUnableListenAndServe, e)
+		s.errors <- fmt.Errorf("%w: %w", ErrServerUnableToListenAndServe, e)
 	}
 }
 

@@ -123,7 +123,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -138,7 +138,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -167,7 +167,7 @@
             "Links": [
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -192,13 +192,13 @@
     {
       "FilePath": "pkg/transform/json.go",
       "Start": {
-        "Offset": 79,
-        "Line": 9,
+        "Offset": 89,
+        "Line": 10,
         "Column": 1
       },
       "End": {
-        "Offset": 97,
-        "Line": 9,
+        "Offset": 107,
+        "Line": 10,
         "Column": 19
       },
       "PackageName": "transform",
@@ -232,13 +232,155 @@
         {
           "FilePath": "pkg/transform/json.go",
           "Start": {
-            "Offset": 181,
-            "Line": 12,
+            "Offset": 206,
+            "Line": 13,
             "Column": 1
           },
           "End": {
-            "Offset": 457,
+            "Offset": 285,
+            "Line": 15,
+            "Column": 2
+          },
+          "Name": "IsMarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsMarshal reports whether err is or wraps the error Transform returns when marshalling fails.\n"
+        },
+        {
+          "FilePath": "pkg/transform/json.go",
+          "Start": {
+            "Offset": 388,
+            "Line": 18,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 471,
+            "Line": 20,
+            "Column": 2
+          },
+          "Name": "IsUnmarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsUnmarshal reports whether err is or wraps the error Transform returns when unmarshalling fails.\n"
+        },
+        {
+          "FilePath": "pkg/transform/json.go",
+          "Start": {
+            "Offset": 555,
             "Line": 23,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 831,
+            "Line": 34,
             "Column": 2
           },
           "Name": "Transform",
@@ -253,7 +395,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -268,7 +410,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -297,7 +439,7 @@
             "Links": [
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""

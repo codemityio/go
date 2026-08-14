@@ -384,7 +384,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -452,7 +452,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -527,7 +527,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -595,7 +595,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -1018,7 +1018,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -1038,7 +1038,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -1138,7 +1138,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -1172,7 +1172,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -1354,7 +1354,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -1405,7 +1405,7 @@
                   "Links": [
                     {
                       "Name": "T",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "sync",
                       "PackagePath": "github.com/codemityio/go/pkg/sync",
                       "PackageAlias": ""
@@ -1425,7 +1425,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -1525,7 +1525,7 @@
                   "Links": [
                     {
                       "Name": "T",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "sync",
                       "PackagePath": "github.com/codemityio/go/pkg/sync",
                       "PackageAlias": ""
@@ -1559,7 +1559,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -1741,7 +1741,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -1792,7 +1792,7 @@
                   "Links": [
                     {
                       "Name": "T",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "sync",
                       "PackagePath": "github.com/codemityio/go/pkg/sync",
                       "PackageAlias": ""
@@ -1812,7 +1812,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -1864,7 +1864,7 @@
                   "Links": [
                     {
                       "Name": "T",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "sync",
                       "PackagePath": "github.com/codemityio/go/pkg/sync",
                       "PackageAlias": ""
@@ -1883,7 +1883,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -2090,7 +2090,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2110,7 +2110,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2210,7 +2210,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2244,7 +2244,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2426,7 +2426,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -2477,7 +2477,7 @@
                   "Links": [
                     {
                       "Name": "T",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "sync",
                       "PackagePath": "github.com/codemityio/go/pkg/sync",
                       "PackageAlias": ""
@@ -2497,7 +2497,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -2597,7 +2597,7 @@
                   "Links": [
                     {
                       "Name": "T",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "sync",
                       "PackagePath": "github.com/codemityio/go/pkg/sync",
                       "PackageAlias": ""
@@ -2631,7 +2631,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -3375,13 +3375,13 @@
     {
       "FilePath": "pkg/sync/safebuffer.go",
       "Start": {
-        "Offset": 110,
-        "Line": 10,
+        "Offset": 120,
+        "Line": 11,
         "Column": 1
       },
       "End": {
-        "Offset": 168,
-        "Line": 13,
+        "Offset": 178,
+        "Line": 14,
         "Column": 2
       },
       "PackageName": "sync",
@@ -3446,13 +3446,84 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 201,
-            "Line": 16,
+            "Offset": 253,
+            "Line": 17,
             "Column": 1
           },
           "End": {
-            "Offset": 410,
-            "Line": 26,
+            "Offset": 354,
+            "Line": 19,
+            "Column": 2
+          },
+          "Name": "IsSafeBufferWrite",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsSafeBufferWrite reports whether err is or wraps ErrSafeBufferWrite.\n"
+        },
+        {
+          "FilePath": "pkg/sync/safebuffer.go",
+          "Start": {
+            "Offset": 387,
+            "Line": 22,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 596,
+            "Line": 32,
             "Column": 2
           },
           "Name": "Write",
@@ -3539,13 +3610,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 462,
-            "Line": 29,
+            "Offset": 648,
+            "Line": 35,
             "Column": 1
           },
           "End": {
-            "Offset": 558,
-            "Line": 34,
+            "Offset": 744,
+            "Line": 40,
             "Column": 2
           },
           "Name": "String",
@@ -3587,13 +3658,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 608,
-            "Line": 37,
+            "Offset": 794,
+            "Line": 43,
             "Column": 1
           },
           "End": {
-            "Offset": 726,
-            "Line": 42,
+            "Offset": 912,
+            "Line": 48,
             "Column": 2
           },
           "Name": "Bytes",
@@ -3635,13 +3706,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 778,
-            "Line": 45,
+            "Offset": 964,
+            "Line": 51,
             "Column": 1
           },
           "End": {
-            "Offset": 865,
-            "Line": 50,
+            "Offset": 1051,
+            "Line": 56,
             "Column": 2
           },
           "Name": "Len",
@@ -3683,13 +3754,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 910,
-            "Line": 53,
+            "Offset": 1096,
+            "Line": 59,
             "Column": 1
           },
           "End": {
-            "Offset": 997,
-            "Line": 58,
+            "Offset": 1183,
+            "Line": 64,
             "Column": 2
           },
           "Name": "Cap",
@@ -3731,13 +3802,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 1039,
-            "Line": 61,
+            "Offset": 1225,
+            "Line": 67,
             "Column": 1
           },
           "End": {
-            "Offset": 1119,
-            "Line": 66,
+            "Offset": 1305,
+            "Line": 72,
             "Column": 2
           },
           "Name": "Reset",
@@ -3755,13 +3826,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 1167,
-            "Line": 69,
+            "Offset": 1353,
+            "Line": 75,
             "Column": 1
           },
           "End": {
-            "Offset": 1392,
-            "Line": 79,
+            "Offset": 1578,
+            "Line": 85,
             "Column": 2
           },
           "Name": "WriteString",
@@ -3848,13 +3919,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 1457,
-            "Line": 82,
+            "Offset": 1643,
+            "Line": 88,
             "Column": 1
           },
           "End": {
-            "Offset": 1672,
-            "Line": 92,
+            "Offset": 1858,
+            "Line": 98,
             "Column": 2
           },
           "Name": "WriteRune",
@@ -3941,13 +4012,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 1723,
-            "Line": 95,
+            "Offset": 1909,
+            "Line": 101,
             "Column": 1
           },
           "End": {
-            "Offset": 1912,
-            "Line": 104,
+            "Offset": 2098,
+            "Line": 110,
             "Column": 2
           },
           "Name": "WriteByte",
@@ -4012,13 +4083,13 @@
         {
           "FilePath": "pkg/sync/safebuffer.go",
           "Start": {
-            "Offset": 1972,
-            "Line": 107,
+            "Offset": 2158,
+            "Line": 113,
             "Column": 1
           },
           "End": {
-            "Offset": 2064,
-            "Line": 112,
+            "Offset": 2250,
+            "Line": 118,
             "Column": 2
           },
           "Name": "Truncate",
@@ -4157,7 +4228,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4227,7 +4298,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -4247,7 +4318,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4347,7 +4418,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -4381,7 +4452,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4563,7 +4634,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -4606,7 +4677,7 @@
               },
               {
                 "Name": "T",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "sync",
                 "PackagePath": "github.com/codemityio/go/pkg/sync",
                 "PackageAlias": ""
@@ -4718,7 +4789,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4788,7 +4859,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -4808,7 +4879,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -4908,7 +4979,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -4942,7 +5013,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -5269,7 +5340,7 @@
                 },
                 {
                   "Name": "T",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "sync",
                   "PackagePath": "github.com/codemityio/go/pkg/sync",
                   "PackageAlias": ""
@@ -5288,7 +5359,7 @@
           },
           {
             "Name": "T",
-            "Underlying": "any",
+            "Underlying": "interface{}",
             "PackageName": "sync",
             "PackagePath": "github.com/codemityio/go/pkg/sync",
             "PackageAlias": ""
@@ -5305,7 +5376,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -5352,7 +5423,7 @@
                 },
                 {
                   "Name": "T",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "sync",
                   "PackagePath": "github.com/codemityio/go/pkg/sync",
                   "PackageAlias": ""
@@ -5371,7 +5442,7 @@
           },
           {
             "Name": "T",
-            "Underlying": "any",
+            "Underlying": "interface{}",
             "PackageName": "sync",
             "PackagePath": "github.com/codemityio/go/pkg/sync",
             "PackageAlias": ""
@@ -5388,7 +5459,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -5535,7 +5606,7 @@
                 },
                 {
                   "Name": "T",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "sync",
                   "PackagePath": "github.com/codemityio/go/pkg/sync",
                   "PackageAlias": ""
@@ -5554,7 +5625,7 @@
           },
           {
             "Name": "T",
-            "Underlying": "any",
+            "Underlying": "interface{}",
             "PackageName": "sync",
             "PackagePath": "github.com/codemityio/go/pkg/sync",
             "PackageAlias": ""
@@ -5571,7 +5642,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""

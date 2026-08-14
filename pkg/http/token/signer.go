@@ -4,6 +4,7 @@ import (
 	"crypto"
 	"crypto/rsa"
 	"encoding/hex"
+	"errors"
 	"fmt"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -19,6 +20,18 @@ type DefaultSigner struct {
 	payloadHash  crypto.Hash
 }
 
+// IsSignerUnableToGenerateUUID reports whether err is or wraps the error Sign returns when it
+// fails to generate the token's UUID.
+func (ds *DefaultSigner) IsSignerUnableToGenerateUUID(err error) bool {
+	return errors.Is(err, ErrSignerUnableToGenerateUUID)
+}
+
+// IsSignerUnableToSignToken reports whether err is or wraps the error Sign returns when it
+// fails to sign the token.
+func (ds *DefaultSigner) IsSignerUnableToSignToken(err error) bool {
+	return errors.Is(err, ErrSignerUnableToSignToken)
+}
+
 // Sign function returns a JWT token.
 func (ds *DefaultSigner) Sign(data []byte) (string, error) {
 	var payloadHashHex string
@@ -29,7 +42,7 @@ func (ds *DefaultSigner) Sign(data []byte) (string, error) {
 
 	id, err := ds.uuidProvider.RandomUUID()
 	if err != nil {
-		return "", fmt.Errorf("%w: %w", ErrSignerUnableGenerateUUID, err)
+		return "", fmt.Errorf("%w: %w", ErrSignerUnableToGenerateUUID, err)
 	}
 
 	claims := jwt.MapClaims{

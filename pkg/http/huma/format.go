@@ -3,6 +3,7 @@ package huma
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"html/template"
 	"io"
@@ -15,6 +16,16 @@ type FormatTextPlain struct{}
 // ContentType returns the MIME type associated with this format.
 func (f *FormatTextPlain) ContentType() string {
 	return ContentTypeTextPlain
+}
+
+// IsMarshal reports whether err is or wraps the error Marshal returns when encoding fails.
+func (f *FormatTextPlain) IsMarshal(err error) bool {
+	return errors.Is(err, ErrMarshal)
+}
+
+// IsUnmarshal reports whether err is or wraps the error Unmarshal returns.
+func (f *FormatTextPlain) IsUnmarshal(err error) bool {
+	return errors.Is(err, ErrUnmarshal)
 }
 
 // Marshal writes the encoded form of v to writer.
@@ -47,6 +58,16 @@ type FormatTextHTML struct {
 // ContentType returns the MIME type associated with this format.
 func (f *FormatTextHTML) ContentType() string {
 	return ContentTypeTextHTML
+}
+
+// IsMarshal reports whether err is or wraps the error Marshal returns when encoding fails.
+func (f *FormatTextHTML) IsMarshal(err error) bool {
+	return errors.Is(err, ErrMarshal)
+}
+
+// IsUnmarshal reports whether err is or wraps the error Unmarshal returns.
+func (f *FormatTextHTML) IsUnmarshal(err error) bool {
+	return errors.Is(err, ErrUnmarshal)
 }
 
 // Marshal writes the encoded form of v to writer.
@@ -82,6 +103,16 @@ type FormatApplicationJSON struct{}
 // ContentType returns the MIME type associated with this format.
 func (f *FormatApplicationJSON) ContentType() string {
 	return ContentTypeApplicationJSON
+}
+
+// IsMarshal reports whether err is or wraps the error Marshal returns when encoding fails.
+func (f *FormatApplicationJSON) IsMarshal(err error) bool {
+	return errors.Is(err, ErrMarshal)
+}
+
+// IsUnmarshal reports whether err is or wraps the error Unmarshal returns when decoding fails.
+func (f *FormatApplicationJSON) IsUnmarshal(err error) bool {
+	return errors.Is(err, ErrUnmarshal)
 }
 
 // Marshal writes the encoded form of v to writer.

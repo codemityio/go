@@ -34,13 +34,13 @@ package "github.com/codemityio/go/pkg/validator" as github_com_codemityio_go_pkg
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     package "github.com/xeipuuv/gojsonschema" as .github_com_xeipuuv_gojsonschema {
         class "Result" as github_com_xeipuuv_gojsonschema_Result << (S, #b5558d) >> {}

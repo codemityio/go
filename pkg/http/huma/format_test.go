@@ -3,6 +3,7 @@ package huma
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"io"
 	"testing"
 
@@ -217,4 +218,41 @@ func TestFormatApplicationJSON(t *testing.T) {
 		require.Error(t, err)
 		require.ErrorIs(t, err, ErrUnmarshal)
 	})
+}
+
+func TestFormat_IsMarshalIsUnmarshal(t *testing.T) {
+	errBoom := errors.New("error")
+
+	formatters := map[string]interface {
+		IsMarshal(err error) bool
+		IsUnmarshal(err error) bool
+	}{
+		"FormatTextPlain":       NewFormatTextPlain(),
+		"FormatTextHTML":        NewFormatTextHTML(),
+		"FormatApplicationJSON": NewFormatApplicationJSON(),
+	}
+
+	for name, frmt := range formatters {
+		t.Run(name, func(t *testing.T) {
+			require.True(t, frmt.IsMarshal(ErrMarshal), "bare marshal sentinel")
+			require.True(
+				t,
+				frmt.IsMarshal(fmt.Errorf("%w: %w", ErrMarshal, errBoom)),
+				"wrapped marshal sentinel",
+			)
+			require.False(t, frmt.IsMarshal(errBoom), "unrelated error")
+			require.False(t, frmt.IsMarshal(ErrUnmarshal), "the other sentinel")
+			require.False(t, frmt.IsMarshal(nil), "nil error")
+
+			require.True(t, frmt.IsUnmarshal(ErrUnmarshal), "bare unmarshal sentinel")
+			require.True(
+				t,
+				frmt.IsUnmarshal(fmt.Errorf("%w: %w", ErrUnmarshal, errBoom)),
+				"wrapped unmarshal sentinel",
+			)
+			require.False(t, frmt.IsUnmarshal(errBoom), "unrelated error")
+			require.False(t, frmt.IsUnmarshal(ErrMarshal), "the other sentinel")
+			require.False(t, frmt.IsUnmarshal(nil), "nil error")
+		})
+	}
 }

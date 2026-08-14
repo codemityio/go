@@ -1,6 +1,8 @@
 package sync
 
 import (
+	"errors"
+	"fmt"
 	"testing"
 	"unicode/utf8"
 
@@ -65,4 +67,14 @@ func TestSafeBuffer_Truncate(t *testing.T) {
 	_, _ = sb.WriteString("abcdef")
 	sb.Truncate(3)
 	require.Equal(t, "abc", sb.String())
+}
+
+func TestSafeBuffer_IsSafeBufferWrite(t *testing.T) {
+	errBoom := errors.New("error")
+	sb := NewSafeBuffer()
+
+	require.True(t, sb.IsSafeBufferWrite(ErrSafeBufferWrite))
+	require.True(t, sb.IsSafeBufferWrite(fmt.Errorf("%w:%w", ErrSafeBufferWrite, errBoom)))
+	require.False(t, sb.IsSafeBufferWrite(errBoom))
+	require.False(t, sb.IsSafeBufferWrite(nil))
 }

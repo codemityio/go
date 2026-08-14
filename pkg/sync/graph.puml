@@ -101,6 +101,7 @@ package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync
     class "<b><font color=#1c1c1c>SafeBuffer</font></b>" as github_com_codemityio_go_pkg_sync_SafeBuffer << (S, #b5558d) >> {
         - mu <font color=#1f38b5>sync.Mutex</font>
         - b <font color=#1f38b5>bytes.Buffer</font>
+        + IsSafeBufferWrite <font color=#1f38b5>(err error) (bool)</font>
         + Write <font color=#1f38b5>(p []byte) (int, error)</font>
         + String <font color=#1f38b5>() (string)</font>
         + Bytes <font color=#1f38b5>() ([]byte)</font>
@@ -159,39 +160,39 @@ package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync
         class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
     }
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
     package "sync" as .sync {
         class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
     }
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
     package "sync" as .sync {
         class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
     }
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
     package "sync" as .sync {
@@ -218,28 +219,29 @@ package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync
     class "error" as _error << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     package "sync" as .sync {
         class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
     }
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     package "sync" as .sync {
         class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
     }
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     package "sync" as .sync {
         class "RWMutex" as sync_RWMutex << (S, #b5558d) >> {}
     }
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "error" as error << (I, #e4f58e) >> {}
     class "error" as error << (I, #e4f58e) >> {}
     package "sync/atomic" as .sync_atomic {
@@ -248,9 +250,9 @@ package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync
     package "sync" as .sync {
         class "Map" as sync_Map << (S, #b5558d) >> {}
     }
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_sync_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_sync_T << (I, #e4f58e) >> {}
 }
 package "github.com/codemityio/go/pkg/sync" as github_com_codemityio_go_pkg_sync {
     github_com_codemityio_go_pkg_sync_Gate #...up...> _struct
