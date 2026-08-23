@@ -1,6 +1,8 @@
 package json
 
 import (
+	"errors"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -71,6 +73,40 @@ func TestSerialiser_Serialise(t *testing.T) {
 			require.ErrorIs(t, err, test.expectedError)
 
 			assert.JSONEq(t, test.expectedResult, string(res))
+		})
+	}
+}
+
+func TestSerialiser_IsMarshal(t *testing.T) {
+	errBoom := errors.New("error")
+
+	tests := map[string]struct {
+		err  error
+		want bool
+	}{
+		"true for the bare sentinel": {
+			err:  ErrMarshal,
+			want: true,
+		},
+		"true when wrapped": {
+			err:  fmt.Errorf("%w: %w", ErrMarshal, errBoom),
+			want: true,
+		},
+		"false for an unrelated error": {
+			err:  errBoom,
+			want: false,
+		},
+		"false for nil": {
+			err:  nil,
+			want: false,
+		},
+	}
+
+	s := NewSerialiser()
+
+	for name, test := range tests {
+		t.Run(name, func(t *testing.T) {
+			require.Equal(t, test.want, s.IsMarshal(test.err))
 		})
 	}
 }

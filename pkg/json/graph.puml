@@ -12,6 +12,7 @@ package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json
         + Next <font color=#1f38b5>(key string) (json.RawMessage)</font>
     }
     class "<b><font color=#1c1c1c>Serialiser</font></b>" as github_com_codemityio_go_pkg_json_Serialiser << (S, #b5558d) >> {
+        + IsMarshal <font color=#1f38b5>(err error) (bool)</font>
         + Serialise <font color=#1f38b5>(input any, groups []string) ([]byte, error)</font>
     }
     class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_json_ErrPkg << (V, #edb4ab) >> {}
@@ -31,7 +32,8 @@ package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json
         class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
     }
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "error" as error << (I, #e4f58e) >> {}
     class "error" as error << (I, #e4f58e) >> {}
@@ -39,11 +41,11 @@ package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json
     package "encoding/json" as .encoding_json {
         class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
     }
-    class "T" as github_com_codemityio_go_pkg_json_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_json_T << (I, #e4f58e) >> {}
     package "encoding/json" as .encoding_json {
         class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
     }
-    class "T" as github_com_codemityio_go_pkg_json_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_json_T << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     package "encoding/json" as .encoding_json {
         class "RawMessage" as encoding_json_RawMessage << (T, #739e78) >> {}
@@ -54,8 +56,8 @@ package "github.com/codemityio/go/pkg/json" as github_com_codemityio_go_pkg_json
     github_com_codemityio_go_pkg_json_RawMessageSequenceMap o---up---> encoding_json_RawMessage
     github_com_codemityio_go_pkg_json_RawMessageSequenceMap ...up...> encoding_json_RawMessage
     github_com_codemityio_go_pkg_json_Serialiser #...up...> _struct
-    github_com_codemityio_go_pkg_json_Serialiser ...up...> _any
     github_com_codemityio_go_pkg_json_Serialiser ...up...> _error
+    github_com_codemityio_go_pkg_json_Serialiser ...up...> _any
     github_com_codemityio_go_pkg_json_ErrPkg ...up...|> error
     github_com_codemityio_go_pkg_json_ErrJSON ...up...|> error
     github_com_codemityio_go_pkg_json_ErrMarshal ...up...|> error

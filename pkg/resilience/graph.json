@@ -1,0 +1,998 @@
+{
+  "Var": [
+    {
+      "FilePath": "pkg/resilience/errors.go",
+      "Start": {
+        "Offset": 49,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 480,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "ErrPkg",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrPkg package error.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/errors.go",
+      "Start": {
+        "Offset": 49,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 480,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "ErrRetryWaitCanceled",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrRetryWaitCanceled is returned when ctx is done before the backoff for the next retry attempt elapses.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/errors.go",
+      "Start": {
+        "Offset": 49,
+        "Line": 8,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 480,
+        "Line": 15,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "ErrRetriesExhausted",
+      "Type": null,
+      "TypeInfo": "error",
+      "Params": null,
+      "IsExported": true,
+      "Doc": "ErrRetriesExhausted is returned when a Retrier's configured attempts are used up without the handler succeeding.\n"
+    }
+  ],
+  "Type": [
+    {
+      "FilePath": "pkg/resilience/retry.go",
+      "Start": {
+        "Offset": 181,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 229,
+        "Line": 12,
+        "Column": 49
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "HandlerFunc",
+      "Type": {
+        "Label": "func(ctx context.Context) (error)",
+        "Links": [
+          {
+            "Name": "Context",
+            "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+            "PackageName": "context",
+            "PackagePath": "context",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "error",
+            "Underlying": "interface{Error() string}",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/resilience.HandlerFunc",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/resilience/retry.go",
+      "Start": {
+        "Offset": 318,
+        "Line": 15,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 406,
+        "Line": 19,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "Retrier",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/resilience.Retrier",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [
+        {
+          "Name": "baseDelay",
+          "Type": {
+            "Label": "time.Duration",
+            "Links": [
+              {
+                "Name": "Duration",
+                "Underlying": "int64",
+                "PackageName": "time",
+                "PackagePath": "time",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "maxDelay",
+          "Type": {
+            "Label": "time.Duration",
+            "Links": [
+              {
+                "Name": "Duration",
+                "Underlying": "int64",
+                "PackageName": "time",
+                "PackagePath": "time",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "retries",
+          "Type": {
+            "Label": "int",
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [
+        {
+          "FilePath": "pkg/resilience/retry.go",
+          "Start": {
+            "Offset": 563,
+            "Line": 23,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 663,
+            "Line": 25,
+            "Column": 2
+          },
+          "Name": "IsRetriesExhausted",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsRetriesExhausted reports whether err is or wraps the error Execute returns once its\nconfigured retries are used up without the handler succeeding.\n"
+        },
+        {
+          "FilePath": "pkg/resilience/retry.go",
+          "Start": {
+            "Offset": 821,
+            "Line": 29,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 923,
+            "Line": 31,
+            "Column": 2
+          },
+          "Name": "IsRetryWaitCanceled",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsRetryWaitCanceled reports whether err is or wraps the error Execute returns when ctx is\ndone before the backoff for the next retry attempt elapses.\n"
+        },
+        {
+          "FilePath": "pkg/resilience/retry.go",
+          "Start": {
+            "Offset": 1073,
+            "Line": 35,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1463,
+            "Line": 54,
+            "Column": 2
+          },
+          "Name": "Execute",
+          "Signature": {
+            "Label": "(ctx context.Context, handler HandlerFunc) (error)",
+            "Alt": "(context.Context, HandlerFunc) (error)",
+            "Arguments": [
+              {
+                "Name": "ctx",
+                "Type": {
+                  "Label": "context.Context",
+                  "Links": [
+                    {
+                      "Name": "Context",
+                      "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                      "PackageName": "context",
+                      "PackagePath": "context",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "handler",
+                "Type": {
+                  "Label": "HandlerFunc",
+                  "Links": [
+                    {
+                      "Name": "HandlerFunc",
+                      "Underlying": "func(ctx context.Context) error",
+                      "PackageName": "resilience",
+                      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Context",
+                "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                "PackageName": "context",
+                "PackagePath": "context",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "HandlerFunc",
+                "Underlying": "func(ctx context.Context) error",
+                "PackageName": "resilience",
+                "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "Execute runs handler, retrying with exponential backoff on error until it succeeds, the\nconfigured retries are used up, or ctx is done first.\n"
+        },
+        {
+          "FilePath": "pkg/resilience/retry.go",
+          "Start": {
+            "Offset": 1611,
+            "Line": 58,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1924,
+            "Line": 73,
+            "Column": 2
+          },
+          "Name": "waitBeforeRetry",
+          "Signature": {
+            "Label": "(ctx context.Context, attempt int) (error)",
+            "Alt": "(context.Context, int) (error)",
+            "Arguments": [
+              {
+                "Name": "ctx",
+                "Type": {
+                  "Label": "context.Context",
+                  "Links": [
+                    {
+                      "Name": "Context",
+                      "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                      "PackageName": "context",
+                      "PackagePath": "context",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "attempt",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Context",
+                "Underlying": "interface{Deadline() (deadline time.Time, ok bool); Done() \u003c-chan struct{}; Err() error; Value(key any) any}",
+                "PackageName": "context",
+                "PackagePath": "context",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": "waitBeforeRetry waits out the backoff for attempt, or returns early if ctx is done first\n(e.g. the caller is approaching its own deadline).\n"
+        },
+        {
+          "FilePath": "pkg/resilience/retry.go",
+          "Start": {
+            "Offset": 2061,
+            "Line": 77,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 2267,
+            "Line": 88,
+            "Column": 2
+          },
+          "Name": "delay",
+          "Signature": {
+            "Label": "(attempt int) (time.Duration)",
+            "Alt": "(int) (time.Duration)",
+            "Arguments": [
+              {
+                "Name": "attempt",
+                "Type": {
+                  "Label": "int",
+                  "Links": [
+                    {
+                      "Name": "int",
+                      "Underlying": "int",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "time.Duration",
+                  "Links": [
+                    {
+                      "Name": "Duration",
+                      "Underlying": "int64",
+                      "PackageName": "time",
+                      "PackagePath": "time",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "int",
+                "Underlying": "int",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Duration",
+                "Underlying": "int64",
+                "PackageName": "time",
+                "PackagePath": "time",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": "delay returns the wait before retry attempt, doubling from baseDelay and capped at\nmaxDelay. The first attempt (0) has no delay.\n"
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/resilience/type.go",
+      "Start": {
+        "Offset": 82,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 116,
+        "Line": 4,
+        "Column": 35
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "Option",
+      "Type": {
+        "Label": "func(retrier *Retrier)",
+        "Links": [
+          {
+            "Name": "Retrier",
+            "Underlying": "struct{baseDelay time.Duration; maxDelay time.Duration; retries int}",
+            "PackageName": "resilience",
+            "PackagePath": "github.com/codemityio/go/pkg/resilience",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/resilience.Option",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": null,
+      "Fields": [],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    }
+  ],
+  "Func": [
+    {
+      "FilePath": "pkg/resilience/factory.go",
+      "Start": {
+        "Offset": 155,
+        "Line": 5,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 384,
+        "Line": 17,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "NewRetrier",
+      "Signature": {
+        "Label": "(options ...Option) (*Retrier)",
+        "Alt": "(...Option) (*Retrier)",
+        "Arguments": [
+          {
+            "Name": "options",
+            "Type": {
+              "Label": "...Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+                  "PackageName": "resilience",
+                  "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*Retrier",
+              "Links": [
+                {
+                  "Name": "Retrier",
+                  "Underlying": "struct{baseDelay time.Duration; maxDelay time.Duration; retries int}",
+                  "PackageName": "resilience",
+                  "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Option",
+            "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+            "PackageName": "resilience",
+            "PackagePath": "github.com/codemityio/go/pkg/resilience",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Retrier",
+            "Underlying": "struct{baseDelay time.Duration; maxDelay time.Duration; retries int}",
+            "PackageName": "resilience",
+            "PackagePath": "github.com/codemityio/go/pkg/resilience",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "NewRetrier creates a new Retrier, applying options on top of the defaults: BaseDelayDefault,\nMaxDelayDefault and RetriesDefault.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/func.go",
+      "Start": {
+        "Offset": 148,
+        "Line": 7,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 270,
+        "Line": 11,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "WithBaseDelay",
+      "Signature": {
+        "Label": "(baseDelay time.Duration) (Option)",
+        "Alt": "(time.Duration) (Option)",
+        "Arguments": [
+          {
+            "Name": "baseDelay",
+            "Type": {
+              "Label": "time.Duration",
+              "Links": [
+                {
+                  "Name": "Duration",
+                  "Underlying": "int64",
+                  "PackageName": "time",
+                  "PackagePath": "time",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+                  "PackageName": "resilience",
+                  "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Duration",
+            "Underlying": "int64",
+            "PackageName": "time",
+            "PackagePath": "time",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+            "PackageName": "resilience",
+            "PackagePath": "github.com/codemityio/go/pkg/resilience",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithBaseDelay sets the wait before the second attempt, doubling on each subsequent\nattempt up to maxDelay.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/func.go",
+      "Start": {
+        "Offset": 334,
+        "Line": 14,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 452,
+        "Line": 18,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "WithMaxDelay",
+      "Signature": {
+        "Label": "(maxDelay time.Duration) (Option)",
+        "Alt": "(time.Duration) (Option)",
+        "Arguments": [
+          {
+            "Name": "maxDelay",
+            "Type": {
+              "Label": "time.Duration",
+              "Links": [
+                {
+                  "Name": "Duration",
+                  "Underlying": "int64",
+                  "PackageName": "time",
+                  "PackagePath": "time",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+                  "PackageName": "resilience",
+                  "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "Duration",
+            "Underlying": "int64",
+            "PackageName": "time",
+            "PackagePath": "time",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+            "PackageName": "resilience",
+            "PackagePath": "github.com/codemityio/go/pkg/resilience",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithMaxDelay sets the cap on the backoff between attempts.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/func.go",
+      "Start": {
+        "Offset": 527,
+        "Line": 21,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 631,
+        "Line": 25,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "WithRetries",
+      "Signature": {
+        "Label": "(retries int) (Option)",
+        "Alt": "(int) (Option)",
+        "Arguments": [
+          {
+            "Name": "retries",
+            "Type": {
+              "Label": "int",
+              "Links": [
+                {
+                  "Name": "int",
+                  "Underlying": "int",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+                  "PackageName": "resilience",
+                  "PackagePath": "github.com/codemityio/go/pkg/resilience",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "int",
+            "Underlying": "int",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(retrier *github.com/codemityio/go/pkg/resilience.Retrier)",
+            "PackageName": "resilience",
+            "PackagePath": "github.com/codemityio/go/pkg/resilience",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithRetries sets the maximum number of attempts, including the first.\n"
+    }
+  ],
+  "Const": [
+    {
+      "FilePath": "pkg/resilience/const.go",
+      "Start": {
+        "Offset": 35,
+        "Line": 5,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 345,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "BaseDelayDefault",
+      "Type": null,
+      "TypeInfo": "time.Duration",
+      "IsExported": true,
+      "Doc": "BaseDelayDefault default wait before the second attempt.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/const.go",
+      "Start": {
+        "Offset": 35,
+        "Line": 5,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 345,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "MaxDelayDefault",
+      "Type": null,
+      "TypeInfo": "time.Duration",
+      "IsExported": true,
+      "Doc": "MaxDelayDefault default cap on the backoff between attempts.\n"
+    },
+    {
+      "FilePath": "pkg/resilience/const.go",
+      "Start": {
+        "Offset": 35,
+        "Line": 5,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 345,
+        "Line": 12,
+        "Column": 2
+      },
+      "PackageName": "resilience",
+      "PackagePath": "github.com/codemityio/go/pkg/resilience",
+      "Name": "RetriesDefault",
+      "Type": null,
+      "TypeInfo": "untyped int",
+      "IsExported": true,
+      "Doc": "RetriesDefault default maximum number of attempts, including the first.\n"
+    }
+  ]
+}

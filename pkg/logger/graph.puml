@@ -119,7 +119,7 @@ package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_lo
 }
 package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_logger {
     class "struct" as _struct << (S, #b5558d) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
@@ -128,16 +128,16 @@ package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_lo
     class "error" as _error << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "interface" as _interface << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "struct" as _struct << (S, #b5558d) >> {}
     package "log" as .log {
         class "Logger" as log_Logger << (S, #b5558d) >> {}
@@ -152,12 +152,12 @@ package "github.com/codemityio/go/pkg/logger" as github_com_codemityio_go_pkg_lo
         class "Once" as sync_Once << (S, #b5558d) >> {}
     }
     class "error" as _error << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
-    class "any" as _any << (T, #6d8cbf) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
+    class "any" as _any << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}

@@ -36,6 +36,7 @@ digraph DepGraph {
               "github.com/codemityio/go/pkg/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo"
               "github.com/codemityio/go/pkg/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/options"
               "github.com/codemityio/go/pkg/mongo" -> "go.mongodb.org/mongo-driver/v2/mongo/readpref"
+        "github.com/codemityio/go/pkg/resilience" [label="github.com/codemityio/go/pkg/resilience", color="gray58", fillcolor="gray99", penwidth=1]
         "github.com/codemityio/go/pkg/strings" [label="github.com/codemityio/go/pkg/strings", color="gray58", fillcolor="gray99", penwidth=1]
               "github.com/codemityio/go/pkg/strings" -> "github.com/iancoleman/strcase"
         "github.com/codemityio/go/pkg/sync" [label="github.com/codemityio/go/pkg/sync", color="gray58", fillcolor="gray99", penwidth=1]

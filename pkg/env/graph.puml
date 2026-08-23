@@ -16,11 +16,11 @@ package "github.com/codemityio/go/pkg/env" as github_com_codemityio_go_pkg_env {
 package "github.com/codemityio/go/pkg/env" as github_com_codemityio_go_pkg_env {
     class "error" as error << (I, #e4f58e) >> {}
     class "error" as error << (I, #e4f58e) >> {}
-    class "T" as github_com_codemityio_go_pkg_env_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_env_T << (T, #6d8cbf) >> {}
-    class "T" as github_com_codemityio_go_pkg_env_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_env_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_env_T << (I, #e4f58e) >> {}
+    class "T" as github_com_codemityio_go_pkg_env_T << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
-    class "T" as github_com_codemityio_go_pkg_env_T << (T, #6d8cbf) >> {}
+    class "T" as github_com_codemityio_go_pkg_env_T << (I, #e4f58e) >> {}
     class "error" as _error << (I, #e4f58e) >> {}
 }
 package "github.com/codemityio/go/pkg/env" as github_com_codemityio_go_pkg_env {

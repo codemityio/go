@@ -1,6 +1,8 @@
 package transform
 
 import (
+	"errors"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -50,4 +52,21 @@ func TestSecurity_CreateUser(t *testing.T) {
 			require.Equal(t, test.expected, test.output)
 		})
 	}
+}
+
+func TestJSON_IsMarshalIsUnmarshal(t *testing.T) {
+	errBoom := errors.New("error")
+	transform := NewJSON()
+
+	require.True(t, transform.IsMarshal(ErrMarshal))
+	require.True(t, transform.IsMarshal(fmt.Errorf("%w: %w", ErrMarshal, errBoom)))
+	require.False(t, transform.IsMarshal(errBoom))
+	require.False(t, transform.IsMarshal(ErrUnmarshal))
+	require.False(t, transform.IsMarshal(nil))
+
+	require.True(t, transform.IsUnmarshal(ErrUnmarshal))
+	require.True(t, transform.IsUnmarshal(fmt.Errorf("%w: %w", ErrUnmarshal, errBoom)))
+	require.False(t, transform.IsUnmarshal(errBoom))
+	require.False(t, transform.IsUnmarshal(ErrMarshal))
+	require.False(t, transform.IsUnmarshal(nil))
 }

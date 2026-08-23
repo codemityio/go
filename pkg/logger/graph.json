@@ -81,7 +81,7 @@
             "Links": [
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -890,7 +890,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -910,7 +910,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -998,7 +998,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -1018,7 +1018,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -1106,7 +1106,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -1126,7 +1126,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -1229,7 +1229,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -1256,7 +1256,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -1344,7 +1344,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -1364,7 +1364,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2009,7 +2009,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2029,7 +2029,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2079,7 +2079,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2099,7 +2099,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2149,7 +2149,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2169,7 +2169,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2234,7 +2234,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2261,7 +2261,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -2311,7 +2311,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -2331,7 +2331,7 @@
               },
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""

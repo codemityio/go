@@ -1,0 +1,105 @@
+@startuml
+top to bottom direction
+skinparam package {
+    BackgroundColor #fafafa
+}
+skinparam defaulttextalignment center
+skinparam noteTextAlignment left
+package "github.com/codemityio/go/pkg/resilience" as github_com_codemityio_go_pkg_resilience {
+    class "<b><font color=#1c1c1c>HandlerFunc</font></b>" as github_com_codemityio_go_pkg_resilience_HandlerFunc << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>Retrier</font></b>" as github_com_codemityio_go_pkg_resilience_Retrier << (S, #b5558d) >> {
+        - baseDelay <font color=#1f38b5>time.Duration</font>
+        - maxDelay <font color=#1f38b5>time.Duration</font>
+        - retries <font color=#1f38b5>int</font>
+        + IsRetriesExhausted <font color=#1f38b5>(err error) (bool)</font>
+        + IsRetryWaitCanceled <font color=#1f38b5>(err error) (bool)</font>
+        + Execute <font color=#1f38b5>(ctx context.Context, handler HandlerFunc) (error)</font>
+        - waitBeforeRetry <font color=#1f38b5>(ctx context.Context, attempt int) (error)</font>
+        - delay <font color=#1f38b5>(attempt int) (time.Duration)</font>
+    }
+    class "<b><font color=#1c1c1c>Option</font></b>" as github_com_codemityio_go_pkg_resilience_Option << (F, #739e78) >> {
+    }
+    class "<b><font color=#1c1c1c>ErrPkg</font></b>" as github_com_codemityio_go_pkg_resilience_ErrPkg << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrRetryWaitCanceled</font></b>" as github_com_codemityio_go_pkg_resilience_ErrRetryWaitCanceled << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>ErrRetriesExhausted</font></b>" as github_com_codemityio_go_pkg_resilience_ErrRetriesExhausted << (V, #edb4ab) >> {}
+    class "<b><font color=#1c1c1c>BaseDelayDefault</font></b>" as github_com_codemityio_go_pkg_resilience_BaseDelayDefault << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MaxDelayDefault</font></b>" as github_com_codemityio_go_pkg_resilience_MaxDelayDefault << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>RetriesDefault</font></b>" as github_com_codemityio_go_pkg_resilience_RetriesDefault << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>NewRetrier</font></b><font color=#1f38b5>(options ...Option) (*Retrier)</font>" as github_com_codemityio_go_pkg_resilience_NewRetrier << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithBaseDelay</font></b><font color=#1f38b5>(baseDelay time.Duration) (Option)</font>" as github_com_codemityio_go_pkg_resilience_WithBaseDelay << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithMaxDelay</font></b><font color=#1f38b5>(maxDelay time.Duration) (Option)</font>" as github_com_codemityio_go_pkg_resilience_WithMaxDelay << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithRetries</font></b><font color=#1f38b5>(retries int) (Option)</font>" as github_com_codemityio_go_pkg_resilience_WithRetries << (F, #dbcb8f) >> {}
+}
+package "github.com/codemityio/go/pkg/resilience" as github_com_codemityio_go_pkg_resilience {
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "func(ctx context.Context) (error)" as github_com_codemityio_go_pkg_resilience_func_ctx_context_Context___error_ << (F, #739e78) >> {}
+    class "struct" as _struct << (S, #b5558d) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "context" as .context {
+        class "Context" as context_Context << (I, #e4f58e) >> {}
+    }
+    class "error" as _error << (I, #e4f58e) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    class "func(retrier *Retrier)" as github_com_codemityio_go_pkg_resilience_func_retrier__Retrier_ << (F, #739e78) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    class "error" as error << (I, #e4f58e) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (T, #6d8cbf) >> {}
+    }
+    package "time" as .time {
+        class "Duration" as time_Duration << (T, #6d8cbf) >> {}
+    }
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+    package "time" as .time {
+        class "Duration" as time_Duration << (P, #74b1b5) >> {}
+    }
+}
+package "github.com/codemityio/go/pkg/resilience" as github_com_codemityio_go_pkg_resilience {
+    github_com_codemityio_go_pkg_resilience_HandlerFunc #...up...> context_Context
+    github_com_codemityio_go_pkg_resilience_HandlerFunc #...up...> _error
+    github_com_codemityio_go_pkg_resilience_HandlerFunc #...up...> github_com_codemityio_go_pkg_resilience_func_ctx_context_Context___error_
+    github_com_codemityio_go_pkg_resilience_Retrier #...up...> _struct
+    github_com_codemityio_go_pkg_resilience_Retrier o---up---> time_Duration
+    github_com_codemityio_go_pkg_resilience_Retrier ...up...> _error
+    github_com_codemityio_go_pkg_resilience_Retrier ...up...> context_Context
+    github_com_codemityio_go_pkg_resilience_Retrier ...up...> github_com_codemityio_go_pkg_resilience_HandlerFunc
+    github_com_codemityio_go_pkg_resilience_Retrier ...up...> time_Duration
+    github_com_codemityio_go_pkg_resilience_Option #...up...> github_com_codemityio_go_pkg_resilience_Retrier
+    github_com_codemityio_go_pkg_resilience_Option #...up...> github_com_codemityio_go_pkg_resilience_func_retrier__Retrier_
+    github_com_codemityio_go_pkg_resilience_ErrPkg ...up...|> error
+    github_com_codemityio_go_pkg_resilience_ErrRetryWaitCanceled ...up...|> error
+    github_com_codemityio_go_pkg_resilience_ErrRetriesExhausted ...up...|> error
+    github_com_codemityio_go_pkg_resilience_BaseDelayDefault #...up...> time_Duration
+    github_com_codemityio_go_pkg_resilience_MaxDelayDefault #...up...> time_Duration
+    github_com_codemityio_go_pkg_resilience_RetriesDefault #...up...> untyped_int
+    github_com_codemityio_go_pkg_resilience_NewRetrier ....up....> github_com_codemityio_go_pkg_resilience_Option
+    github_com_codemityio_go_pkg_resilience_NewRetrier ....up....> github_com_codemityio_go_pkg_resilience_Retrier
+    github_com_codemityio_go_pkg_resilience_WithBaseDelay ....up....> time_Duration
+    github_com_codemityio_go_pkg_resilience_WithBaseDelay ....up....> github_com_codemityio_go_pkg_resilience_Option
+    github_com_codemityio_go_pkg_resilience_WithMaxDelay ....up....> time_Duration
+    github_com_codemityio_go_pkg_resilience_WithMaxDelay ....up....> github_com_codemityio_go_pkg_resilience_Option
+    github_com_codemityio_go_pkg_resilience_WithRetries ....up....> github_com_codemityio_go_pkg_resilience_Option
+}
+@enduml
+

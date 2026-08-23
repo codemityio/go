@@ -28,7 +28,7 @@ func WithConfig(config *Config) Option {
 			certPool := x509.NewCertPool()
 			certPool.AppendCertsFromPEM(caCertFile)
 
-			tlsConfig = &tls.Config{ //nolint:exhaustruct // not necessary, use zero values
+			tlsConfig = &tls.Config{ //nolint:exhaustruct_v5 // not necessary, use zero values
 				MinVersion: tls.VersionTLS13,
 				ClientAuth: tls.RequireAndVerifyClientCert,
 				ClientCAs:  certPool,

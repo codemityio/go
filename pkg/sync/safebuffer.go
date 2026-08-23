@@ -2,6 +2,7 @@ package sync
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"sync"
 )
@@ -10,6 +11,11 @@ import (
 type SafeBuffer struct {
 	mu sync.Mutex
 	b  bytes.Buffer
+}
+
+// IsSafeBufferWrite reports whether err is or wraps ErrSafeBufferWrite.
+func (s *SafeBuffer) IsSafeBufferWrite(err error) bool {
+	return errors.Is(err, ErrSafeBufferWrite)
 }
 
 // Write writes to the buffer.

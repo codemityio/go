@@ -2,6 +2,7 @@ package json
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 
 	"github.com/liip/sheriff/v2"
@@ -15,6 +16,11 @@ func NewSerialiser() *Serialiser {
 	return &Serialiser{}
 }
 
+// IsMarshal reports whether err is or wraps the error Serialise returns when marshalling fails.
+func (s *Serialiser) IsMarshal(err error) bool {
+	return errors.Is(err, ErrMarshal)
+}
+
 // Serialise a simple serialiser with capability to serialise for specific group of interest.
 func (s *Serialiser) Serialise(input any, groups []string) ([]byte, error) {
 	var err error
@@ -24,7 +30,7 @@ func (s *Serialiser) Serialise(input any, groups []string) ([]byte, error) {
 	var out []byte
 
 	if len(groups) > 0 {
-		opts := &sheriff.Options{ //nolint:exhaustruct
+		opts := &sheriff.Options{ //nolint:exhaustruct_v5
 			ApiVersion:      nil,
 			Groups:          groups,
 			IncludeEmptyTag: false,

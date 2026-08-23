@@ -6,6 +6,8 @@ import (
 	"crypto/x509"
 	_ "embed"
 	"encoding/pem"
+	"errors"
+	"fmt"
 	"testing"
 
 	"github.com/golang-jwt/jwt/v4"
@@ -142,6 +144,82 @@ func TestDefaultSigner_Sign(t *testing.T) {
 			require.True(t, ok, "unexpected claims type")
 
 			tt.wantClaims(t, tt.wantIat, tt.wantAud, claims)
+		})
+	}
+}
+
+func TestDefaultSigner_IsSignerUnableToGenerateUUID(t *testing.T) {
+	errBoom := errors.New("error")
+
+	tests := map[string]struct {
+		err  error
+		want bool
+	}{
+		"true for the bare sentinel": {
+			err:  ErrSignerUnableToGenerateUUID,
+			want: true,
+		},
+		"true when wrapped": {
+			err:  fmt.Errorf("%w: %w", ErrSignerUnableToGenerateUUID, errBoom),
+			want: true,
+		},
+		"false for an unrelated error": {
+			err:  errBoom,
+			want: false,
+		},
+		"false for a different sentinel": {
+			err:  ErrSignerUnableToSignToken,
+			want: false,
+		},
+		"false for nil": {
+			err:  nil,
+			want: false,
+		},
+	}
+
+	signer := &DefaultSigner{}
+
+	for name, test := range tests {
+		t.Run(name, func(t *testing.T) {
+			require.Equal(t, test.want, signer.IsSignerUnableToGenerateUUID(test.err))
+		})
+	}
+}
+
+func TestDefaultSigner_IsSignerUnableToSignToken(t *testing.T) {
+	errBoom := errors.New("error")
+
+	tests := map[string]struct {
+		err  error
+		want bool
+	}{
+		"true for the bare sentinel": {
+			err:  ErrSignerUnableToSignToken,
+			want: true,
+		},
+		"true when wrapped": {
+			err:  fmt.Errorf("%w: %w: signature error", ErrSignerUnableToSignToken, errBoom),
+			want: true,
+		},
+		"false for an unrelated error": {
+			err:  errBoom,
+			want: false,
+		},
+		"false for a different sentinel": {
+			err:  ErrSignerUnableToGenerateUUID,
+			want: false,
+		},
+		"false for nil": {
+			err:  nil,
+			want: false,
+		},
+	}
+
+	signer := &DefaultSigner{}
+
+	for name, test := range tests {
+		t.Run(name, func(t *testing.T) {
+			require.Equal(t, test.want, signer.IsSignerUnableToSignToken(test.err))
 		})
 	}
 }

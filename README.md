@@ -1,6 +1,6 @@
 # ![Go](logo.jpg)
 
-![coverage-badge-do-not-edit](https://img.shields.io/badge/Coverage-85%25-green.svg?longCache=true&style=flat)
+![coverage-badge-do-not-edit](https://img.shields.io/badge/Coverage-88%25-green.svg?longCache=true&style=flat)
 
 ## Table of contents
 
@@ -15,6 +15,10 @@
 ## Summary
 
 Go shared library.
+
+> This library is in initial development. Any `v0.x.x` release is considered **unstable**, and breaking changes may be
+> introduced at any time without a major version bump. The public API will be considered stable starting with `v1.0.0`,
+> per [Semantic Versioning](https://semver.org/#spec-item-4).
 
 ## Development
 
@@ -42,6 +46,8 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
 - [`mongo`](pkg/mongo/README.md) - Package mongo provides a mongo client factory and abstractions for interacting with
   mongo. It wraps the official mongo Go driver, exposing a simplified interface for connection management and database
   operations.
+- [`resilience`](pkg/resilience/README.md) - This package provides resilience patterns for executing operations under
+  transient failure conditions.
 - [`strings`](pkg/strings/README.md) - This package provides string manipulation utilities.
 - [`sync`](pkg/sync/README.md) - This package provides concurrency primitives and thread-safe data structures to
   complement the Go standard library.
@@ -62,17 +68,17 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
 
 | Package                                            | Licence                                                                             | Type         |
 |----------------------------------------------------|-------------------------------------------------------------------------------------|--------------|
-| github.com/danielgtaylor/huma/v2                   | https://github.com/danielgtaylor/huma/blob/v2.39.0/LICENSE.md                       | MIT          |
-| github.com/go-chi/chi/v5                           | https://github.com/go-chi/chi/blob/v5.3.1/LICENSE                                   | MIT          |
+| github.com/danielgtaylor/huma/v2                   | https://github.com/danielgtaylor/huma/blob/v2.39.1/LICENSE.md                       | MIT          |
+| github.com/go-chi/chi/v5                           | https://github.com/go-chi/chi/blob/v5.3.2/LICENSE                                   | MIT          |
 | github.com/golang-jwt/jwt/v4                       | https://github.com/golang-jwt/jwt/blob/v4.5.2/LICENSE                               | MIT          |
 | github.com/google/uuid                             | https://github.com/google/uuid/blob/v1.6.0/LICENSE                                  | BSD-3-Clause |
 | github.com/hashicorp/go-version                    | https://github.com/hashicorp/go-version/blob/v1.7.0/LICENSE                         | MPL-2.0      |
 | github.com/iancoleman/strcase                      | https://github.com/iancoleman/strcase/blob/v0.3.0/LICENSE                           | MIT          |
-| github.com/klauspost/compress                      | https://github.com/klauspost/compress/blob/v1.18.6/LICENSE                          | MIT          |
-| github.com/klauspost/compress/internal/snapref     | https://github.com/klauspost/compress/blob/v1.18.6/internal/snapref/LICENSE         | BSD-3-Clause |
-| github.com/klauspost/compress/s2                   | https://github.com/klauspost/compress/blob/v1.18.6/s2/LICENSE                       | BSD-3-Clause |
-| github.com/klauspost/compress/snappy               | https://github.com/klauspost/compress/blob/v1.18.6/snappy/LICENSE                   | BSD-3-Clause |
-| github.com/klauspost/compress/zstd/internal/xxhash | https://github.com/klauspost/compress/blob/v1.18.6/zstd/internal/xxhash/LICENSE.txt | MIT          |
+| github.com/klauspost/compress                      | https://github.com/klauspost/compress/blob/v1.19.0/LICENSE                          | MIT          |
+| github.com/klauspost/compress/internal/snapref     | https://github.com/klauspost/compress/blob/v1.19.0/internal/snapref/LICENSE         | BSD-3-Clause |
+| github.com/klauspost/compress/s2                   | https://github.com/klauspost/compress/blob/v1.19.0/s2/LICENSE                       | BSD-3-Clause |
+| github.com/klauspost/compress/snappy               | https://github.com/klauspost/compress/blob/v1.19.0/snappy/LICENSE                   | BSD-3-Clause |
+| github.com/klauspost/compress/zstd/internal/xxhash | https://github.com/klauspost/compress/blob/v1.19.0/zstd/internal/xxhash/LICENSE.txt | MIT          |
 | github.com/liip/sheriff/v2                         | https://github.com/liip/sheriff/blob/v2.0.1/LICENSE                                 | BSD-3-Clause |
 | github.com/sethvargo/go-envconfig                  | https://github.com/sethvargo/go-envconfig/blob/v1.4.3/LICENSE                       | Apache-2.0   |
 | github.com/xdg-go/scram                            | https://github.com/xdg-go/scram/blob/v1.2.0/LICENSE                                 | Apache-2.0   |
@@ -82,9 +88,9 @@ Use the arrow keys `↓ ↑ → ←` to navigate the options, and press `/` to t
 | github.com/xeipuuv/gojsonschema                    | https://github.com/xeipuuv/gojsonschema/blob/v1.2.0/LICENSE-APACHE-2.0.txt          | Apache-2.0   |
 | github.com/youmark/pkcs8                           | https://github.com/youmark/pkcs8/blob/a2c0da244d78/LICENSE                          | MIT          |
 | go.mongodb.org/mongo-driver/v2                     | https://github.com/mongodb/mongo-go-driver/blob/v2.8.0/LICENSE                      | Apache-2.0   |
-| golang.org/x/crypto                                | https://cs.opensource.google/go/x/crypto/+/v0.52.0:LICENSE                          | BSD-3-Clause |
-| golang.org/x/sync                                  | https://cs.opensource.google/go/x/sync/+/v0.21.0:LICENSE                            | BSD-3-Clause |
-| golang.org/x/text                                  | https://cs.opensource.google/go/x/text/+/v0.39.0:LICENSE                            | BSD-3-Clause |
+| golang.org/x/crypto                                | https://cs.opensource.google/go/x/crypto/+/v0.54.0:LICENSE                          | BSD-3-Clause |
+| golang.org/x/sync                                  | https://cs.opensource.google/go/x/sync/+/v0.22.0:LICENSE                            | BSD-3-Clause |
+| golang.org/x/text                                  | https://cs.opensource.google/go/x/text/+/v0.40.0:LICENSE                            | BSD-3-Clause |
 | gopkg.in/yaml.v3                                   | https://github.com/go-yaml/yaml/blob/v3.0.1/LICENSE                                 | MIT          |
 
 ## License

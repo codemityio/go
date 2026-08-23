@@ -228,13 +228,13 @@
     {
       "FilePath": "pkg/json/serialiser.go",
       "Start": {
-        "Offset": 120,
-        "Line": 11,
+        "Offset": 130,
+        "Line": 12,
         "Column": 1
       },
       "End": {
-        "Offset": 144,
-        "Line": 11,
+        "Offset": 154,
+        "Line": 12,
         "Column": 25
       },
       "PackageName": "json",
@@ -262,13 +262,84 @@
         {
           "FilePath": "pkg/json/serialiser.go",
           "Start": {
-            "Offset": 343,
-            "Line": 19,
+            "Offset": 356,
+            "Line": 20,
             "Column": 1
           },
           "End": {
-            "Offset": 885,
-            "Line": 45,
+            "Offset": 441,
+            "Line": 22,
+            "Column": 2
+          },
+          "Name": "IsMarshal",
+          "Signature": {
+            "Label": "(err error) (bool)",
+            "Alt": "(error) (bool)",
+            "Arguments": [
+              {
+                "Name": "err",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "bool",
+                  "Links": [
+                    {
+                      "Name": "bool",
+                      "Underlying": "bool",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": true,
+          "Doc": "IsMarshal reports whether err is or wraps the error Serialise returns when marshalling fails.\n"
+        },
+        {
+          "FilePath": "pkg/json/serialiser.go",
+          "Start": {
+            "Offset": 537,
+            "Line": 25,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1082,
+            "Line": 51,
             "Column": 2
           },
           "Name": "Serialise",
@@ -283,7 +354,7 @@
                   "Links": [
                     {
                       "Name": "any",
-                      "Underlying": "any",
+                      "Underlying": "interface{}",
                       "PackageName": "",
                       "PackagePath": "",
                       "PackageAlias": ""
@@ -342,7 +413,7 @@
             "Links": [
               {
                 "Name": "any",
-                "Underlying": "any",
+                "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
                 "PackageAlias": ""
@@ -423,7 +494,7 @@
               "Links": [
                 {
                   "Name": "T",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "json",
                   "PackagePath": "github.com/codemityio/go/pkg/json",
                   "PackageAlias": ""
@@ -442,7 +513,7 @@
           },
           {
             "Name": "T",
-            "Underlying": "any",
+            "Underlying": "interface{}",
             "PackageName": "json",
             "PackagePath": "github.com/codemityio/go/pkg/json",
             "PackageAlias": ""
@@ -459,7 +530,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -515,7 +586,7 @@
               "Links": [
                 {
                   "Name": "T",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "json",
                   "PackagePath": "github.com/codemityio/go/pkg/json",
                   "PackageAlias": ""
@@ -549,7 +620,7 @@
           },
           {
             "Name": "T",
-            "Underlying": "any",
+            "Underlying": "interface{}",
             "PackageName": "json",
             "PackagePath": "github.com/codemityio/go/pkg/json",
             "PackageAlias": ""
@@ -573,7 +644,7 @@
               "Links": [
                 {
                   "Name": "any",
-                  "Underlying": "any",
+                  "Underlying": "interface{}",
                   "PackageName": "",
                   "PackagePath": "",
                   "PackageAlias": ""
@@ -676,13 +747,13 @@
     {
       "FilePath": "pkg/json/serialiser.go",
       "Start": {
-        "Offset": 189,
-        "Line": 14,
+        "Offset": 199,
+        "Line": 15,
         "Column": 1
       },
       "End": {
-        "Offset": 247,
-        "Line": 16,
+        "Offset": 257,
+        "Line": 17,
         "Column": 2
       },
       "PackageName": "json",
