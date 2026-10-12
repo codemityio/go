@@ -10,12 +10,12 @@ digraph DepGraph {
         "github.com/codemityio/go/pkg/validator" [label="github.com/codemityio/go/pkg/validator", color="gray58", fillcolor="gray99", penwidth=1]
               "github.com/codemityio/go/pkg/validator" -> "github.com/xeipuuv/gojsonschema"
               "github.com/codemityio/go/pkg/validator" -> "gopkg.in/yaml.v3"
-        "github.com/xeipuuv/gojsonpointer" [label="github.com/xeipuuv/gojsonpointer", color="gray65", fillcolor="gray83", penwidth=1]
-        "github.com/xeipuuv/gojsonreference" [label="github.com/xeipuuv/gojsonreference", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/xeipuuv/gojsonpointer" [label="github.com/xeipuuv/gojsonpointer@v0.0.0-20180127040702-4e3ac2762d5f", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/xeipuuv/gojsonreference" [label="github.com/xeipuuv/gojsonreference@v0.0.0-20180127040603-bd5ef7bd5415", color="gray65", fillcolor="gray83", penwidth=1]
               "github.com/xeipuuv/gojsonreference" -> "github.com/xeipuuv/gojsonpointer"
-        "github.com/xeipuuv/gojsonschema" [label="github.com/xeipuuv/gojsonschema", color="gray65", fillcolor="gray83", penwidth=1]
+        "github.com/xeipuuv/gojsonschema" [label="github.com/xeipuuv/gojsonschema@v1.2.0", color="gray65", fillcolor="gray83", penwidth=1]
               "github.com/xeipuuv/gojsonschema" -> "github.com/xeipuuv/gojsonreference"
-        "gopkg.in/yaml.v3" [label="gopkg.in/yaml.v3", color="gray65", fillcolor="gray83", penwidth=1]
+        "gopkg.in/yaml.v3" [label="gopkg.in/yaml.v3@v3.0.1", color="gray65", fillcolor="gray83", penwidth=1]
     }
 }
 
