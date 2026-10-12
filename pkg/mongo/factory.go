@@ -21,6 +21,7 @@ func NewClient(config *Config) (*mongo.Client, error) {
 				PasswordSet:             false,
 				OIDCMachineCallback:     nil,
 				OIDCHumanCallback:       nil,
+				AWSCredentialsProvider:  nil,
 			}),
 	)
 	if err != nil {

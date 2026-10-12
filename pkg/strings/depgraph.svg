@@ -19,9 +19,9 @@
 <!-- github.com/iancoleman/strcase -->
 <g id="node2" class="node">
 <title>github.com/iancoleman/strcase</title>
-<polygon fill="#d4d4d4" stroke="#a6a6a6" points="284,-36 41,-36 41,-40 29,-40 29,0 284,0 284,-36"/>
-<polyline fill="none" stroke="#a6a6a6" points="29,-36 41,-36"/>
-<text text-anchor="middle" x="157" y="-13" font-family="Courier New" font-size="14.00">github.com/iancoleman/strcase</text>
+<polygon fill="#d4d4d4" stroke="#a6a6a6" points="313,-36 12,-36 12,-40 0,-40 0,0 313,0 313,-36"/>
+<polyline fill="none" stroke="#a6a6a6" points="0,-36 12,-36"/>
+<text text-anchor="middle" x="157" y="-13" font-family="Courier New" font-size="14.00">github.com/iancoleman/strcase@v0.3.0</text>
 </g>
 <!-- github.com/codemityio/go/pkg/strings&#45;&gt;github.com/iancoleman/strcase -->
 <g id="edge1" class="edge">
