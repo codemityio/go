@@ -64,7 +64,7 @@ func (c *DefaultContainer) Set(key string, service any, ss func(service any)) {
 		Shutdown: ss,
 	})
 
-	c.infoFunc(fmt.Sprintf("container %s service stored", key))
+	c.infoFunc(key + " service stored")
 }
 
 // Keys list all service keys.
@@ -126,7 +126,7 @@ func (c *DefaultContainer) shutdown() {
 					return
 				}
 
-				c.infoFunc(fmt.Sprintf("container service %s shutdown started", key))
+				c.infoFunc(fmt.Sprintf("service %s shutdown started", key))
 
 				if record.Shutdown != nil {
 					record.Shutdown(record.Service)
@@ -134,7 +134,7 @@ func (c *DefaultContainer) shutdown() {
 
 				c.services.Delete(key)
 
-				c.infoFunc(fmt.Sprintf("container service %s shutdown completed", key))
+				c.infoFunc(fmt.Sprintf("service %s shutdown completed", key))
 			})
 
 			return true

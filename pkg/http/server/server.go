@@ -21,27 +21,27 @@ type DefaultServer struct {
 	startOnce sync.Once
 	stopOnce  sync.Once
 	started   bool
+	stopped   bool
 	errors    chan error
 	done      chan struct{}
 }
 
 // New a factory function to create a new server.
 func New(options ...Option) *DefaultServer {
-	ds := DefaultServer{
-		Server: http.Server{ //nolint:exhaustruct_v5 // not necessary, use zero values
-			ReadHeaderTimeout: 0,
-			IdleTimeout:       0,
-			ReadTimeout:       defaultTimeout * time.Second,
-			WriteTimeout:      defaultTimeout * time.Second,
-		},
-		logFunc:   nil,
-		config:    nil,
-		mu:        sync.Mutex{},
-		startOnce: sync.Once{},
-		stopOnce:  sync.Once{},
-		started:   false,
-		errors:    nil,
-		done:      nil,
+	ds := DefaultServer{ //nolint:exhaustruct_v5
+		ReadHeaderTimeout: 0,
+		IdleTimeout:       0,
+		ReadTimeout:       defaultTimeout * time.Second,
+		WriteTimeout:      defaultTimeout * time.Second,
+		logFunc:           nil,
+		config:            nil,
+		mu:                sync.Mutex{},
+		startOnce:         sync.Once{},
+		stopOnce:          sync.Once{},
+		started:           false,
+		stopped:           false,
+		errors:            nil,
+		done:              nil,
 	}
 
 	for _, option := range options {
@@ -55,6 +55,14 @@ func New(options ...Option) *DefaultServer {
 func (s *DefaultServer) Start() {
 	s.startOnce.Do(func() {
 		s.mu.Lock()
+
+		// Stop has already been called, starting now would leave a server that can never be stopped.
+		if s.stopped {
+			s.mu.Unlock()
+
+			return
+		}
+
 		s.errors = make(chan error, s.config.ErrorsBufferSize)
 		s.started = true
 		s.done = make(chan struct{})
@@ -91,8 +99,10 @@ func (s *DefaultServer) Stop(ctx context.Context, timeout time.Duration) {
 	s.stopOnce.Do(func() {
 		s.mu.Lock()
 
+		s.stopped = true
+
+		// Not started yet, so there are no s.done and s.errors channels to close.
 		if !s.started {
-			close(s.done)
 			s.mu.Unlock()
 
 			return
@@ -128,11 +138,15 @@ func (s *DefaultServer) Stop(ctx context.Context, timeout time.Duration) {
 
 // Done blocks until the server is fully stopped.
 func (s *DefaultServer) Done() {
-	if s.done == nil {
+	s.mu.Lock()
+	done := s.done
+	s.mu.Unlock()
+
+	if done == nil {
 		return
 	}
 
-	<-s.done
+	<-done
 }
 
 // Errors subscribe to async errors.

@@ -18,6 +18,8 @@ The following input types are supported.
 - `[]byte` - as **JSON**
 - `[]byte` - as **YAML**
 - `any`
+- `T` - via the generic `Validator[T]` interface (`NewGeneric[T]()`), where `[]byte` and `json.RawMessage` are treated
+  as raw **JSON** and any other type is validated as a Go value (using its `json` tags)
 
 ## Design
 

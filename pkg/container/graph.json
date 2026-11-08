@@ -221,7 +221,7 @@
             "Column": 1
           },
           "End": {
-            "Offset": 1369,
+            "Offset": 1345,
             "Line": 68,
             "Column": 2
           },
@@ -301,12 +301,12 @@
         {
           "FilePath": "pkg/container/container.go",
           "Start": {
-            "Offset": 1402,
+            "Offset": 1378,
             "Line": 71,
             "Column": 1
           },
           "End": {
-            "Offset": 1699,
+            "Offset": 1675,
             "Line": 88,
             "Column": 2
           },
@@ -349,12 +349,12 @@
         {
           "FilePath": "pkg/container/container.go",
           "Start": {
-            "Offset": 1701,
+            "Offset": 1677,
             "Line": 90,
             "Column": 1
           },
           "End": {
-            "Offset": 2038,
+            "Offset": 2014,
             "Line": 106,
             "Column": 2
           },
@@ -373,12 +373,12 @@
         {
           "FilePath": "pkg/container/container.go",
           "Start": {
-            "Offset": 2040,
+            "Offset": 2016,
             "Line": 108,
             "Column": 1
           },
           "End": {
-            "Offset": 3059,
+            "Offset": 3015,
             "Line": 158,
             "Column": 2
           },

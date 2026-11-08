@@ -46,6 +46,88 @@ package "github.com/codemityio/go/pkg/http/client" as github_com_codemityio_go_p
     class "<font color=#1c1c1c>configCertKey</font><font color=#1f38b5>(tlsConfig *tls.Config, config *Config)</font>" as github_com_codemityio_go_pkg_http_client_configCertKey << (F, #dbcb8f) >> {}
     class "<font color=#1c1c1c>configJWT</font><font color=#1f38b5>(config *Config) (*token.DefaultSigner)</font>" as github_com_codemityio_go_pkg_http_client_configJWT << (F, #dbcb8f) >> {}
 }
+package "github.com/codemityio/go/pkg/http/content" as github_com_codemityio_go_pkg_http_content {
+    class "<b><font color=#1c1c1c>MediaTypeJSON</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeJSON << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeProblemJSON</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeProblemJSON << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeNDJSON</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeNDJSON << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeXML</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeXML << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeXHTML</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeXHTML << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeYAML</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeYAML << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeHTML</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeHTML << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypePlain</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypePlain << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeCSS</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeCSS << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeCSV</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeCSV << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMarkdown</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMarkdown << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeJavaScript</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeJavaScript << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeEventStream</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeEventStream << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWebAssembly</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWebAssembly << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeManifestJSON</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeManifestJSON << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeSignedExchange</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeSignedExchange << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeAVIF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeAVIF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeAPNG</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeAPNG << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeBMP</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeBMP << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeGIF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeGIF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeICO</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeICO << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeJPEG</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeJPEG << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeJXL</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeJXL << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypePNG</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypePNG << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeSVG</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeSVG << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeTIFF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeTIFF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWebP</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWebP << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeAVI</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeAVI << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMatroska</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMatroska << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMP4</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMP4 << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMPEG</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMPEG << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeOGGVideo</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeOGGVideo << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeQuickTime</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeQuickTime << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWebMVideo</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWebMVideo << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeHLS</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeHLS << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeDASH</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeDASH << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeAAC</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeAAC << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeFLAC</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeFLAC << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMP3</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMP3 << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMP4Audio</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMP4Audio << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeOGGAudio</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeOGGAudio << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeOpus</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeOpus << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWAV</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWAV << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWebMAudio</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWebMAudio << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeOctetStream</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeOctetStream << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypePDF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypePDF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeZIP</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeZIP << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeGZIP</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeGZIP << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeTAR</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeTAR << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaType7Z</font></b>" as github_com_codemityio_go_pkg_http_content_MediaType7Z << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeRAR</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeRAR << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeDOC</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeDOC << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeDOCX</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeDOCX << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeXLS</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeXLS << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeXLSX</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeXLSX << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypePPT</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypePPT << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypePPTX</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypePPTX << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeODT</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeODT << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeODS</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeODS << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeEPUB</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeEPUB << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeRTF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeRTF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeOTF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeOTF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeTTF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeTTF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWOFF</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWOFF << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeWOFF2</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeWOFF2 << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeFormURLEncoded</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeFormURLEncoded << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMultipartFormData</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMultipartFormData << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMultipartMixed</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMultipartMixed << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>MediaTypeMultipartByteRanges</font></b>" as github_com_codemityio_go_pkg_http_content_MediaTypeMultipartByteRanges << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>mediaRangeAny</font>" as github_com_codemityio_go_pkg_http_content_mediaRangeAny << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>mediaRangeSubtypeAny</font>" as github_com_codemityio_go_pkg_http_content_mediaRangeSubtypeAny << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>mediaRangeWildcard</font>" as github_com_codemityio_go_pkg_http_content_mediaRangeWildcard << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>mediaParamQuality</font>" as github_com_codemityio_go_pkg_http_content_mediaParamQuality << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>specificityNone</font>" as github_com_codemityio_go_pkg_http_content_specificityNone << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>specificityAny</font>" as github_com_codemityio_go_pkg_http_content_specificityAny << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>specificityType</font>" as github_com_codemityio_go_pkg_http_content_specificityType << (C, #c5bfdb) >> {}
+    class "<font color=#1c1c1c>specificityExact</font>" as github_com_codemityio_go_pkg_http_content_specificityExact << (C, #c5bfdb) >> {}
+    class "<b><font color=#1c1c1c>Negotiate</font></b><font color=#1f38b5>(accept string, offers ...string) (string)</font>" as github_com_codemityio_go_pkg_http_content_Negotiate << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>offerQuality</font><font color=#1f38b5>(accept string, offer string) (float64)</font>" as github_com_codemityio_go_pkg_http_content_offerQuality << (F, #dbcb8f) >> {}
+    class "<font color=#1c1c1c>matchSpecificity</font><font color=#1f38b5>(mediaRange string, offer string) (int)</font>" as github_com_codemityio_go_pkg_http_content_matchSpecificity << (F, #dbcb8f) >> {}
+}
 package "github.com/codemityio/go/pkg/http/huma" as github_com_codemityio_go_pkg_http_huma {
     class "<b><font color=#1c1c1c>Config</font></b>" as github_com_codemityio_go_pkg_http_huma_Config << (S, #b5558d) >> {
         + Title <font color=#1f38b5>string</font>
@@ -244,6 +326,7 @@ package "github.com/codemityio/go/pkg/http/server" as github_com_codemityio_go_p
         - startOnce <font color=#1f38b5>sync.Once</font>
         - stopOnce <font color=#1f38b5>sync.Once</font>
         - started <font color=#1f38b5>bool</font>
+        - stopped <font color=#1f38b5>bool</font>
         - errors <font color=#1f38b5>*ast.ChanType</font>
         - done <font color=#1f38b5>*ast.ChanType</font>
         + IsServerUnableToListenAndServe <font color=#1f38b5>(err error) (bool)</font>
@@ -368,6 +451,85 @@ package "github.com/codemityio/go/pkg/http/client" as github_com_codemityio_go_p
     package "crypto/tls" as .crypto_tls {
         class "Config" as crypto_tls_Config << (S, #b5558d) >> {}
     }
+}
+package "github.com/codemityio/go/pkg/http/content" as github_com_codemityio_go_pkg_http_content {
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped string" as untyped_string << (T, #6d8cbf) >> {}
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
+    class "untyped int" as untyped_int << (T, #6d8cbf) >> {}
 }
 package "github.com/codemityio/go/pkg/http/huma" as github_com_codemityio_go_pkg_http_huma {
     class "struct" as _struct << (S, #b5558d) >> {}
@@ -644,6 +806,85 @@ package "github.com/codemityio/go/pkg/http/client" as github_com_codemityio_go_p
     github_com_codemityio_go_pkg_http_client_configCertKey ....up....> crypto_tls_Config
     github_com_codemityio_go_pkg_http_client_configJWT ....up....> github_com_codemityio_go_pkg_http_client_Config
     github_com_codemityio_go_pkg_http_client_configJWT ....up....> github_com_codemityio_go_pkg_http_token_DefaultSigner
+}
+package "github.com/codemityio/go/pkg/http/content" as github_com_codemityio_go_pkg_http_content {
+    github_com_codemityio_go_pkg_http_content_MediaTypeJSON #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeProblemJSON #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeNDJSON #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeXML #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeXHTML #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeYAML #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeHTML #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypePlain #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeCSS #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeCSV #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMarkdown #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeJavaScript #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeEventStream #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWebAssembly #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeManifestJSON #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeSignedExchange #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeAVIF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeAPNG #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeBMP #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeGIF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeICO #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeJPEG #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeJXL #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypePNG #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeSVG #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeTIFF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWebP #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeAVI #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMatroska #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMP4 #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMPEG #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeOGGVideo #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeQuickTime #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWebMVideo #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeHLS #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeDASH #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeAAC #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeFLAC #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMP3 #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMP4Audio #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeOGGAudio #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeOpus #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWAV #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWebMAudio #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeOctetStream #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypePDF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeZIP #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeGZIP #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeTAR #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaType7Z #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeRAR #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeDOC #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeDOCX #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeXLS #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeXLSX #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypePPT #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypePPTX #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeODT #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeODS #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeEPUB #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeRTF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeOTF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeTTF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWOFF #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeWOFF2 #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeFormURLEncoded #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMultipartFormData #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMultipartMixed #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_MediaTypeMultipartByteRanges #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_mediaRangeAny #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_mediaRangeSubtypeAny #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_mediaRangeWildcard #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_mediaParamQuality #...up...> untyped_string
+    github_com_codemityio_go_pkg_http_content_specificityNone #...up...> untyped_int
+    github_com_codemityio_go_pkg_http_content_specificityAny #...up...> untyped_int
+    github_com_codemityio_go_pkg_http_content_specificityType #...up...> untyped_int
+    github_com_codemityio_go_pkg_http_content_specificityExact #...up...> untyped_int
 }
 package "github.com/codemityio/go/pkg/http/huma" as github_com_codemityio_go_pkg_http_huma {
     github_com_codemityio_go_pkg_http_huma_Config #...up...> _struct
