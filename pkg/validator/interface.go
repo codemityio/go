@@ -16,3 +16,8 @@ type YAMLValidator interface {
 type AnyValidator interface {
 	ValidateAny(schema []byte, input any) ([]Error, error)
 }
+
+// Validator validator interface.
+type Validator[T any] interface {
+	Validate(schema []byte, input T) ([]Error, error)
+}

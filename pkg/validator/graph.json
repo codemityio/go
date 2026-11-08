@@ -24,6 +24,81 @@
   ],
   "Type": [
     {
+      "FilePath": "pkg/validator/generic.go",
+      "Start": {
+        "Offset": 349,
+        "Line": 14,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 411,
+        "Line": 16,
+        "Column": 2
+      },
+      "PackageName": "validator",
+      "PackagePath": "github.com/codemityio/go/pkg/validator",
+      "Name": "GenericValidator",
+      "Type": {
+        "Label": "struct",
+        "Links": [
+          {
+            "Name": "struct",
+            "Underlying": "struct",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/validator.GenericValidator[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "interface{}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [
+        {
+          "Name": "base",
+          "Type": {
+            "Label": "DefaultValidator",
+            "Links": [
+              {
+                "Name": "DefaultValidator",
+                "Underlying": "struct{}",
+                "PackageName": "validator",
+                "PackagePath": "github.com/codemityio/go/pkg/validator",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        }
+      ],
+      "Methods": [],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
       "FilePath": "pkg/validator/interface.go",
       "Start": {
         "Offset": 156,
@@ -442,6 +517,178 @@
                 "Underlying": "interface{}",
                 "PackageName": "",
                 "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "Error",
+                "Underlying": "struct{Field string \"json:\\\"field\\\"\"; Message string \"json:\\\"message\\\"\"}",
+                "PackageName": "validator",
+                "PackagePath": "github.com/codemityio/go/pkg/validator",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "error",
+                "Underlying": "interface{Error() string}",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": false,
+          "IsExported": true,
+          "Doc": ""
+        }
+      ],
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/validator/interface.go",
+      "Start": {
+        "Offset": 528,
+        "Line": 21,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 614,
+        "Line": 23,
+        "Column": 2
+      },
+      "PackageName": "validator",
+      "PackagePath": "github.com/codemityio/go/pkg/validator",
+      "Name": "Validator",
+      "Type": {
+        "Label": "interface",
+        "Links": [
+          {
+            "Name": "interface",
+            "Underlying": "interface",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "TypeInfo": "github.com/codemityio/go/pkg/validator.Validator[T any]",
+      "IsTypeAlias": false,
+      "Interfaces": [],
+      "Embedded": [],
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "interface{}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Fields": [],
+      "Methods": [
+        {
+          "FilePath": "pkg/validator/interface.go",
+          "Start": {
+            "Offset": 571,
+            "Line": 22,
+            "Column": 10
+          },
+          "End": {
+            "Offset": 612,
+            "Line": 22,
+            "Column": 51
+          },
+          "Name": "Validate",
+          "Signature": {
+            "Label": "(schema []byte, input T) ([]Error, error)",
+            "Alt": "([]byte, T) ([]Error, error)",
+            "Arguments": [
+              {
+                "Name": "schema",
+                "Type": {
+                  "Label": "[]byte",
+                  "Links": [
+                    {
+                      "Name": "byte",
+                      "Underlying": "byte",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "input",
+                "Type": {
+                  "Label": "T",
+                  "Links": [
+                    {
+                      "Name": "T",
+                      "Underlying": "interface{}",
+                      "PackageName": "validator",
+                      "PackagePath": "github.com/codemityio/go/pkg/validator",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "[]Error",
+                  "Links": [
+                    {
+                      "Name": "Error",
+                      "Underlying": "struct{Field string \"json:\\\"field\\\"\"; Message string \"json:\\\"message\\\"\"}",
+                      "PackageName": "validator",
+                      "PackagePath": "github.com/codemityio/go/pkg/validator",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "error",
+                  "Links": [
+                    {
+                      "Name": "error",
+                      "Underlying": "interface{Error() string}",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "byte",
+                "Underlying": "byte",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "T",
+                "Underlying": "interface{}",
+                "PackageName": "validator",
+                "PackagePath": "github.com/codemityio/go/pkg/validator",
                 "PackageAlias": ""
               },
               {
@@ -1065,6 +1312,89 @@
       "Params": null,
       "IsExported": true,
       "Doc": "New validator factory function.\n"
+    },
+    {
+      "FilePath": "pkg/validator/factory.go",
+      "Start": {
+        "Offset": 166,
+        "Line": 9,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 276,
+        "Line": 13,
+        "Column": 2
+      },
+      "PackageName": "validator",
+      "PackagePath": "github.com/codemityio/go/pkg/validator",
+      "Name": "NewGeneric",
+      "Signature": {
+        "Label": "() (*GenericValidator[T])",
+        "Alt": "() (*GenericValidator[T])",
+        "Arguments": [],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "*GenericValidator[T]",
+              "Links": [
+                {
+                  "Name": "GenericValidator",
+                  "Underlying": "struct{base github.com/codemityio/go/pkg/validator.DefaultValidator}",
+                  "PackageName": "validator",
+                  "PackagePath": "github.com/codemityio/go/pkg/validator",
+                  "PackageAlias": ""
+                },
+                {
+                  "Name": "T",
+                  "Underlying": "interface{}",
+                  "PackageName": "validator",
+                  "PackagePath": "github.com/codemityio/go/pkg/validator",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "GenericValidator",
+            "Underlying": "struct{base github.com/codemityio/go/pkg/validator.DefaultValidator}",
+            "PackageName": "validator",
+            "PackagePath": "github.com/codemityio/go/pkg/validator",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "T",
+            "Underlying": "interface{}",
+            "PackageName": "validator",
+            "PackagePath": "github.com/codemityio/go/pkg/validator",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": {
+        "Label": "[T any]",
+        "List": [
+          {
+            "Name": "T",
+            "Constrain": {
+              "Label": "any",
+              "Links": [
+                {
+                  "Name": "any",
+                  "Underlying": "interface{}",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "IsExported": true,
+      "Doc": "NewGeneric generic validator factory function.\n"
     }
   ],
   "Const": []

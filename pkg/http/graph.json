@@ -8412,8 +8412,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 349,
-        "Line": 26,
+        "Offset": 365,
+        "Line": 27,
         "Column": 2
       },
       "PackageName": "server",
@@ -8548,6 +8548,24 @@
         },
         {
           "Name": "started",
+          "Type": {
+            "Label": "bool",
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "stopped",
           "Type": {
             "Label": "bool",
             "Links": [
@@ -8944,13 +8962,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 989,
+            "Offset": 1031,
             "Line": 55,
             "Column": 1
           },
           "End": {
-            "Offset": 1785,
-            "Line": 87,
+            "Offset": 1974,
+            "Line": 95,
             "Column": 2
           },
           "Name": "Start",
@@ -8968,13 +8986,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 1824,
-            "Line": 90,
+            "Offset": 2013,
+            "Line": 98,
             "Column": 1
           },
           "End": {
-            "Offset": 2526,
-            "Line": 127,
+            "Offset": 2795,
+            "Line": 137,
             "Column": 2
           },
           "Name": "Stop",
@@ -9038,13 +9056,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 2578,
-            "Line": 130,
+            "Offset": 2847,
+            "Line": 140,
             "Column": 1
           },
           "End": {
-            "Offset": 2655,
-            "Line": 136,
+            "Offset": 2965,
+            "Line": 150,
             "Column": 2
           },
           "Name": "Done",
@@ -9062,13 +9080,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 2694,
-            "Line": 139,
+            "Offset": 3004,
+            "Line": 153,
             "Column": 1
           },
           "End": {
-            "Offset": 2829,
-            "Line": 148,
+            "Offset": 3139,
+            "Line": 162,
             "Column": 2
           },
           "Name": "Errors",
@@ -9094,13 +9112,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 2831,
-            "Line": 150,
+            "Offset": 3141,
+            "Line": 164,
             "Column": 1
           },
           "End": {
-            "Offset": 3111,
-            "Line": 156,
+            "Offset": 3421,
+            "Line": 170,
             "Column": 2
           },
           "Name": "listenAndServe",
@@ -9118,13 +9136,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 3113,
-            "Line": 158,
+            "Offset": 3423,
+            "Line": 172,
             "Column": 1
           },
           "End": {
-            "Offset": 3623,
-            "Line": 178,
+            "Offset": 3933,
+            "Line": 192,
             "Column": 2
           },
           "Name": "listenAndServeTLS",
@@ -9142,13 +9160,13 @@
         {
           "FilePath": "pkg/http/server/server.go",
           "Start": {
-            "Offset": 3625,
-            "Line": 180,
+            "Offset": 3935,
+            "Line": 194,
             "Column": 1
           },
           "End": {
-            "Offset": 3712,
-            "Line": 184,
+            "Offset": 4022,
+            "Line": 198,
             "Column": 2
           },
           "Name": "info",
@@ -9211,7 +9229,7 @@
         "Links": [
           {
             "Name": "DefaultServer",
-            "Underlying": "struct{net/http.Server; logFunc github.com/codemityio/go/pkg/http/server.LogFunc; config *github.com/codemityio/go/pkg/http/server.Config; mu sync.Mutex; startOnce sync.Once; stopOnce sync.Once; started bool; errors chan error; done chan struct{}}",
+            "Underlying": "struct{net/http.Server; logFunc github.com/codemityio/go/pkg/http/server.LogFunc; config *github.com/codemityio/go/pkg/http/server.Config; mu sync.Mutex; startOnce sync.Once; stopOnce sync.Once; started bool; stopped bool; errors chan error; done chan struct{}}",
             "PackageName": "server",
             "PackagePath": "github.com/codemityio/go/pkg/http/server",
             "PackageAlias": ""
@@ -9914,6 +9932,263 @@
       "Params": null,
       "IsExported": false,
       "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/func.go",
+      "Start": {
+        "Offset": 327,
+        "Line": 12,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 770,
+        "Line": 33,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "Negotiate",
+      "Signature": {
+        "Label": "(accept string, offers ...string) (string)",
+        "Alt": "(string, ...string) (string)",
+        "Arguments": [
+          {
+            "Name": "accept",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "offers",
+            "Type": {
+              "Label": "...string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "Negotiate returns the best matching media type offered for the `Accept` header value (e.g. `text/html` for\nbrowser requests), offers are listed in the order of preference and the first one is used when the header is\nempty or none of the offers is acceptable.\n"
+    },
+    {
+      "FilePath": "pkg/http/content/func.go",
+      "Start": {
+        "Offset": 872,
+        "Line": 36,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1408,
+        "Line": 60,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "offerQuality",
+      "Signature": {
+        "Label": "(accept string, offer string) (float64)",
+        "Alt": "(string, string) (float64)",
+        "Arguments": [
+          {
+            "Name": "accept",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "offer",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "float64",
+              "Links": [
+                {
+                  "Name": "float64",
+                  "Underlying": "float64",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "float64",
+            "Underlying": "float64",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": false,
+      "Doc": "offerQuality returns the quality of the offer taken from the most specific matching media range.\n"
+    },
+    {
+      "FilePath": "pkg/http/content/func.go",
+      "Start": {
+        "Offset": 1490,
+        "Line": 63,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1874,
+        "Line": 78,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "matchSpecificity",
+      "Signature": {
+        "Label": "(mediaRange string, offer string) (int)",
+        "Alt": "(string, string) (int)",
+        "Arguments": [
+          {
+            "Name": "mediaRange",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          },
+          {
+            "Name": "offer",
+            "Type": {
+              "Label": "string",
+              "Links": [
+                {
+                  "Name": "string",
+                  "Underlying": "string",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "int",
+              "Links": [
+                {
+                  "Name": "int",
+                  "Underlying": "int",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "string",
+            "Underlying": "string",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "int",
+            "Underlying": "int",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": false,
+      "Doc": "matchSpecificity returns how specifically the media range matches the offer.\n"
     },
     {
       "FilePath": "pkg/http/huma/factory.go",
@@ -11494,12 +11769,12 @@
     {
       "FilePath": "pkg/http/server/server.go",
       "Start": {
-        "Offset": 401,
-        "Line": 29,
+        "Offset": 417,
+        "Line": 30,
         "Column": 1
       },
       "End": {
-        "Offset": 948,
+        "Offset": 990,
         "Line": 52,
         "Column": 2
       },
@@ -11534,7 +11809,7 @@
               "Links": [
                 {
                   "Name": "DefaultServer",
-                  "Underlying": "struct{net/http.Server; logFunc github.com/codemityio/go/pkg/http/server.LogFunc; config *github.com/codemityio/go/pkg/http/server.Config; mu sync.Mutex; startOnce sync.Once; stopOnce sync.Once; started bool; errors chan error; done chan struct{}}",
+                  "Underlying": "struct{net/http.Server; logFunc github.com/codemityio/go/pkg/http/server.LogFunc; config *github.com/codemityio/go/pkg/http/server.Config; mu sync.Mutex; startOnce sync.Once; stopOnce sync.Once; started bool; stopped bool; errors chan error; done chan struct{}}",
                   "PackageName": "server",
                   "PackagePath": "github.com/codemityio/go/pkg/http/server",
                   "PackageAlias": ""
@@ -11553,7 +11828,7 @@
           },
           {
             "Name": "DefaultServer",
-            "Underlying": "struct{net/http.Server; logFunc github.com/codemityio/go/pkg/http/server.LogFunc; config *github.com/codemityio/go/pkg/http/server.Config; mu sync.Mutex; startOnce sync.Once; stopOnce sync.Once; started bool; errors chan error; done chan struct{}}",
+            "Underlying": "struct{net/http.Server; logFunc github.com/codemityio/go/pkg/http/server.LogFunc; config *github.com/codemityio/go/pkg/http/server.Config; mu sync.Mutex; startOnce sync.Once; stopOnce sync.Once; started bool; stopped bool; errors chan error; done chan struct{}}",
             "PackageName": "server",
             "PackagePath": "github.com/codemityio/go/pkg/http/server",
             "PackageAlias": ""
@@ -11603,6 +11878,1546 @@
       "Name": "ver",
       "Type": null,
       "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeJSON",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeProblemJSON",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeNDJSON",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeXML",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeXHTML",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeYAML",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeHTML",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypePlain",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeCSS",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeCSV",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMarkdown",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeJavaScript",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeEventStream",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWebAssembly",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeManifestJSON",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 58,
+        "Line": 4,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 807,
+        "Line": 21,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeSignedExchange",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeAVIF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeAPNG",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeBMP",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeGIF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeICO",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeJPEG",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeJXL",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypePNG",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeSVG",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeTIFF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 831,
+        "Line": 24,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1183,
+        "Line": 36,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWebP",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeAVI",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMatroska",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMP4",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMPEG",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeOGGVideo",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeQuickTime",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWebMVideo",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeHLS",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1207,
+        "Line": 39,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1574,
+        "Line": 49,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeDASH",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeAAC",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeFLAC",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMP3",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMP4Audio",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeOGGAudio",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeOpus",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWAV",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1598,
+        "Line": 52,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1883,
+        "Line": 61,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWebMAudio",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeOctetStream",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypePDF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeZIP",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeGZIP",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeTAR",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaType7Z",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeRAR",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeDOC",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeDOCX",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeXLS",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeXLSX",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypePPT",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypePPTX",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeODT",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeODS",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeEPUB",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 1931,
+        "Line": 64,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 2932,
+        "Line": 82,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeRTF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 2955,
+        "Line": 85,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3083,
+        "Line": 90,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeOTF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 2955,
+        "Line": 85,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3083,
+        "Line": 90,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeTTF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 2955,
+        "Line": 85,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3083,
+        "Line": 90,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWOFF",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 2955,
+        "Line": 85,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3083,
+        "Line": 90,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeWOFF2",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3120,
+        "Line": 93,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3356,
+        "Line": 98,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeFormURLEncoded",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3120,
+        "Line": 93,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3356,
+        "Line": 98,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMultipartFormData",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3120,
+        "Line": 93,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3356,
+        "Line": 98,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMultipartMixed",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3120,
+        "Line": 93,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3356,
+        "Line": 98,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "MediaTypeMultipartByteRanges",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": true,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3358,
+        "Line": 100,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3482,
+        "Line": 105,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "mediaRangeAny",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3358,
+        "Line": 100,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3482,
+        "Line": 105,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "mediaRangeSubtypeAny",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3358,
+        "Line": 100,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3482,
+        "Line": 105,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "mediaRangeWildcard",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3358,
+        "Line": 100,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3482,
+        "Line": 105,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "mediaParamQuality",
+      "Type": null,
+      "TypeInfo": "untyped string",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3558,
+        "Line": 108,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3646,
+        "Line": 113,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "specificityNone",
+      "Type": null,
+      "TypeInfo": "untyped int",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3558,
+        "Line": 108,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3646,
+        "Line": 113,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "specificityAny",
+      "Type": null,
+      "TypeInfo": "untyped int",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3558,
+        "Line": 108,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3646,
+        "Line": 113,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "specificityType",
+      "Type": null,
+      "TypeInfo": "untyped int",
+      "IsExported": false,
+      "Doc": ""
+    },
+    {
+      "FilePath": "pkg/http/content/const.go",
+      "Start": {
+        "Offset": 3558,
+        "Line": 108,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 3646,
+        "Line": 113,
+        "Column": 2
+      },
+      "PackageName": "content",
+      "PackagePath": "github.com/codemityio/go/pkg/http/content",
+      "Name": "specificityExact",
+      "Type": null,
+      "TypeInfo": "untyped int",
       "IsExported": false,
       "Doc": ""
     },

@@ -391,3 +391,21 @@ func TestServerHuma(t *testing.T) {
 
 	srvr.Done()
 }
+
+func TestDefaultServerStopBeforeStart(t *testing.T) {
+	server := New()
+
+	// Not started yet, Done must not block.
+	server.Done()
+
+	require.NotPanics(t, func() {
+		server.Stop(t.Context(), time.Second)
+	})
+
+	// Stopped before start, Start must be a no-op so the server is never left running.
+	server.Start()
+
+	require.Nil(t, server.Errors())
+
+	server.Done()
+}
